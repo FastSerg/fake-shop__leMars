@@ -4,8 +4,6 @@ import { NavbarMenu } from './NavbarMenu'
 import { Social } from './Social'
 import { Logo } from './Logo'
 
-// type navProps = { name: string }
-
 const Header = () => {
     return (
         <div className="site-header">

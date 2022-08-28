@@ -19,4 +19,43 @@
   width: 100%;
   height: 800px;
   top: 160px;
+  // z-index: 2;
+}
+
+.container {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
+}
+
+.container__post {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  top: -140px;
+  position: relative;
+
+}
+
+.post__item {
+  position: relative;
+
+}
+
+.item__img img {
+  height: 325px;
+  width: 100%;
+}
+
+.header-overlay--post {
+  background-color: black;
+  opacity: 0.3;
+  position:absolute;
+  width: 360px;
+  height: 325px;
+  top: 0;
+  right: 0;
 }
