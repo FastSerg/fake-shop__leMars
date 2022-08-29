@@ -28,15 +28,16 @@
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
-
+  top: -134px;
+  position: relative;
 }
 
 .container__post {
   display: flex;
   justify-content: center;
   gap: 30px;
-  top: -140px;
-  position: relative;
+
+  // flex-wrap: wrap;
 
 }
 
@@ -51,11 +52,12 @@
 }
 
 .header-overlay--post {
-  background-color: black;
+  background-color: gray;
   opacity: 0.3;
   position:absolute;
   width: 360px;
   height: 325px;
   top: 0;
   right: 0;
+  // z-index: 1;
 }

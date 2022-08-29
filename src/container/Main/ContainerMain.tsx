@@ -2,7 +2,7 @@ import React from 'react'
 import ContainerMainItem from './ContainerMainItem'
 import imgListArr from './imgListArr'
 
-type Props = { id?: number; img: string; text?: string; alt: string }
+type Props = { id: number; img: string; text?: string; alt: string }
 
 const ContainerMain = () => {
     return (
