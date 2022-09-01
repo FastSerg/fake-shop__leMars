@@ -1,7 +1,8 @@
 import React from 'react'
 import './Main.scss'
 import Banner from './Banner'
-import ContainerMain from './ContainerMain'
+import ContainerMainCategory from './ContainerMainCategory'
+import Conteiner from './Container'
 
 type Props = {}
 
@@ -9,7 +10,8 @@ const Main = (props: Props) => {
     return (
         <>
             <Banner />
-            <ContainerMain />
+            <ContainerMainCategory />
+            <Conteiner />
         </>
     )
 }

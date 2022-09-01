@@ -3,7 +3,7 @@ import ContainerMainItem from './ContainerMainItem'
 import imgListArr from './imgListArr'
 import { imgListProps } from './imgListArr'
 
-const ContainerMain = () => {
+const ContainerMainCategory = () => {
     return (
         <>
             <div className="container">
@@ -35,4 +35,4 @@ const ContainerMain = () => {
     )
 }
 
-export default ContainerMain
+export default ContainerMainCategory
