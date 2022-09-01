@@ -8,16 +8,17 @@ const pages = [
     { name: 'Pages', id: 5 },
     { name: 'Contact us', id: 6 },
 ]
+type Props = {}
 
-type navProps = { name?: string; id?: number }
+type navProps = { name: string; id: number }
 
-export const NavbarMenu = (props: navProps) => {
+export const NavbarMenu = (props: Props) => {
     return (
         <nav className="navbar-menu">
             <ul className="navbar-menu__list">
                 {pages.map(({ name, id }: navProps) => (
                     <li className="navbar-menu__item" key={id}>
-                        {name?.toUpperCase()}
+                        {name.toUpperCase()}
                     </li>
                 ))}
                 <ul className="category"></ul>

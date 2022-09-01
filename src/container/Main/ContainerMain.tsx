@@ -1,23 +1,34 @@
 import React from 'react'
 import ContainerMainItem from './ContainerMainItem'
 import imgListArr from './imgListArr'
-
-type Props = { id: number; img: string; text?: string; alt: string }
+import { imgListProps } from './imgListArr'
 
 const ContainerMain = () => {
     return (
         <>
             <div className="container">
                 <div className="container__post">
-                    {imgListArr.map(({ id, img, text, alt }: Props) => (
-                        <div className="post__item" key={id}>
-                            <ContainerMainItem
-                                img={img}
-                                alt={alt}
-                                text={text}
-                            />
-                        </div>
-                    ))}
+                    {imgListArr.map(
+                        ({
+                            id,
+                            img,
+                            nameCategory,
+                            title,
+                            readMore,
+                            alt,
+                        }: imgListProps) => (
+                            <div className="post__item" key={id}>
+                                <ContainerMainItem
+                                    id={id}
+                                    img={img}
+                                    alt={alt}
+                                    nameCategory={nameCategory}
+                                    title={title}
+                                    readMore={readMore}
+                                />
+                            </div>
+                        )
+                    )}
                 </div>
             </div>
         </>
