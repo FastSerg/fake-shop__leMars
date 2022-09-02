@@ -12,13 +12,13 @@ type Props = {}
 const GridItemCartTop = (props: Props) => {
     return (
         <>
-            <Grid container spacing={2}>
+            <Grid container spacing={2} sx={{ marginBottom: '60px' }}>
                 <Grid item md={6}>
-                    <Card sx={{ maxWidth: 415 }}>
+                    <Card sx={{ maxWidth: '100%' }}>
                         <CardActionArea>
                             <CardMedia
                                 component="img"
-                                height="560"
+                                height="100%"
                                 image="/img/man_with_bag.jpg"
                                 alt="man_with_bag"
                             />
@@ -32,11 +32,11 @@ const GridItemCartTop = (props: Props) => {
                 </Grid>
 
                 <Grid item md={4}>
-                    <Card sx={{ maxWidth: 300 }}>
+                    <Card sx={{ maxWidth: '100%' }}>
                         <CardActionArea>
                             <CardMedia
                                 component="img"
-                                height="205"
+                                height="100%"
                                 image="/img/wooman_legs.jpg"
                                 alt="man_with_bag"
                             />
@@ -74,11 +74,11 @@ const GridItemCartTop = (props: Props) => {
                     </Card>
                 </Grid>
                 <Grid item md={4}>
-                    <Card sx={{ maxWidth: 300 }}>
+                    <Card sx={{ maxWidth: '100%' }}>
                         <CardActionArea>
                             <CardMedia
                                 component="img"
-                                height="205"
+                                height="100%"
                                 image="/img/sity_palm.jpg"
                                 alt="man_with_bag"
                             />
@@ -116,11 +116,11 @@ const GridItemCartTop = (props: Props) => {
                     </Card>
                 </Grid>
                 <Grid item md={4}>
-                    <Card sx={{ maxWidth: 300 }}>
+                    <Card sx={{ maxWidth: '100%' }}>
                         <CardActionArea>
                             <CardMedia
                                 component="img"
-                                height="205"
+                                height="100%"
                                 image="/img/man_see.jpg"
                                 alt="man_with_bag"
                             />
