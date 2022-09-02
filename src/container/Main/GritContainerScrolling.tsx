@@ -1,14 +1,5 @@
 import React from 'react'
-import {
-    Grid,
-    CardActionArea,
-    CardMedia,
-    Card,
-    CardContent,
-    Typography,
-    ImageList,
-    ImageListItem,
-} from '@mui/material'
+import { Grid, CardMedia, Card } from '@mui/material'
 import { Social } from '../Header/Social'
 
 type itemDataProps = { id: number; img: string; alt: string }
@@ -23,7 +14,7 @@ const itemData = [
 const GritContainerScrolling = () => {
     return (
         <>
-            <Grid container spacing={1}>
+            <Grid container spacing={1} sx={{ marginLeft: '15px' }}>
                 <Grid item md={12}></Grid>
                 <Grid item md={12}>
                     <h6 className="widget-title">

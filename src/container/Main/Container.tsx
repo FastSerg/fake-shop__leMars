@@ -4,22 +4,28 @@ import { Grid } from '@mui/material'
 import GridItemCartTop from './GridItemCartTop'
 import GridContainerMain from './GridContainerMain'
 import GritContainerScrolling from './GritContainerScrolling'
+import GridContainerBottom from './GridContainerBottom'
 
 type Props = {}
 
 const Conteiner = (props: Props) => {
     return (
-        <div className="container">
-            <Grid container spacing={1} sx={{ paddingTop: '70px' }}>
-                <Grid item md={9}>
-                    <GridItemCartTop />
-                    <GridContainerMain />
+        <>
+            <div className="container">
+                <Grid container spacing={1} sx={{ paddingTop: '70px' }}>
+                    <Grid item md={9}>
+                        <GridItemCartTop />
+                        <GridContainerMain />
+                    </Grid>
+                    <Grid item md={3}>
+                        <GritContainerScrolling />
+                    </Grid>
                 </Grid>
-                <Grid item md={3}>
-                    <GritContainerScrolling />
-                </Grid>
-            </Grid>
-        </div>
+            </div>
+            <div className="container bottom">
+                <GridContainerBottom />
+            </div>
+        </>
     )
 }
 
