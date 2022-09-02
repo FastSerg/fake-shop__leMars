@@ -1,10 +1,11 @@
 
 .footer-site {
   display: block;
-  height: 563px;
+  height: 613px;
   color: white;
   box-sizing: border-box;
-  margin-top: -135px;
+  margin-top: -134px;
+ 
 }
 
 .footer-top {
@@ -63,3 +64,11 @@
  
 }
 
+.widget-title {
+  text-align: center;
+  text-decoration: overline;
+  margin-bottom: 30px;
+  font-size: 16px;
+  letter-spacing: 2.5px;
+  font-weight: 700;
+}
