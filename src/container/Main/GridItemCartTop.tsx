@@ -27,7 +27,18 @@ const GridItemCartTop = (props: Props) => {
                 </Grid>
                 <Grid item md={6}>
                     <div className="blog-cart">
-                        <div className="blog-cart__info"></div>
+                        <div className="blog-cart__info">
+                            <div className="title-top">
+                                <h5>Lifestyle</h5>
+                            </div>
+                            <h4 className="title">Makeup for new Look</h4>
+                            <p className="text-align-center">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Nam imperdiet, orci sed
+                                volutpat tempor, nisl massa ullamcorper tortor,
+                                vitae vestibulum neque lacus a sem. Donec
+                            </p>
+                        </div>
                     </div>
                 </Grid>
 

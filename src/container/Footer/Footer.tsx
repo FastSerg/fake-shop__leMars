@@ -106,7 +106,11 @@ const Footer = (props: Props) => {
                     </Grid>
                 </div>
             </div>
-            <div className="footer-bottom"></div>
+            <div className="footer-bottom">
+                <Grid item md={12} sx={{ textAlign: 'center' }}>
+                    <span>© 2022 All Rights Reserved.</span>
+                </Grid>
+            </div>
         </div>
     )
 }
