@@ -15,9 +15,7 @@ export const Social = (props: Props) => {
     return (
         <div className="social">
             {arrSocial.map(({ id, name }: Props) => (
-                <a href="#" key={id}>
-                    {name}
-                </a>
+                <span key={id}>{name}</span>
             ))}
         </div>
     )

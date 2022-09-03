@@ -2,7 +2,9 @@ import React from 'react'
 import './Footer.scss'
 import { LogoFooter } from './LogoFooter'
 import { Grid, CardMedia, Card } from '@mui/material'
-import { Social } from '../Header/Social'
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
+import FacebookIcon from '@mui/icons-material/Facebook'
+import TwitterIcon from '@mui/icons-material/Twitter'
 
 type Props = {}
 
@@ -99,8 +101,18 @@ const Footer = (props: Props) => {
                                     <span>SOCIAL ICON</span>
                                 </h6>
                             </Grid>
-                            <Grid item md={12}>
-                                <Social />
+                            <Grid
+                                item
+                                md={12}
+                                sx={{
+                                    display: 'flex',
+                                    justifyContent: 'center',
+                                    gap: '10px',
+                                }}
+                            >
+                                <FacebookIcon />
+                                <TwitterIcon />
+                                <LinkedInIcon />
                             </Grid>
                         </Grid>
                     </Grid>
