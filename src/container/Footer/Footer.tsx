@@ -83,12 +83,19 @@ const Footer = (props: Props) => {
                                         <span>MY BLOGS</span>
                                     </h6>
                                 </Grid>
-                                <Grid item md={12}>
-                                    <Card sx={{ maxWidth: '100%' }}>
+                                <Grid
+                                    item
+                                    md={12}
+                                    sx={{
+                                        display: 'flex',
+                                        justifyContent: 'center',
+                                    }}
+                                >
+                                    <Card sx={{ maxWidth: '240px' }}>
                                         <CardMedia
                                             component="img"
-                                            height="90%"
-                                            image="https://lemars.wprdx.com/demo/wp-content/themes/lemars/assets/images/footer-video.jpg"
+                                            height="150px"
+                                            image="/img/man_in_bike.jpg"
                                             alt="wooman in white"
                                         />
                                     </Card>
@@ -107,12 +114,12 @@ const Footer = (props: Props) => {
                                 sx={{
                                     display: 'flex',
                                     justifyContent: 'center',
-                                    gap: '10px',
+                                    gap: '20px',
                                 }}
                             >
-                                <FacebookIcon />
-                                <TwitterIcon />
-                                <LinkedInIcon />
+                                <FacebookIcon sx={{ fontSize: '2rem' }} />
+                                <TwitterIcon sx={{ fontSize: '2rem' }} />
+                                <LinkedInIcon sx={{ fontSize: '2rem' }} />
                             </Grid>
                         </Grid>
                     </Grid>

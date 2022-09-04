@@ -108,7 +108,7 @@ const GridItemCartTop = (props: Props) => {
                                     variant="h6"
                                     component="div"
                                 >
-                                    FASHION
+                                    LIFESTYLE
                                 </Typography>
                                 <Typography
                                     variant="inherit"
@@ -121,7 +121,7 @@ const GridItemCartTop = (props: Props) => {
                                         textAlign: 'center',
                                     }}
                                 >
-                                    Ready for the Summer
+                                    Sonoma Valley Lancome
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
@@ -150,7 +150,7 @@ const GridItemCartTop = (props: Props) => {
                                     variant="h6"
                                     component="div"
                                 >
-                                    FASHION
+                                    BEAUTY
                                 </Typography>
                                 <Typography
                                     variant="inherit"
@@ -163,7 +163,7 @@ const GridItemCartTop = (props: Props) => {
                                         textAlign: 'center',
                                     }}
                                 >
-                                    Ready for the Summer
+                                    New Year Creativity
                                 </Typography>
                             </CardContent>
                         </CardActionArea>

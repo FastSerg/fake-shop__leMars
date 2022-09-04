@@ -1,6 +1,16 @@
 import React from 'react'
-import { Grid, CardMedia, Card } from '@mui/material'
+import {
+    Grid,
+    CardMedia,
+    Card,
+    Typography,
+    Box,
+    TextField,
+    IconButton,
+} from '@mui/material'
+import SendIcon from '@mui/icons-material/Send'
 import { Social } from '../Header/Social'
+import './GridContainerScrolling.scss'
 
 type itemDataProps = { id: number; img: string; alt: string }
 
@@ -15,7 +25,51 @@ const GritContainerScrolling = () => {
     return (
         <>
             <Grid container spacing={1} sx={{ marginLeft: '15px' }}>
-                <Grid item md={12}></Grid>
+                <div className="fon-scroll">
+                    <Grid item md={12}>
+                        <Grid
+                            container
+                            spacing={1}
+                            sx={{ alignItems: 'center' }}
+                        >
+                            <Grid item md={12} sx={{ textAlign: 'center' }}>
+                                <Typography>Join</Typography>
+                            </Grid>
+                            <Grid item md={10}>
+                                <Box
+                                    component="form"
+                                    sx={{
+                                        '& > :not(style)': {
+                                            m: 1,
+                                            width: '100%',
+                                        },
+
+                                        textAlign: 'center',
+                                    }}
+                                    noValidate
+                                    autoComplete="off"
+                                >
+                                    <TextField
+                                        id="filled-basic"
+                                        label="Your Email"
+                                        variant="filled"
+                                    />
+                                </Box>
+                            </Grid>
+                            <Grid item md={2}>
+                                <IconButton
+                                    aria-label="fingerprint"
+                                    color="inherit"
+                                    sx={{
+                                        marginLeft: '-55px',
+                                    }}
+                                >
+                                    <SendIcon />
+                                </IconButton>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </div>
                 <Grid item md={12}>
                     <h6 className="widget-title">
                         <span>INSTAGRAM</span>

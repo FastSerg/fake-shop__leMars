@@ -18,6 +18,36 @@ const GridContainerMain = (props: Props) => {
                 <Grid item md={12}>
                     <Card sx={{ maxWidth: 840 }}>
                         <CardActionArea>
+                            <CardContent>
+                                <Typography
+                                    sx={{
+                                        fontSize: '12px',
+                                        lineHeight: '24px',
+                                        marginBottom: '10px',
+                                        fontWeight: '600',
+                                        color: 'red',
+                                        textAlign: 'center',
+                                        letterSpacing: '5px',
+                                    }}
+                                    variant="h6"
+                                    component="div"
+                                >
+                                    BEAUTY
+                                </Typography>
+                                <Typography
+                                    variant="inherit"
+                                    color="#2b2d2e"
+                                    sx={{
+                                        fontSize: '42px',
+                                        letterSpacing: '5px',
+                                        marginBottom: '10px',
+                                        fontWeight: '600',
+                                        textAlign: 'center',
+                                    }}
+                                >
+                                    Story of Beauty
+                                </Typography>
+                            </CardContent>
                             <CardMedia
                                 component="img"
                                 height="420"
@@ -58,13 +88,27 @@ const GridContainerMain = (props: Props) => {
                                         color="#2b2d2e"
                                         sx={{
                                             fontSize: '20px',
-
                                             marginBottom: '10px',
                                             fontWeight: '600',
                                             textAlign: 'center',
                                         }}
                                     >
-                                        Ready for the Summer
+                                        Everything About Cultural
+                                    </Typography>
+                                    <Typography
+                                        sx={{
+                                            fontSize: '15px',
+                                            color: '#77797c',
+                                            lineHeight: '24px',
+                                            marginBottom: '24px',
+                                            textAlign: 'center',
+                                        }}
+                                    >
+                                        Donec sed lacus eu massa commodo
+                                        interdum non id mauris. Etiam eu
+                                        dignissim elit. Nulla cursus neque
+                                        adictum quam tristique ac. Pellentesque
+                                        habitant morbi tristique
                                     </Typography>
                                 </CardContent>
                             </CardActionArea>
@@ -93,7 +137,7 @@ const GridContainerMain = (props: Props) => {
                                         variant="h6"
                                         component="div"
                                     >
-                                        FASHION
+                                        TRAVEL
                                     </Typography>
                                     <Typography
                                         variant="inherit"
@@ -106,7 +150,22 @@ const GridContainerMain = (props: Props) => {
                                             textAlign: 'center',
                                         }}
                                     >
-                                        Ready for the Summer
+                                        Watch Jackson Wang
+                                    </Typography>
+                                    <Typography
+                                        sx={{
+                                            fontSize: '15px',
+                                            color: '#77797c',
+                                            lineHeight: '24px',
+                                            marginBottom: '24px',
+                                            textAlign: 'center',
+                                        }}
+                                    >
+                                        Donec sed lacus eu massa commodo
+                                        interdum non id mauris. Etiam eu
+                                        dignissim elit. Nulla cursus neque
+                                        adictum quam tristique ac. Pellentesque
+                                        habitant morbi tristique
                                     </Typography>
                                 </CardContent>
                             </CardActionArea>
@@ -135,7 +194,7 @@ const GridContainerMain = (props: Props) => {
                                         variant="h6"
                                         component="div"
                                     >
-                                        FASHION
+                                        TRAVEL
                                     </Typography>
                                     <Typography
                                         variant="inherit"
@@ -148,7 +207,22 @@ const GridContainerMain = (props: Props) => {
                                             textAlign: 'center',
                                         }}
                                     >
-                                        Ready for the Summer
+                                        Styling Harvey
+                                    </Typography>
+                                    <Typography
+                                        sx={{
+                                            fontSize: '15px',
+                                            color: '#77797c',
+                                            lineHeight: '24px',
+                                            marginBottom: '24px',
+                                            textAlign: 'center',
+                                        }}
+                                    >
+                                        Donec sed lacus eu massa commodo
+                                        interdum non id mauris. Etiam eu
+                                        dignissim elit. Nulla cursus neque
+                                        adictum quam tristique ac. Pellentesque
+                                        habitant morbi tristique
                                     </Typography>
                                 </CardContent>
                             </CardActionArea>
@@ -192,7 +266,22 @@ const GridContainerMain = (props: Props) => {
                                             textAlign: 'center',
                                         }}
                                     >
-                                        Ready for the Summer
+                                        Las Catalines Welcome
+                                    </Typography>
+                                    <Typography
+                                        sx={{
+                                            fontSize: '15px',
+                                            color: '#77797c',
+                                            lineHeight: '24px',
+                                            marginBottom: '24px',
+                                            textAlign: 'center',
+                                        }}
+                                    >
+                                        Donec sed lacus eu massa commodo
+                                        interdum non id mauris. Etiam eu
+                                        dignissim elit. Nulla cursus neque
+                                        adictum quam tristique ac. Pellentesque
+                                        habitant morbi tristique
                                     </Typography>
                                 </CardContent>
                             </CardActionArea>
@@ -221,7 +310,7 @@ const GridContainerMain = (props: Props) => {
                                         variant="h6"
                                         component="div"
                                     >
-                                        FASHION
+                                        LIFESTYLE
                                     </Typography>
                                     <Typography
                                         variant="inherit"
@@ -234,7 +323,22 @@ const GridContainerMain = (props: Props) => {
                                             textAlign: 'center',
                                         }}
                                     >
-                                        Ready for the Summer
+                                        Clarins Marcara
+                                    </Typography>
+                                    <Typography
+                                        sx={{
+                                            fontSize: '15px',
+                                            color: '#77797c',
+                                            lineHeight: '24px',
+                                            marginBottom: '24px',
+                                            textAlign: 'center',
+                                        }}
+                                    >
+                                        Donec sed lacus eu massa commodo
+                                        interdum non id mauris. Etiam eu
+                                        dignissim elit. Nulla cursus neque
+                                        adictum quam tristique ac. Pellentesque
+                                        habitant morbi tristique
                                     </Typography>
                                 </CardContent>
                             </CardActionArea>
@@ -276,7 +380,22 @@ const GridContainerMain = (props: Props) => {
                                             textAlign: 'center',
                                         }}
                                     >
-                                        Ready for the Summer
+                                        Dress Like a Parisian
+                                    </Typography>
+                                    <Typography
+                                        sx={{
+                                            fontSize: '15px',
+                                            color: '#77797c',
+                                            lineHeight: '24px',
+                                            marginBottom: '24px',
+                                            textAlign: 'center',
+                                        }}
+                                    >
+                                        Donec sed lacus eu massa commodo
+                                        interdum non id mauris. Etiam eu
+                                        dignissim elit. Nulla cursus neque
+                                        adictum quam tristique ac. Pellentesque
+                                        habitant morbi tristique
                                     </Typography>
                                 </CardContent>
                             </CardActionArea>
