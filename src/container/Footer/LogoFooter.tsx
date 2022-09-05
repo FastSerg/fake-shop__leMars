@@ -1,13 +1,14 @@
 import React from 'react'
+import { Grid } from '@mui/material'
 
 type Props = {}
 
 export const LogoFooter = (props: Props) => {
     return (
-        <div className="logo">
-            <a href="#">
+        <Grid item md={2}>
+            <div className="logo">
                 <img src="/img/logo-white.png" alt="Le Mars" />
-            </a>
-        </div>
+            </div>
+        </Grid>
     )
 }
