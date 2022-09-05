@@ -8,8 +8,10 @@
 }
 
 .fon-scroll {
-  background: url(../../../public/img/fon_scroll.jpg)  no-repeat  50% 50% ;
+  background: url(../../../../public/img/fon_scroll.jpg)  no-repeat  50% 50% ;
   background-size: cover;
   height: 335px;
   width: 100%;
+  display: flex;
+  align-items:center;
 }

@@ -3,7 +3,7 @@ import './Container.scss'
 import { Grid } from '@mui/material'
 import GridItemCartTop from './GridItemCartTop'
 import GridContainerMain from './GridContainerMain'
-import GritContainerScrolling from './GritContainerScrolling'
+import GritContainerScrolling from './ScrollMenu/GritContainerScrolling'
 import GridContainerBottom from './GridContainerBottom'
 
 type Props = {}
