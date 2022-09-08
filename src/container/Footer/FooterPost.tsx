@@ -10,7 +10,11 @@ const FooterPost = (props: Props) => {
                 <Grid item md={12}>
                     <h6 className="widget-title ">RECENT POST</h6>
                 </Grid>
-                <Grid item md={6}>
+                <Grid
+                    item
+                    md={6}
+                    sx={{ display: 'flex', justifyContent: 'flex-end' }}
+                >
                     <Card sx={{ maxWidth: '80px' }}>
                         <CardMedia
                             component="img"
@@ -26,8 +30,11 @@ const FooterPost = (props: Props) => {
                         <div>OCT 1, 2022</div>
                     </div>
                 </Grid>
-
-                <Grid item md={6}>
+                <Grid
+                    item
+                    md={6}
+                    sx={{ display: 'flex', justifyContent: 'flex-end' }}
+                >
                     <Card sx={{ maxWidth: '80px' }}>
                         <CardMedia
                             component="img"
@@ -44,8 +51,12 @@ const FooterPost = (props: Props) => {
                     </div>
                 </Grid>
 
-                <Grid item md={6}>
-                    <Card sx={{ maxWidth: '80px' }}>
+                <Grid
+                    item
+                    md={6}
+                    sx={{ display: 'flex', justifyContent: 'flex-end' }}
+                >
+                    <Card sx={{ width: '80px' }}>
                         <CardMedia
                             component="img"
                             height="80px"

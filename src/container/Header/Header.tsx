@@ -1,18 +1,20 @@
 import * as React from 'react'
 import './Header.scss'
-import { NavbarMenu } from './NavbarMenu'
+import { NavbarMenu } from './NavbarMenu/NavbarMenu'
 import { Social } from './Social'
 import { Logo } from './Logo'
 
 const Header = () => {
     return (
-        <div className="site-header">
-            <div className="navbar">
-                <Logo />
-                <NavbarMenu />
-                <Social />
+        <header className="header">
+            <div className="header-container">
+                <div className="navbar">
+                    <Logo />
+                    <NavbarMenu />
+                    <Social />
+                </div>
             </div>
-        </div>
+        </header>
     )
 }
 export default Header
