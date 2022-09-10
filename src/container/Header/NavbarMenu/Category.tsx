@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Grid } from '@mui/material'
+import CardMediaProtoMain from 'container/Main/CardMainContent/CardMediaProtoMain'
 
 const categoryList = [
     { name: 'All', id: 1 },
@@ -8,20 +10,86 @@ const categoryList = [
     { name: 'TRAVEL', id: 5 },
 ]
 type CategoryProps = { name: string; id: number }
+type PropsAll = {
+    isActive: boolean
+    nameCategory: string
+}
 
 type Props = {}
 
 const Category = (props: Props) => {
+    const [active, setActive] = useState<boolean>(false)
+    const [show, setShow] = useState<boolean>(false)
+    // const [show, setShow] = useState<PropsAll>({
+    //     isActive: false,
+    //     nameCategory: 'All',
+    // })
+
+    // const showNameCatagory = ({ isActive, nameCategory }: PropsAll) => {
+    //     setShow((prevState:PropsAll) => ({
+    //         ...prevState,
+    //         prevState &&
+    //     }))
+    // }
+
     return (
-        <li className="category">
+        <li
+            className="category"
+            onMouseEnter={() => setActive(true)}
+            onMouseLeave={() => setActive(false)}
+        >
             <div className="menu-item">CATEGORY</div>
-            <ul className="sub-menu category-position">
-                {categoryList.map(({ id, name }: CategoryProps) => (
-                    <li className="sub-menu__item" key={id}>
-                        {name}
-                    </li>
-                ))}
-            </ul>
+            <div className={active ? 'lage-menu active' : 'lage-menu'}>
+                <ul className="category-position">
+                    {categoryList.map(({ id, name }: CategoryProps) => (
+                        <li
+                            className="sub-menu__item"
+                            key={id}
+                            onMouseEnter={() => setShow(true)}
+                            onMouseLeave={() => setShow(false)}
+                        >
+                            {name}
+                        </li>
+                    ))}
+                </ul>
+                <div className="lage-menu__position">
+                    <div
+                        className="lage-menu__item "
+                        style={show ? { opacity: 1 } : { opacity: 0 }}
+                    >
+                        <Grid
+                            container
+                            spacing={1}
+                            sx={{ textAlign: 'center' }}
+                        >
+                            <Grid item md={4}>
+                                <CardMediaProtoMain
+                                    img={'/img/wooman_legs.jpg'}
+                                    alt="man_with_bag"
+                                    nameCategory={'FASHION'}
+                                    title={'Ready for the Summer'}
+                                />
+                            </Grid>
+                            <Grid item md={4} sx={{ height: '150px' }}>
+                                <CardMediaProtoMain
+                                    img={'/img/sity_palm.jpg'}
+                                    alt={'sity_palm'}
+                                    nameCategory={'LIFESTYLE'}
+                                    title={'Sonoma Valley Lancome'}
+                                />
+                            </Grid>
+                            <Grid item md={4}>
+                                <CardMediaProtoMain
+                                    img={'/img/man_see.jpg'}
+                                    alt={'man_see'}
+                                    nameCategory={'BEAUTY'}
+                                    title={'New Year Creativity'}
+                                />
+                            </Grid>
+                        </Grid>
+                    </div>
+                </div>
+            </div>
         </li>
     )
 }

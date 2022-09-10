@@ -1,5 +1,5 @@
 import React from 'react'
-import { imgListProps } from './imgListArr'
+import { imgListProps } from '../MainCatagory/imgListArr'
 
 const ContainerMainItem = ({
     id,

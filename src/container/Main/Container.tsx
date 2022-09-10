@@ -2,7 +2,7 @@ import React from 'react'
 import './Container.scss'
 import { Grid } from '@mui/material'
 import GridItemCartTop from './GridItemCartTop'
-import GridContainerMain from './GridContainerMain'
+import GridContainerMain from './CardMainContent/GridContainerMain'
 import GritContainerScrolling from './ScrollMenu/GritContainerScrolling'
 import GridContainerBottom from './GridContainerBottom'
 

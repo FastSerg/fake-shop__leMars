@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const categoryList = [
     { name: 'About Us', id: 1 },
@@ -12,10 +12,16 @@ type Props = {}
 type CategoryProps = { name: string; id: number }
 
 const Pages = (props: Props) => {
+    const [active, setActive] = useState<boolean>(false)
+
     return (
-        <li className="page">
+        <li
+            className="page"
+            onMouseEnter={() => setActive(true)}
+            onMouseLeave={() => setActive(false)}
+        >
             <div className="menu-item">PAGES</div>
-            <ul className="sub-menu">
+            <ul className={active ? 'sub-menu active' : 'sub-menu'}>
                 {categoryList.map(({ id, name }: CategoryProps) => (
                     <li className="sub-menu__item" key={id}>
                         {name}

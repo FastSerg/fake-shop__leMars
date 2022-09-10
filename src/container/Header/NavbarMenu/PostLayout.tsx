@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const postLayoutList = [
     { name: 'Post Standard', id: 1 },
@@ -18,10 +18,16 @@ type PostLayoutProps = { name: string; id: number }
 type Props = {}
 
 const PostLayout = (props: Props) => {
+    const [active, setActive] = useState<boolean>(false)
+
     return (
-        <li className="post-layout">
+        <li
+            className="post-layout"
+            onMouseEnter={() => setActive(true)}
+            onMouseLeave={() => setActive(false)}
+        >
             <div className="menu-item">POST LAYOUT</div>
-            <ul className="sub-menu">
+            <ul className={active ? 'sub-menu active' : 'sub-menu'}>
                 {postLayoutList.map(({ id, name }: PostLayoutProps) => (
                     <li className="sub-menu__item" key={id}>
                         {name}

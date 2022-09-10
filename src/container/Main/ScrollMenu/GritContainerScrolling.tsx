@@ -10,7 +10,11 @@ type Props = {}
 const GritContainerScrolling = (props: Props) => {
     return (
         <>
-            <Grid container spacing={1} sx={{ marginLeft: '15px' }}>
+            <Grid
+                container
+                spacing={1}
+                sx={{ marginLeft: '15px', position: 'sticky', top: '20px' }}
+            >
                 <ScrollForm />
                 <ScrollGalleryPost />
                 <ScrollSocialIcon />

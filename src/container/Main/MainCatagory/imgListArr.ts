@@ -7,9 +7,10 @@ export type imgListProps = {
   alt: string
 }
 
+
 const imgList = [
   {
-    id: 1,
+    id: 10,
     img: '/img/bridge.jpg',
     nameCategory: 'LIFESTYLE',
     title: 'Clarins Mascara',
@@ -17,7 +18,7 @@ const imgList = [
     alt: 'bridge',
   },
   {
-    id: 2,
+    id: 11,
     img: 'img/wooman-face.jpg',
     nameCategory: 'BEAUTY',
     title: 'Cobalt Leather',
@@ -25,7 +26,7 @@ const imgList = [
     alt: 'wooman-face',
   },
   {
-    id: 3,
+    id: 12,
     img: '/img/man-with-board.jpg',
     nameCategory: 'FASHION',
     title: 'Dress Like a Parisian',

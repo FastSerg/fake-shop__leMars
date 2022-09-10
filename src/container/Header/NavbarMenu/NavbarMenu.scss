@@ -1,4 +1,3 @@
-@use '../../../assets/mixins-media';
 
 .navbar-menu {
   overflow: hidden;
@@ -16,7 +15,6 @@
   
 }
 
-
 .menu-item {
   font-size: 14px;
   position: relative;
@@ -24,38 +22,81 @@
 
 .sub-menu {
   position: absolute;
-  top: 160px;
+  top: 110px;
   background-color: #ffffff;
   padding: 15px 0;
   width: 200px;
   opacity: 0;
+  transition: opacity 1.75s;
+  visibility: hidden;
+  z-index: 10;
+
+}
+
+.lage-menu {
+  position: absolute;
+  display: flex;
+  height: 300px;
+  max-width: 980px;
+  width: 100%;
+  background-color:#ffffff;
+  top: 111px;
+  left: 50px;
+  opacity: 0;
+  transition: opacity 1.75s;
+  visibility: hidden;
+  padding: 10px;
+
+}
+
+.lage-menu__position {
+  padding: 15px;
+  // opacity: 1;
+  width: 100%;
+  height: 200px;
+}
+
+.lage-menu__item {
+  opacity: 0;
+
+}
+
+.active {
+  opacity: 1;
+  visibility: visible;
+}
+.active2 {
+  opacity: 1;
+  visibility: visible;
 }
 
 .category-position {
-  left: 60px;
-  
+  padding: 10px;
 }
 
-.home:hover .sub-menu{
-  opacity: 1;
-}
 
-.post-layout:hover .sub-menu{
-  opacity: 1;
-}
+// .post-layout:hover .sub-menu{
+//   opacity: 1;
+//   visibility: visible;
+// }
 
-.shop:hover .sub-menu{
-  opacity: 1;
-}
+// .shop:hover .sub-menu{
+//   opacity: 1;
+//   visibility: visible;
+// }
 
-.page:hover .sub-menu{
-  opacity: 1;
-}
+// .page:hover .sub-menu{
+//   opacity: 1;
+//   visibility: visible;
 
-.category:hover .sub-menu{
-  opacity: 1;
-}
 
+// }
+
+// .category:hover .lage-menu{
+//   opacity: 1;
+//   visibility: visible;
+
+// }
 
 .sub-menu__item {
   font-size: 12px;
@@ -67,5 +108,6 @@ ul {
 }
 
 li {
-  padding: 10px 20px;
+  padding: 20px 20px;
+  cursor: pointer;
 }
