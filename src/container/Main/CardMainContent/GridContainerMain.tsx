@@ -14,6 +14,7 @@ import {
     arrMainPageLeft,
     arrMainPageRight,
 } from './arrGridContainerMain'
+import { NavLink } from 'react-router-dom'
 
 type Props = {}
 
@@ -22,46 +23,48 @@ const GridContainerMain = (props: Props) => {
         <>
             <Grid container spacing={2} sx={{ padding: '70px 0' }}>
                 <Grid item md={12}>
-                    <Card sx={{ maxWidth: 840 }}>
-                        <CardActionArea>
-                            <CardContent>
-                                <Typography
-                                    sx={{
-                                        fontSize: '12px',
-                                        lineHeight: '24px',
-                                        marginBottom: '10px',
-                                        fontWeight: '600',
-                                        color: 'red',
-                                        textAlign: 'center',
-                                        letterSpacing: '5px',
-                                    }}
-                                    variant="h6"
-                                    component="div"
-                                >
-                                    BEAUTY
-                                </Typography>
-                                <Typography
-                                    variant="inherit"
-                                    color="#2b2d2e"
-                                    sx={{
-                                        fontSize: '42px',
-                                        letterSpacing: '5px',
-                                        marginBottom: '10px',
-                                        fontWeight: '600',
-                                        textAlign: 'center',
-                                    }}
-                                >
-                                    Story of Beauty
-                                </Typography>
-                            </CardContent>
-                            <CardMedia
-                                component="img"
-                                height="420"
-                                image="/img/ledy_in_white.jpg"
-                                alt="ledy_in_white"
-                            />
-                        </CardActionArea>
-                    </Card>
+                    <NavLink to="/storyOfBeaty">
+                        <Card sx={{ maxWidth: 840 }}>
+                            <CardActionArea>
+                                <CardContent>
+                                    <Typography
+                                        sx={{
+                                            fontSize: '12px',
+                                            lineHeight: '24px',
+                                            marginBottom: '10px',
+                                            fontWeight: '600',
+                                            color: 'red',
+                                            textAlign: 'center',
+                                            letterSpacing: '5px',
+                                        }}
+                                        variant="h6"
+                                        component="div"
+                                    >
+                                        BEAUTY
+                                    </Typography>
+                                    <Typography
+                                        variant="inherit"
+                                        color="#2b2d2e"
+                                        sx={{
+                                            fontSize: '42px',
+                                            letterSpacing: '5px',
+                                            marginBottom: '10px',
+                                            fontWeight: '600',
+                                            textAlign: 'center',
+                                        }}
+                                    >
+                                        Story of Beauty
+                                    </Typography>
+                                </CardContent>
+                                <CardMedia
+                                    component="img"
+                                    height="420"
+                                    image="/img/ledy_in_white.jpg"
+                                    alt="ledy_in_white"
+                                />
+                            </CardActionArea>
+                        </Card>
+                    </NavLink>
                 </Grid>{' '}
                 <Grid item md={6}>
                     {arrMainPageLeft.map(

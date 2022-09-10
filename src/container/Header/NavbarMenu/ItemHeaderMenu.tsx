@@ -1,12 +1,12 @@
 import React from 'react'
-// import {
-//     Grid,
-//     CardActionArea,
-//     CardMedia,
-//     Card,
-//     CardContent,
-//     Typography,
-// } from '@mui/material'
+import {
+    Grid,
+    CardActionArea,
+    CardMedia,
+    Card,
+    CardContent,
+    Typography,
+} from '@mui/material'
 
 // const categoryList: CategoryProps[] = [
 //     { name: 'All', id: 1 },
@@ -16,145 +16,69 @@ import React from 'react'
 //     { name: 'TRAVEL', id: 5 },
 // ]
 // type CategoryProps = { name: string; id: number }
+import { arrMainPageProps } from '../../Main/CardMainContent/arrGridContainerMain'
 
-// type Props = {}
+type Props = {}
 
-// const ItemHeaderMenu = (props: Props) => {
-//     return (
-//         <div className="lage-menu__item ">
-//                         <Grid
-//                             container
-//                             spacing={1}
-//                             sx={{ textAlign: 'center' }}
-//                         >
-//                             <Grid item md={4}>
-//                                 <Card sx={{ maxWidth: '100%' }}>
-//                                     <CardActionArea>
-//                                         <CardMedia
-//                                             component="img"
-//                                             height="100%"
-//                                             image="/img/wooman_legs.jpg"
-//                                             alt="man_with_bag"
-//                                         />
-//                                         <CardContent>
-//                                             <Typography
-//                                                 sx={{
-//                                                     fontSize: '12px',
-//                                                     lineHeight: '24px',
-//                                                     marginBottom: '10px',
-//                                                     fontWeight: '600',
-//                                                     color: 'red',
-//                                                     textAlign: 'center',
-//                                                     letterSpacing: '5px',
-//                                                 }}
-//                                                 variant="h6"
-//                                                 component="div"
-//                                             >
-//                                                 FASHION
-//                                             </Typography>
-//                                             <Typography
-//                                                 variant="inherit"
-//                                                 color="#2b2d2e"
-//                                                 sx={{
-//                                                     fontSize: '20px',
+const ItemHeaderMenu = ({
+    id,
+    img,
+    alt,
+    text,
+    nameCategory,
+    title,
+}: arrMainPageProps) => {
+    return (
+        <Card sx={{ maxWidth: '100%', marginTop: '10px' }}>
+            <CardActionArea>
+                <CardMedia
+                    component="img"
+                    height="150px"
+                    image={img}
+                    alt={alt}
+                />
+                <CardContent>
+                    <Typography
+                        sx={{
+                            fontSize: '12px',
+                            marginBottom: '5px',
+                            fontWeight: '600',
+                            color: 'red',
+                            textAlign: 'center',
+                            letterSpacing: '5px',
+                        }}
+                        variant="h6"
+                        component="div"
+                    >
+                        {nameCategory}
+                    </Typography>
+                    <Typography
+                        variant="inherit"
+                        color="#2b2d2e"
+                        sx={{
+                            fontSize: '12px',
+                            marginBottom: '5px',
+                            fontWeight: '600',
+                            textAlign: 'center',
+                        }}
+                    >
+                        {title}
+                    </Typography>
+                    <Typography
+                        sx={{
+                            fontSize: '14px',
+                            color: '#77797c',
+                            lineHeight: '16px',
+                            marginBottom: '10px',
+                            textAlign: 'center',
+                        }}
+                    >
+                        {text}
+                    </Typography>
+                </CardContent>
+            </CardActionArea>
+        </Card>
+    )
+}
 
-//                                                     marginBottom: '10px',
-//                                                     fontWeight: '600',
-//                                                     textAlign: 'center',
-//                                                 }}
-//                                             >
-//                                                 Ready for the Summer
-//                                             </Typography>
-//                                         </CardContent>
-//                                     </CardActionArea>
-//                                 </Card>
-//                             </Grid>
-//                             <Grid item md={4}>
-//                                 <Card sx={{ maxWidth: '100%' }}>
-//                                     <CardActionArea>
-//                                         <CardMedia
-//                                             component="img"
-//                                             height="100%"
-//                                             image="/img/sity_palm.jpg"
-//                                             alt="man_with_bag"
-//                                         />
-//                                         <CardContent>
-//                                             <Typography
-//                                                 sx={{
-//                                                     fontSize: '12px',
-//                                                     lineHeight: '24px',
-//                                                     marginBottom: '10px',
-//                                                     fontWeight: '600',
-//                                                     color: 'red',
-//                                                     textAlign: 'center',
-//                                                     letterSpacing: '5px',
-//                                                 }}
-//                                                 variant="h6"
-//                                                 component="div"
-//                                             >
-//                                                 LIFESTYLE
-//                                             </Typography>
-//                                             <Typography
-//                                                 variant="inherit"
-//                                                 color="#2b2d2e"
-//                                                 sx={{
-//                                                     fontSize: '20px',
-
-//                                                     marginBottom: '10px',
-//                                                     fontWeight: '600',
-//                                                     textAlign: 'center',
-//                                                 }}
-//                                             >
-//                                                 Sonoma Valley Lancome
-//                                             </Typography>
-//                                         </CardContent>
-//                                     </CardActionArea>
-//                                 </Card>
-//                             </Grid>
-//                             <Grid item md={4}>
-//                                 <Card sx={{ maxWidth: '100%' }}>
-//                                     <CardActionArea>
-//                                         <CardMedia
-//                                             component="img"
-//                                             height="100%"
-//                                             image="/img/man_see.jpg"
-//                                             alt="man_with_bag"
-//                                         />
-//                                         <CardContent>
-//                                             <Typography
-//                                                 sx={{
-//                                                     fontSize: '12px',
-//                                                     lineHeight: '24px',
-//                                                     marginBottom: '10px',
-//                                                     fontWeight: '600',
-//                                                     color: 'red',
-//                                                     textAlign: 'center',
-//                                                     letterSpacing: '5px',
-//                                                 }}
-//                                                 variant="h6"
-//                                                 component="div"
-//                                             >
-//                                                 BEAUTY
-//                                             </Typography>
-//                                             <Typography
-//                                                 variant="inherit"
-//                                                 color="#2b2d2e"
-//                                                 sx={{
-//                                                     fontSize: '20px',
-
-//                                                     marginBottom: '10px',
-//                                                     fontWeight: '600',
-//                                                     textAlign: 'center',
-//                                                 }}
-//                                             >
-//                                                 New Year Creativity
-//                                             </Typography>
-//                                         </CardContent>
-//                                     </CardActionArea>
-//                                 </Card>
-//                             </Grid>
-//                         </Grid>
-//                     </div>
-// }
-
-// export default ItemHeaderMenu
+export default ItemHeaderMenu

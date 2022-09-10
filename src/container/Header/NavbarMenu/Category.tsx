@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Grid } from '@mui/material'
-import CardMediaProtoMain from 'container/Main/CardMainContent/CardMediaProtoMain'
+import ItemHeaderMenu from './ItemHeaderMenu'
 
 const categoryList = [
     { name: 'All', id: 1 },
@@ -20,17 +20,6 @@ type Props = {}
 const Category = (props: Props) => {
     const [active, setActive] = useState<boolean>(false)
     const [show, setShow] = useState<boolean>(false)
-    // const [show, setShow] = useState<PropsAll>({
-    //     isActive: false,
-    //     nameCategory: 'All',
-    // })
-
-    // const showNameCatagory = ({ isActive, nameCategory }: PropsAll) => {
-    //     setShow((prevState:PropsAll) => ({
-    //         ...prevState,
-    //         prevState &&
-    //     }))
-    // }
 
     return (
         <li
@@ -63,15 +52,15 @@ const Category = (props: Props) => {
                             sx={{ textAlign: 'center' }}
                         >
                             <Grid item md={4}>
-                                <CardMediaProtoMain
+                                <ItemHeaderMenu
                                     img={'/img/wooman_legs.jpg'}
                                     alt="man_with_bag"
                                     nameCategory={'FASHION'}
                                     title={'Ready for the Summer'}
                                 />
                             </Grid>
-                            <Grid item md={4} sx={{ height: '150px' }}>
-                                <CardMediaProtoMain
+                            <Grid item md={4} sx={{ height: '100%' }}>
+                                <ItemHeaderMenu
                                     img={'/img/sity_palm.jpg'}
                                     alt={'sity_palm'}
                                     nameCategory={'LIFESTYLE'}
@@ -79,7 +68,7 @@ const Category = (props: Props) => {
                                 />
                             </Grid>
                             <Grid item md={4}>
-                                <CardMediaProtoMain
+                                <ItemHeaderMenu
                                     img={'/img/man_see.jpg'}
                                     alt={'man_see'}
                                     nameCategory={'BEAUTY'}
