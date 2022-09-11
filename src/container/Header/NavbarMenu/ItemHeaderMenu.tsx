@@ -1,6 +1,5 @@
 import React from 'react'
 import {
-    Grid,
     CardActionArea,
     CardMedia,
     Card,
@@ -8,14 +7,6 @@ import {
     Typography,
 } from '@mui/material'
 
-// const categoryList: CategoryProps[] = [
-//     { name: 'All', id: 1 },
-//     { name: 'BEAUTY', id: 2 },
-//     { name: 'FASHION', id: 3 },
-//     { name: 'LIFESTYLE', id: 4 },
-//     { name: 'TRAVEL', id: 5 },
-// ]
-// type CategoryProps = { name: string; id: number }
 import { arrMainPageProps } from '../../Main/CardMainContent/arrGridContainerMain'
 
 type Props = {}

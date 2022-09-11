@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import { Grid } from '@mui/material'
 import ItemHeaderMenu from './ItemHeaderMenu'
+import {
+    arrMainPageLeft,
+    arrMainPageProps,
+} from '../../Main/CardMainContent/arrGridContainerMain'
 
 const categoryList = [
     { name: 'All', id: 1 },
@@ -10,43 +14,86 @@ const categoryList = [
     { name: 'TRAVEL', id: 5 },
 ]
 type CategoryProps = { name: string; id: number }
-type PropsAll = {
-    isActive: boolean
-    nameCategory: string
+
+type Props = {
+    active: { [id: number]: boolean }
+    changeState: (id: number) => void
+    isActive?: boolean
 }
 
-type Props = {}
-
-const Category = (props: Props) => {
-    const [active, setActive] = useState<boolean>(false)
+const Category = ({ active, changeState, isActive = false }: Props) => {
     const [show, setShow] = useState<boolean>(false)
 
     return (
         <li
             className="category"
-            onMouseEnter={() => setActive(true)}
-            onMouseLeave={() => setActive(false)}
+            onMouseEnter={() => setShow(true)}
+            onMouseLeave={() => setShow(false)}
         >
             <div className="menu-item">CATEGORY</div>
-            <div className={active ? 'lage-menu active' : 'lage-menu'}>
+            <div className={show ? 'lage-menu active' : 'lage-menu'}>
                 <ul className="category-position">
                     {categoryList.map(({ id, name }: CategoryProps) => (
                         <li
                             className="sub-menu__item"
                             key={id}
-                            onMouseEnter={() => setShow(true)}
-                            onMouseLeave={() => setShow(false)}
+                            // isActive={active[id]}
+                            onMouseEnter={() => changeState(id)}
+                            onMouseLeave={() => changeState(id)}
                         >
                             {name}
                         </li>
                     ))}
                 </ul>
                 <div className="lage-menu__position">
-                    <div
-                        className="lage-menu__item "
-                        style={show ? { opacity: 1 } : { opacity: 0 }}
-                    >
-                        <Grid
+                    {arrMainPageLeft
+                        .filter(
+                            ({ nameCategory }: arrMainPageProps) =>
+                                nameCategory === 'FASHION'
+                        )
+                        .map(
+                            ({
+                                img,
+                                alt,
+                                nameCategory,
+                                title,
+                                id,
+                            }: arrMainPageProps) => (
+                                <div
+                                    key={id}
+                                    className="lage-menu__item "
+                                    style={
+                                        active ? { opacity: 1 } : { opacity: 0 }
+                                    }
+                                >
+                                    <Grid
+                                        container
+                                        spacing={1}
+                                        sx={{ textAlign: 'center' }}
+                                    >
+                                        <Grid item md={4}>
+                                            <ItemHeaderMenu
+                                                img={img}
+                                                alt={alt}
+                                                nameCategory={nameCategory}
+                                                title={title}
+                                                id={id}
+                                            />
+                                        </Grid>
+                                    </Grid>
+                                </div>
+                            )
+                        )}
+                </div>
+            </div>
+        </li>
+    )
+}
+
+export default Category
+
+{
+    /* <Grid
                             container
                             spacing={1}
                             sx={{ textAlign: 'center' }}
@@ -75,12 +122,5 @@ const Category = (props: Props) => {
                                     title={'New Year Creativity'}
                                 />
                             </Grid>
-                        </Grid>
-                    </div>
-                </div>
-            </div>
-        </li>
-    )
+                        </Grid> */
 }
-
-export default Category

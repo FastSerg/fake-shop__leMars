@@ -5,7 +5,7 @@ type Props = {}
 type itemDataProps = { id: number; img: string; alt: string }
 
 const itemData = [
-    { id: 1, img: '/img/ledy_in_white.jpg', alt: 'ledy_in_white' },
+    { id: 1, img: '/img/ledy_in_white_full.jpg', alt: 'ledy_in_white' },
     { id: 2, img: '/img/wooman_near_water.jpg', alt: 'wooman_near_water' },
     { id: 3, img: '/img/wooman_in_bike.jpg', alt: 'wooman_near_water' },
     { id: 4, img: '/img/motoki-tonn.jpg', alt: 'motoki-tonn' },
@@ -26,12 +26,21 @@ const ScrollGalleryPost = (props: Props) => {
             </Grid>
             {itemData.map(({ id, img, alt }: itemDataProps) => (
                 <Grid item md={6} key={id}>
-                    <Card sx={{ maxWidth: '100%' }}>
+                    <Card
+                        sx={{
+                            padding: '10px',
+                        }}
+                    >
                         <CardMedia
                             component="img"
-                            height="115px"
+                            height="100%"
                             image={img}
                             alt={alt}
+                            sx={{
+                                width: '117px',
+                                height: '123px',
+                                backgroundSize: 'cover',
+                            }}
                         />
                     </Card>
                 </Grid>

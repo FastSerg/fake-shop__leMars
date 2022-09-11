@@ -1,5 +1,3 @@
-import React from 'react'
-
 export type arrMainPageProps = {
     id?: number
     img: string

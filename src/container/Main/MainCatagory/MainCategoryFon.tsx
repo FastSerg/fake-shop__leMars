@@ -6,7 +6,7 @@ import { imgListProps } from './imgListArr'
 const ContainerMainCategory = () => {
     return (
         <>
-            <div className="container">
+            <div className="container top">
                 <div className="container__post">
                     {imgListArr
                         // .filter(

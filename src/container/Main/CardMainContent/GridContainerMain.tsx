@@ -21,7 +21,7 @@ type Props = {}
 const GridContainerMain = (props: Props) => {
     return (
         <>
-            <Grid container spacing={2} sx={{ padding: '70px 0' }}>
+            <Grid container spacing={4} sx={{ padding: '70px 0' }}>
                 <Grid item md={12}>
                     <NavLink to="/storyOfBeaty">
                         <Card sx={{ maxWidth: 840 }}>

@@ -12,7 +12,6 @@ const GritContainerScrolling = (props: Props) => {
         <>
             <Grid
                 container
-                spacing={1}
                 sx={{ marginLeft: '15px', position: 'sticky', top: '20px' }}
             >
                 <ScrollForm />

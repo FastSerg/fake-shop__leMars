@@ -1,12 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import CssBaseline from '@mui/material/CssBaseline'
 import Header from 'container/Header/Header'
 import Main from 'container/Main/Main'
 import Footer from 'container/Footer/Footer'
 import { Routes, Route } from 'react-router-dom'
-import StoryOfBeauty from 'Pages/StoryOfBeauty'
+import StoryOfBeauty from 'Pages/StoryOfBeaty/StoryOfBeauty'
+
+type listProps = { [id: number]: boolean }
 
 export const App = () => {
+    const [active, setActive] = useState<listProps>({
+        1: false,
+        2: false,
+    })
+
+    const changeState = (id: number) => {
+        setActive((prevState: listProps) => ({
+            [id]: prevState[id] !== (true || false) ? true : false,
+        }))
+    }
+
     return (
         <>
             <Routes>
@@ -14,8 +27,8 @@ export const App = () => {
                     path="/"
                     element={
                         <>
-                            <CssBaseline />
-                            <Header />
+                            <CssBaseline />{' '}
+                            <Header active={active} changeState={changeState} />{' '}
                             <Main />
                             <Footer />
                         </>
@@ -26,7 +39,7 @@ export const App = () => {
                     element={
                         <>
                             {' '}
-                            <Header />
+                            <Header active={active} changeState={changeState} />
                             <StoryOfBeauty />
                             <Footer />
                         </>
