@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
     Grid,
     CardActionArea,
@@ -6,14 +6,19 @@ import {
     Card,
     CardContent,
     Typography,
+    Button,
 } from '@mui/material'
 import GridContainerBottom from 'container/Main/GridContainerBottom'
 import GritContainerScrolling from 'container/Main/ScrollMenu/GritContainerScrolling'
 import CommentsForm from '../CommentsForm/CommentsForm'
+import Subscribe from 'Pages/Subscribe/Subscribe'
+import ModalWindow from 'Pages/Subscribe/ModalWindow'
 
 type Props = {}
 
 const StylingHarvey = (props: Props) => {
+    const [modalActive, setModalActive] = useState<boolean>(true)
+
     return (
         <div className="container">
             <Grid
@@ -45,6 +50,12 @@ const StylingHarvey = (props: Props) => {
                                         >
                                             TRAVEL
                                         </Typography>
+                                        <Button
+                                            variant="contained"
+                                            onClick={() => setModalActive(true)}
+                                        >
+                                            Subscribe
+                                        </Button>
                                         <Typography
                                             variant="inherit"
                                             color="#2b2d2e"
@@ -158,7 +169,9 @@ const StylingHarvey = (props: Props) => {
                     <GritContainerScrolling />
                 </Grid>
             </Grid>
-
+            <Subscribe active={modalActive} setActive={setModalActive}>
+                <ModalWindow />
+            </Subscribe>
             <div className="container bottom">
                 <GridContainerBottom />
             </div>
