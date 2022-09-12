@@ -5,7 +5,7 @@ type Props = {}
 
 const FooterBlogs = (props: Props) => {
     return (
-        <Grid item md={4}>
+        <Grid item md={4} sm={12}>
             <Grid container spacing={2}>
                 <Grid item md={12}>
                     <h6 className="widget-title">MY BLOGS</h6>

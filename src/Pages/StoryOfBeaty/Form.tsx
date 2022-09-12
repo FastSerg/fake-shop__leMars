@@ -7,10 +7,23 @@ import {
     Typography,
     Button,
 } from '@mui/material'
+import { CommentsProps } from './CommentsForm'
 
-type Props = {}
+type Props = {
+    newComment: CommentsProps
+    onSend: (e: React.FormEvent<HTMLFormElement>) => void
+    heandlerChangeName: (e: React.ChangeEvent<HTMLInputElement>) => void
+    heandlerChangeEmail: (e: React.ChangeEvent<HTMLInputElement>) => void
+    heandlerChangeText: (e: React.ChangeEvent<HTMLTextAreaElement>) => void
+}
 
-const Form = (props: Props) => {
+const Form = ({
+    onSend,
+    heandlerChangeName,
+    heandlerChangeEmail,
+    heandlerChangeText,
+    newComment,
+}: Props) => {
     return (
         <>
             <Card>
@@ -35,7 +48,7 @@ const Form = (props: Props) => {
                         `Your email address will not be published. Required
                         fields are marked *`
                     </Typography>
-                    <form>
+                    <form onSubmit={onSend}>
                         <Grid container spacing={1}>
                             <Grid item md={6} sm={12}>
                                 <TextField
@@ -44,6 +57,8 @@ const Form = (props: Props) => {
                                     variant="outlined"
                                     fullWidth
                                     required
+                                    value={newComment.name}
+                                    onChange={heandlerChangeName}
                                 />
                             </Grid>
                             <Grid item md={6} sm={12}>
@@ -53,18 +68,21 @@ const Form = (props: Props) => {
                                     placeholder="Email"
                                     variant="outlined"
                                     fullWidth
-                                    required
+                                    value={newComment.email}
+                                    onChange={heandlerChangeEmail}
                                 />
                             </Grid>
                             <Grid item md={12}>
                                 <TextField
                                     label="Message"
-                                    rows={4}
+                                    rows={5}
                                     multiline
                                     placeholder="Type Comment Here"
                                     variant="outlined"
                                     fullWidth
                                     required
+                                    value={newComment.text}
+                                    onChange={heandlerChangeText}
                                 />
                             </Grid>
                             <Grid item md={12} sx={{ marginTop: '10px' }}>

@@ -8,7 +8,7 @@ type Props = {}
 
 const FooterSocialIcon = (props: Props) => {
     return (
-        <Grid item md={2}>
+        <Grid item md={2} sm={12}>
             <Grid item md={12}>
                 <h6 className="widget-title">SOCIAL ICON</h6>
             </Grid>
