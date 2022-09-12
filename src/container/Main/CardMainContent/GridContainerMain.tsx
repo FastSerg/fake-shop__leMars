@@ -77,14 +77,28 @@ const GridContainerMain = (props: Props) => {
                             alt,
                         }: arrMainPageProps) => (
                             <Grid item md={12} key={id}>
-                                <CardMediaProtoMain
-                                    id={id}
-                                    img={img}
-                                    title={title}
-                                    text={text}
-                                    alt={alt}
-                                    nameCategory={nameCategory}
-                                />
+                                {title === 'Styling Harvey' ? (
+                                    <NavLink to="/StylingHarvey">
+                                        {' '}
+                                        <CardMediaProtoMain
+                                            id={id}
+                                            img={img}
+                                            title={title}
+                                            text={text}
+                                            alt={alt}
+                                            nameCategory={nameCategory}
+                                        />
+                                    </NavLink>
+                                ) : (
+                                    <CardMediaProtoMain
+                                        id={id}
+                                        img={img}
+                                        title={title}
+                                        text={text}
+                                        alt={alt}
+                                        nameCategory={nameCategory}
+                                    />
+                                )}
                             </Grid>
                         )
                     )}

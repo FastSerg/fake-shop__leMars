@@ -1,0 +1,32 @@
+.comments {
+  padding: 30px;
+  margin-bottom: 60px;
+}
+
+.coments-container {
+  display: flex;
+}
+
+.coments-profileImg {
+
+  margin-bottom: 30px;
+}
+.comments-content{
+  padding-left: 30px;
+  text-align: left;
+  padding-top: 0;
+  position: relative;
+  width: 100%;
+ 
+}
+
+.coments-author{
+  font-size: 22px;
+  line-height: 24px;
+}
+
+.coments-text{
+  font-size: 15px;
+  line-height: 27px;
+  color: #77797c;
+}

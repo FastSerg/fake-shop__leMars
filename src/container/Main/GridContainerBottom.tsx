@@ -26,8 +26,9 @@ const GridContainerBottom = (props: Props) => {
                 <Grid item md={6}>
                     <Card sx={{ maxWidth: '100%' }}>
                         <CardMedia
+                            sx={{ padding: ' 0  10px' }}
                             component="img"
-                            height="565px"
+                            height="585px"
                             image="/img/girl_in_glass.png"
                             alt="girl_in_glass"
                         />

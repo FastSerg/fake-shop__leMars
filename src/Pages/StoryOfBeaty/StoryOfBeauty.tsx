@@ -9,7 +9,7 @@ import {
 } from '@mui/material'
 import GridContainerBottom from 'container/Main/GridContainerBottom'
 import GritContainerScrolling from 'container/Main/ScrollMenu/GritContainerScrolling'
-import CommentsForm from './CommentsForm'
+import CommentsForm from '../CommentsForm/CommentsForm'
 
 type Props = {}
 
@@ -156,16 +156,7 @@ const StoryOfBeauty = (props: Props) => {
                                     <span>WRITE A COMMENT</span>
                                 </Grid>
                             </Grid>
-                            <Grid
-                                item
-                                md={12}
-                                container
-                                sx={{
-                                    marginTop: '40px',
-                                }}
-                            >
-                                <CommentsForm />
-                            </Grid>
+                            <CommentsForm />
                         </Grid>
                     </Grid>
                     <Grid item md={3}>

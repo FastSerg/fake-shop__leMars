@@ -1,6 +1,6 @@
 import React from 'react'
 import { Grid, CardActionArea, CardMedia, Card } from '@mui/material'
-import CardMediaProto from './CardMediaProtoTop'
+import CardMediaProto from '../CartMediaTop/CardMediaProtoTop'
 
 type Props = {}
 

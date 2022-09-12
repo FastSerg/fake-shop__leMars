@@ -2,7 +2,7 @@ import React from 'react'
 import './Main.scss'
 import Banner from './Banner'
 import ContainerMainCategory from './MainCatagory/MainCategoryFon'
-import Conteiner from './Container'
+import Conteiner from './ContainerMain/Container'
 
 type Props = {}
 

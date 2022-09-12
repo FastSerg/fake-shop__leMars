@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import Form from './Form'
 import Avatar from '@mui/material/Avatar'
-import './StoryOfBeauty.scss'
+import './CommentsForm.scss'
+import { Grid } from '@mui/material'
 
 export type CommentsProps = {
     name: string
@@ -63,40 +64,48 @@ const CommentsForm = (props: Props) => {
 
     return (
         <>
-            <div className="comments">
-                {comments.map((comment: CommentsProps, i: number) => (
-                    <div className="coments-container" key={i}>
-                        <div className="coments-profileImg">
-                            <Avatar
-                                alt="Remy Sharp"
-                                src={
-                                    comment.img
-                                        ? comment.img
-                                        : '/img/no_name.jpg'
-                                }
-                                sx={{ width: '100px', height: '100px' }}
-                            />
-                        </div>
-
-                        <div className="comments-content">
-                            <div className="coments-author">
-                                <div>{comment.name}</div>
+            <Grid
+                item
+                md={12}
+                container
+                sx={{
+                    marginTop: '40px',
+                }}
+            >
+                <div className="comments">
+                    {comments.map((comment: CommentsProps, i: number) => (
+                        <div className="coments-container" key={i}>
+                            <div className="coments-profileImg">
+                                <Avatar
+                                    alt="Remy Sharp"
+                                    src={
+                                        comment.img
+                                            ? comment.img
+                                            : '/img/no_name.jpg'
+                                    }
+                                    sx={{ width: '100px', height: '100px' }}
+                                />
                             </div>
-                            <div className="coments-text">
-                                <p>{comment.text}</p>
+
+                            <div className="comments-content">
+                                <div className="coments-author">
+                                    <div>{comment.name}</div>
+                                </div>
+                                <div className="coments-text">
+                                    <p>{comment.text}</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                ))}
-            </div>
-
-            <Form
-                newComment={newComment}
-                onSend={onSend}
-                heandlerChangeName={heandlerChangeName}
-                heandlerChangeText={heandlerChangeText}
-                heandlerChangeEmail={heandlerChangeEmail}
-            />
+                    ))}
+                </div>
+                <Form
+                    newComment={newComment}
+                    onSend={onSend}
+                    heandlerChangeName={heandlerChangeName}
+                    heandlerChangeText={heandlerChangeText}
+                    heandlerChangeEmail={heandlerChangeEmail}
+                />{' '}
+            </Grid>
         </>
     )
 }

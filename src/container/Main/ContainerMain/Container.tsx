@@ -1,10 +1,10 @@
 import React from 'react'
 import './Container.scss'
 import { Grid } from '@mui/material'
-import GridItemCartTop from './GridItemCartTop'
-import GritContainerScrolling from './ScrollMenu/GritContainerScrolling'
-import GridContainerBottom from './GridContainerBottom'
-import GridContainerMain from './CardMainContent/GridContainerMain'
+import GridItemCartTop from '../GridItemCartTop/GridItemCartTop'
+import GritContainerScrolling from '../ScrollMenu/GritContainerScrolling'
+import GridContainerBottom from '../GridContainerBottom'
+import GridContainerMain from '../CardMainContent/GridContainerMain'
 
 type Props = {}
 
