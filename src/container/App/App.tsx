@@ -6,6 +6,7 @@ import Footer from 'container/Footer/Footer'
 import { Routes, Route } from 'react-router-dom'
 import StoryOfBeauty from 'Pages/StoryOfBeaty/StoryOfBeauty'
 import StylingHarvey from 'Pages/StylingHarvey/StylingHarvey'
+import ContactUs from 'Pages/ContactUs/ContactUs'
 
 type listProps = { [id: number]: boolean }
 
@@ -39,6 +40,7 @@ export const App = () => {
                     path="storyOfBeaty"
                     element={
                         <>
+                            <CssBaseline />
                             <Header active={active} changeState={changeState} />
                             <StoryOfBeauty />
                             <Footer />
@@ -49,8 +51,26 @@ export const App = () => {
                     path="StylingHarvey"
                     element={
                         <>
-                            <Header active={active} changeState={changeState} />
-                            <StylingHarvey />
+                            <CssBaseline />
+                            {/* <Header  /> */}
+                            <StylingHarvey
+                                active={active}
+                                changeState={changeState}
+                            />
+                            <Footer />
+                        </>
+                    }
+                />
+                <Route
+                    path="contactUs"
+                    element={
+                        <>
+                            <CssBaseline />
+                            {/* <Header active={active} changeState={changeState} /> */}
+                            <ContactUs
+                                active={active}
+                                changeState={changeState}
+                            />
                             <Footer />
                         </>
                     }

@@ -1,6 +1,7 @@
 body {
   box-sizing: border-box;
 }
+
 .banner-img {
   position: relative;
   width: 100%;
@@ -49,7 +50,7 @@ body {
 
 .post__item:hover{
   outline: 4px solid #ffffff;
-  box-shadow:  20px 10px 10px 0 rgba(187, 43, 43, 0.4);
+  box-shadow:  20px 10px 10px 0 rgba(90, 50, 50, 0.4);
 }
 
 .item__img img {

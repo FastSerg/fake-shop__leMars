@@ -16,11 +16,11 @@ export const Social = (props: Props) => {
     return (
         <div className="social">
             {arrSocial.map(({ id, name, src }: Props) => (
-                <span key={id}>
+                <div key={id}>
                     <a href={src} target="_blank">
                         {name}
                     </a>{' '}
-                </span>
+                </div>
             ))}
         </div>
     )

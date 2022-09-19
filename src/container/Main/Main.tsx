@@ -1,6 +1,6 @@
 import React from 'react'
 import './Main.scss'
-import Banner from './Banner'
+import Banner from './Banner/Banner'
 import ContainerMainCategory from './MainCatagory/MainCategoryFon'
 import Conteiner from './ContainerMain/Container'
 

@@ -7,7 +7,7 @@ import {
     CardContent,
     Typography,
 } from '@mui/material'
-import GridContainerBottom from 'container/Main/GridContainerBottom'
+import GridContainerBottom from 'container/Main/GridContainerBottom/GridContainerBottom'
 import GritContainerScrolling from 'container/Main/ScrollMenu/GritContainerScrolling'
 import CommentsForm from '../CommentsForm/CommentsForm'
 

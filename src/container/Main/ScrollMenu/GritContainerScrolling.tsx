@@ -12,7 +12,7 @@ const GritContainerScrolling = (props: Props) => {
         <>
             <Grid
                 container
-                sx={{ marginLeft: '15px', position: 'sticky', top: '20px' }}
+                sx={{ padding: '0 10px', position: 'sticky', top: '20px' }}
             >
                 <ScrollForm />
                 <ScrollGalleryPost />

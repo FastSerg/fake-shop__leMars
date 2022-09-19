@@ -8,7 +8,7 @@ const ScrollForm = (props: Props) => {
     return (
         <div className="fon-scroll">
             <Grid item md={12}>
-                <Grid container spacing={1} sx={{ alignItems: 'center' }}>
+                <Grid container sx={{ alignItems: 'center' }}>
                     <Grid item md={12} sx={{ textAlign: 'center' }}>
                         <Typography
                             sx={{
@@ -36,6 +36,7 @@ const ScrollForm = (props: Props) => {
                                 id="filled-basic"
                                 label="Your Email"
                                 variant="filled"
+                                type="email"
                             />
                         </Box>
                     </Grid>
@@ -46,6 +47,7 @@ const ScrollForm = (props: Props) => {
                             sx={{
                                 marginLeft: '-55px',
                             }}
+                            type="submit"
                         >
                             <SendIcon />
                         </IconButton>

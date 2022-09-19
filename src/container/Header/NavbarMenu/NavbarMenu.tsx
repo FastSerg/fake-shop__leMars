@@ -1,10 +1,11 @@
 import React from 'react'
-import Category from './Category'
-import Home from './Home'
+import Category from './ElementsNavbarMenu/Category'
+import Home from './ElementsNavbarMenu/Home'
 import './NavbarMenu.scss'
-import Pages from './Pages'
-import PostLayout from './PostLayout'
-import Shop from './Shop'
+import Pages from './ElementsNavbarMenu/Pages'
+import PostLayout from './ElementsNavbarMenu/PostLayout'
+import Shop from './ElementsNavbarMenu/Shop'
+import { NavLink } from 'react-router-dom'
 
 type Props = {
     active: { [id: number]: boolean }
@@ -20,9 +21,11 @@ export const NavbarMenu = ({ active, changeState }: Props) => {
                 <Category active={active} changeState={changeState} />
                 <Shop />
                 <Pages />
-                <li className="contact">
-                    <div className="menu-item">CONTACT US</div>
-                </li>
+                <NavLink to="/contactUs">
+                    <li className="contact">
+                        <div className="menu-item">CONTACT US</div>
+                    </li>
+                </NavLink>
             </ul>
         </nav>
     )

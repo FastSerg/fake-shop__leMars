@@ -1,10 +1,10 @@
 import React from 'react'
 import './Footer.scss'
-import { LogoFooter } from './LogoFooter'
+import { LogoFooter } from './FooterMenu/LogoFooter'
 import { Grid } from '@mui/material'
-import FooterPost from './FooterPost'
-import FooterBlogs from './FooterBlogs'
-import FooterSocialIcon from './FooterSocialIcon'
+import FooterPost from './FooterMenu/FooterPost'
+import FooterBlogs from './FooterMenu/FooterBlogs'
+import FooterSocialIcon from './FooterMenu/FooterSocialIcon'
 import FooterBottom from './FooterBottom'
 
 type Props = {}
