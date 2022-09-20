@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../../container/Header/Header.scss'
-import { NavbarMenu } from '../../container/Header/NavbarMenu/NavbarMenu'
-import { Social } from '../../container/Header/Social'
-import { Logo } from '../../container/Header/Logo'
-import { NavLink } from 'react-router-dom'
-import Header from 'container/Header/Header'
+
+import HeaderTop from 'components/HeaderTopComponent/HeaderTop'
+import GridContainerBottom from 'container/Main/GridContainerBottom/GridContainerBottom'
+import Subscribe from 'Pages/Subscribe/Subscribe'
+import ModalWindow from 'Pages/Subscribe/ModalWindow'
+import ContactContent from './ContactContent'
 
 type Props = {
     active: { [id: number]: boolean }
@@ -12,19 +13,29 @@ type Props = {
 }
 
 const ContactUs = ({ changeState, active }: Props) => {
+    const [modalActive, setModalActive] = useState<boolean>(false)
+    const changeBoolean = (modalActive: boolean) => {
+        setModalActive(true)
+    }
+
     return (
         <>
-            <header className="header">
-                <div className="header-container">
-                    <div className="navbar">
-                        <NavLink to="/">
-                            <Logo />
-                        </NavLink>
-                        <NavbarMenu active={active} changeState={changeState} />
-                        <Social />
+            <HeaderTop
+                setModalActive={changeBoolean}
+                active={active}
+                changeState={changeState}
+            />
+            <div className="container-pages">
+                <div className="container">
+                    <ContactContent />
+                    <Subscribe active={modalActive} setActive={setModalActive}>
+                        <ModalWindow />
+                    </Subscribe>
+                    <div className="container bottom">
+                        <GridContainerBottom />
                     </div>
                 </div>
-            </header>
+            </div>
         </>
     )
 }

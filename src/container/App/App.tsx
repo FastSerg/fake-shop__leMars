@@ -41,8 +41,11 @@ export const App = () => {
                     element={
                         <>
                             <CssBaseline />
-                            <Header active={active} changeState={changeState} />
-                            <StoryOfBeauty />
+                            {/* <Header  /> */}
+                            <StoryOfBeauty
+                                active={active}
+                                changeState={changeState}
+                            />
                             <Footer />
                         </>
                     }
@@ -66,6 +69,7 @@ export const App = () => {
                     element={
                         <>
                             <CssBaseline />
+
                             {/* <Header active={active} changeState={changeState} /> */}
                             <ContactUs
                                 active={active}
