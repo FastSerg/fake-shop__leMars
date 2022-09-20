@@ -7,6 +7,7 @@ import { Routes, Route } from 'react-router-dom'
 import StoryOfBeauty from 'Pages/StoryOfBeaty/StoryOfBeauty'
 import StylingHarvey from 'Pages/StylingHarvey/StylingHarvey'
 import ContactUs from 'Pages/ContactUs/ContactUs'
+import EverythingCultural from 'Pages/EverythingCultural/EverythingCultural'
 
 type listProps = { [id: number]: boolean }
 
@@ -69,9 +70,20 @@ export const App = () => {
                     element={
                         <>
                             <CssBaseline />
-
-                            {/* <Header active={active} changeState={changeState} /> */}
                             <ContactUs
+                                active={active}
+                                changeState={changeState}
+                            />
+                            <Footer />
+                        </>
+                    }
+                />
+                <Route
+                    path="cultural"
+                    element={
+                        <>
+                            <CssBaseline />
+                            <EverythingCultural
                                 active={active}
                                 changeState={changeState}
                             />

@@ -1,10 +1,8 @@
 import * as React from 'react'
 import { Box, Grid, Tab, Tabs } from '@mui/material/'
-import {
-    arrMainPageLeft,
-    arrMainPageProps,
-} from '../../../../Main/CardMainContent/arrGridContainerMain'
+import { arrMainPageProps } from '../../../../Main/CardMainContent/arrGridContainerMain'
 import ItemHeaderMenu from '../CategoryImgList/ItemHeaderMenu'
+import { arraysAll } from '../../../../../components/Arrays/arraysAll'
 
 interface TabPanelProps {
     children?: React.ReactNode
@@ -74,43 +72,7 @@ export default function CategoryTab() {
                 <Tab label="TRAVEL" {...a11yProps(4)} />
             </Tabs>
             <TabPanel value={value} index={0}>
-                {arrMainPageLeft
-                    // .filter(
-                    //     ({ nameCategory }: arrMainPageProps) =>
-                    //         nameCategory === 'FASHION'
-                    // )
-                    .map(
-                        ({
-                            img,
-                            alt,
-                            nameCategory,
-                            title,
-                            id,
-                        }: arrMainPageProps) => (
-                            <Grid
-                                key={id}
-                                container
-                                spacing={1}
-                                sx={{
-                                    textAlign: 'center',
-                                    display: 'flex',
-                                }}
-                            >
-                                <Grid item md={12}>
-                                    <ItemHeaderMenu
-                                        img={img}
-                                        alt={alt}
-                                        nameCategory={nameCategory}
-                                        title={title}
-                                        id={id}
-                                    />
-                                </Grid>
-                            </Grid>
-                        )
-                    )}
-            </TabPanel>
-            <TabPanel value={value} index={1}>
-                {arrMainPageLeft
+                {arraysAll
                     .filter(
                         ({ nameCategory }: arrMainPageProps) =>
                             nameCategory === 'FASHION'
@@ -130,6 +92,44 @@ export default function CategoryTab() {
                                 sx={{
                                     textAlign: 'center',
                                     display: 'flex',
+                                    overflow: 'hidden',
+                                }}
+                            >
+                                <Grid item md={12}>
+                                    <ItemHeaderMenu
+                                        img={img}
+                                        alt={alt}
+                                        nameCategory={nameCategory}
+                                        title={title}
+                                        id={id}
+                                    />
+                                </Grid>
+                            </Grid>
+                        )
+                    )}
+            </TabPanel>
+            <TabPanel value={value} index={1}>
+                {arraysAll
+                    .filter(
+                        ({ nameCategory }: arrMainPageProps) =>
+                            nameCategory === 'BEAUTY'
+                    )
+                    .map(
+                        ({
+                            img,
+                            alt,
+                            nameCategory,
+                            title,
+                            id,
+                        }: arrMainPageProps) => (
+                            <Grid
+                                key={id}
+                                container
+                                spacing={1}
+                                sx={{
+                                    textAlign: 'center',
+                                    display: 'flex',
+                                    overflow: 'hidden',
                                 }}
                             >
                                 <Grid item md={12}>
@@ -146,11 +146,11 @@ export default function CategoryTab() {
                     )}
             </TabPanel>
             <TabPanel value={value} index={2}>
-                {arrMainPageLeft
-                    // .filter(
-                    //     ({ nameCategory }: arrMainPageProps) =>
-                    //         nameCategory === 'FASHION'
-                    // )
+                {arraysAll
+                    .filter(
+                        ({ nameCategory }: arrMainPageProps) =>
+                            nameCategory === 'FASHION'
+                    )
                     .map(
                         ({
                             img,
@@ -166,6 +166,7 @@ export default function CategoryTab() {
                                 sx={{
                                     textAlign: 'center',
                                     display: 'flex',
+                                    overflow: 'hidden',
                                 }}
                             >
                                 <Grid item md={12}>
@@ -182,7 +183,44 @@ export default function CategoryTab() {
                     )}
             </TabPanel>
             <TabPanel value={value} index={3}>
-                {arrMainPageLeft
+                {arraysAll
+                    .filter(
+                        ({ nameCategory }: arrMainPageProps) =>
+                            nameCategory === 'LIFESTYLE'
+                    )
+                    .map(
+                        ({
+                            img,
+                            alt,
+                            nameCategory,
+                            title,
+                            id,
+                        }: arrMainPageProps) => (
+                            <Grid
+                                key={id}
+                                container
+                                spacing={1}
+                                sx={{
+                                    textAlign: 'center',
+                                    display: 'flex',
+                                    overflow: 'hidden',
+                                }}
+                            >
+                                <Grid item md={12}>
+                                    <ItemHeaderMenu
+                                        img={img}
+                                        alt={alt}
+                                        nameCategory={nameCategory}
+                                        title={title}
+                                        id={id}
+                                    />
+                                </Grid>
+                            </Grid>
+                        )
+                    )}
+            </TabPanel>
+            <TabPanel value={value} index={4}>
+                {arraysAll
                     .filter(
                         ({ nameCategory }: arrMainPageProps) =>
                             nameCategory === 'TRAVEL'
@@ -202,42 +240,7 @@ export default function CategoryTab() {
                                 sx={{
                                     textAlign: 'center',
                                     display: 'flex',
-                                }}
-                            >
-                                <Grid item md={12}>
-                                    <ItemHeaderMenu
-                                        img={img}
-                                        alt={alt}
-                                        nameCategory={nameCategory}
-                                        title={title}
-                                        id={id}
-                                    />
-                                </Grid>
-                            </Grid>
-                        )
-                    )}
-            </TabPanel>
-            <TabPanel value={value} index={4}>
-                {arrMainPageLeft
-                    .filter(
-                        ({ nameCategory }: arrMainPageProps) =>
-                            nameCategory === 'FASHION'
-                    )
-                    .map(
-                        ({
-                            img,
-                            alt,
-                            nameCategory,
-                            title,
-                            id,
-                        }: arrMainPageProps) => (
-                            <Grid
-                                key={id}
-                                container
-                                spacing={1}
-                                sx={{
-                                    textAlign: 'center',
-                                    display: 'flex',
+                                    overflow: 'hidden',
                                 }}
                             >
                                 <Grid item md={12}>

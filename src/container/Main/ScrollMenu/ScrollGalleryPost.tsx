@@ -1,5 +1,6 @@
 import React from 'react'
 import { Grid, CardMedia, Card } from '@mui/material'
+import { NavLink } from 'react-router-dom'
 
 type Props = {}
 type itemDataProps = { id: number; img: string; alt: string }

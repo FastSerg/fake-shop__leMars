@@ -89,6 +89,18 @@ const GridContainerMain = (props: Props) => {
                                             nameCategory={nameCategory}
                                         />
                                     </NavLink>
+                                ) : title === 'Everything About Cultural' ? (
+                                    <NavLink to="/cultural">
+                                        {' '}
+                                        <CardMediaProtoMain
+                                            id={id}
+                                            img={img}
+                                            title={title}
+                                            text={text}
+                                            alt={alt}
+                                            nameCategory={nameCategory}
+                                        />
+                                    </NavLink>
                                 ) : (
                                     <CardMediaProtoMain
                                         id={id}
