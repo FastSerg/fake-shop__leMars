@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 
 const categoryList = [
     { name: 'Shop', id: 1 },
@@ -24,7 +25,11 @@ const Shop = (props: Props) => {
             <ul className={active ? 'sub-menu active' : 'sub-menu'}>
                 {categoryList.map(({ id, name }: CategoryProps) => (
                     <li className="sub-menu__item" key={id}>
-                        {name}
+                        {name === 'Product Detail' ? (
+                            <NavLink to="/products">Product Detail</NavLink>
+                        ) : (
+                            name
+                        )}
                     </li>
                 ))}
             </ul>

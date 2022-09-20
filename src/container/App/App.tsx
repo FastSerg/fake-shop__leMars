@@ -8,6 +8,7 @@ import StoryOfBeauty from 'Pages/StoryOfBeaty/StoryOfBeauty'
 import StylingHarvey from 'Pages/StylingHarvey/StylingHarvey'
 import ContactUs from 'Pages/ContactUs/ContactUs'
 import EverythingCultural from 'Pages/EverythingCultural/EverythingCultural'
+import Products from 'Pages/Products/Products'
 
 type listProps = { [id: number]: boolean }
 
@@ -84,6 +85,19 @@ export const App = () => {
                         <>
                             <CssBaseline />
                             <EverythingCultural
+                                active={active}
+                                changeState={changeState}
+                            />
+                            <Footer />
+                        </>
+                    }
+                />
+                <Route
+                    path="products"
+                    element={
+                        <>
+                            <CssBaseline />
+                            <Products
                                 active={active}
                                 changeState={changeState}
                             />

@@ -1,16 +1,16 @@
+import ButtonFixed from 'components/ButtonFixed/ButtonFixed'
 import HeaderTop from 'components/HeaderTopComponent/HeaderTop'
 import GridContainerBottom from 'container/Main/GridContainerBottom/GridContainerBottom'
 import ModalWindow from 'Pages/Subscribe/ModalWindow'
 import Subscribe from 'Pages/Subscribe/Subscribe'
 import React, { useState } from 'react'
-import CulturalContent from './CulturalContent'
 
 type Props = {
     active: { [id: number]: boolean }
     changeState: (id: number) => void
 }
 
-const EverythingCultural = ({ active, changeState }: Props) => {
+const Products = ({ active, changeState }: Props) => {
     const [modalActive, setModalActive] = useState<boolean>(false)
     const changeBoolean = (modalActive: boolean) => {
         setModalActive(true)
@@ -26,7 +26,6 @@ const EverythingCultural = ({ active, changeState }: Props) => {
 
             <div className="container-pages">
                 <div className="container">
-                    <CulturalContent />
                     <Subscribe active={modalActive} setActive={setModalActive}>
                         <ModalWindow />
                     </Subscribe>
@@ -35,8 +34,8 @@ const EverythingCultural = ({ active, changeState }: Props) => {
                     </div>
                 </div>
             </div>
+            <ButtonFixed />
         </>
     )
 }
-
-export default EverythingCultural
+export default Products
