@@ -6,13 +6,13 @@ const Carousel = ({ carouselItems, ...rest }: any) => {
     const [active, setActive] = React.useState(0)
     let scrollInterval: any = null
 
-    React.useEffect(() => {
-        scrollInterval = setTimeout(() => {
-            setActive((active + 1) % carouselItems.length)
-        }, 2000)
+    // React.useEffect(() => {
+    //     scrollInterval = setTimeout(() => {
+    //         setActive((active + 1) % carouselItems.length)
+    //     }, 2000)
 
-        return () => clearTimeout(scrollInterval)
-    })
+    //     return () => clearTimeout(scrollInterval)
+    // })
 
     return (
         <div className="carousel">

@@ -8,7 +8,7 @@ import StoryOfBeauty from 'Pages/StoryOfBeaty/StoryOfBeauty'
 import StylingHarvey from 'Pages/StylingHarvey/StylingHarvey'
 import ContactUs from 'Pages/ContactUs/ContactUs'
 import EverythingCultural from 'Pages/EverythingCultural/EverythingCultural'
-import Products from 'Pages/Products/Products'
+import Products from 'Pages/ShopProd/Shop'
 
 type listProps = { [id: number]: boolean }
 
