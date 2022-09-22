@@ -12,6 +12,9 @@ import {
     ArrProductsProps,
 } from '../../components/Arrays/arraysProducts'
 import ShopScrollItem from './ProductItem/ShopScrollItem'
+import FormatListBulletedOutlinedIcon from '@mui/icons-material/FormatListBulletedOutlined'
+import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined'
+import SelectedControl from './ProductItem/SelectedControl'
 
 type Props = {
     active: { [id: number]: boolean }
@@ -50,6 +53,38 @@ const Products = ({ active, changeState }: Props) => {
                         </Grid>
                         <Grid item md={9}>
                             <Grid container spacing={3}>
+                                <Grid item md={8} sx={{ marginBottom: '30px' }}>
+                                    <SelectedControl />
+                                </Grid>
+                                <Grid
+                                    item
+                                    md={4}
+                                    sx={{
+                                        display: 'flex',
+                                        justifyContent: 'flex-end',
+                                        gap: '10px',
+                                        marginBottom: '30px',
+                                    }}
+                                >
+                                    <FormatListBulletedOutlinedIcon
+                                        sx={{
+                                            fontSize: '40px',
+                                            padding: '5px',
+                                            cursor: 'pointer',
+                                            border: '1px solid #999b9d',
+                                        }}
+                                    />
+                                    <GridViewOutlinedIcon
+                                        sx={{
+                                            fontSize: '40px',
+                                            backgroundColor: 'black',
+                                            color: 'white',
+                                            padding: '10px',
+                                            cursor: 'pointer',
+                                        }}
+                                    />
+                                </Grid>
+
                                 {arrProducts.map(
                                     ({
                                         id,
