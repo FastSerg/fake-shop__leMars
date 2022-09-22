@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import '../../container/Header/Header.scss'
 
 import HeaderTop from 'components/HeaderTopComponent/HeaderTop'
 import GridContainerBottom from 'container/Main/GridContainerBottom/GridContainerBottom'

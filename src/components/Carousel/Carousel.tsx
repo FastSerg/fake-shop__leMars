@@ -1,59 +1,92 @@
 import React from 'react'
-import './Carousel/scss'
-type Props = {}
+import { Grid } from '@mui/material/'
+import { arraysAll, ArraysAllProps } from '../Arrays/arraysAll'
+import { useState } from 'react'
+import ItemHeaderMenu from 'container/Header/NavbarMenu/ElementsNavbarMenu/CategoryImgList/ItemHeaderMenu'
+import './Carousel.scss'
 
-const Carousel = ({ carouselItems, ...rest }: any) => {
-    const [active, setActive] = React.useState(0)
-    let scrollInterval: any = null
+const categoryList: CategoryListProps[] = [
+    {
+        key: 1,
+        name: 'ALL',
+    },
+    {
+        key: 2,
+        name: 'BEAUTY',
+    },
+    {
+        key: 3,
+        name: 'FASHION',
+    },
+    {
+        key: 4,
+        name: 'LIFESTYLE',
+    },
+    {
+        key: 5,
+        name: 'TRAVEL',
+    },
+]
+type CategoryListProps = { key: number; name: string }
 
-    // React.useEffect(() => {
-    //     scrollInterval = setTimeout(() => {
-    //         setActive((active + 1) % carouselItems.length)
-    //     }, 2000)
+const Carousel = () => {
+    const [categoryState, setCategoryState] = useState(arraysAll)
 
-    //     return () => clearTimeout(scrollInterval)
-    // })
+    const chooseCategory = (category: string) => {
+        let categoryState = arraysAll.filter((el: ArraysAllProps) =>
+            category === 'ALL' ? arraysAll : el.nameCategory === category
+        )
+        setCategoryState(categoryState)
+    }
 
     return (
-        <div className="carousel">
-            {carouselItems.map((item: any, index: number) => {
-                const activeClass = active === index ? ' visible' : ''
-                return React.cloneElement(item, {
-                    ...rest,
-                    className: `carousel-item${activeClass}`,
-                })
-            })}
-        </div>
+        <>
+            <Grid container spacing={2}>
+                <Grid item md={2} sx={{}}>
+                    {categoryList.map((el: CategoryListProps) => (
+                        <div
+                            className="gategory-list"
+                            key={el.key}
+                            onClick={() => chooseCategory(el.name)}
+                        >
+                            {el.name}
+                        </div>
+                    ))}
+                </Grid>
+                <Grid item md={10}>
+                    <Grid
+                        container
+                        spacing={2}
+                        sx={{
+                            textAlign: 'center',
+                            display: 'flex',
+                            overflow: 'hidden',
+                        }}
+                    >
+                        {categoryState.map(
+                            ({
+                                img,
+                                alt,
+                                nameCategory,
+                                title,
+                                id,
+                            }: ArraysAllProps) => (
+                                <Grid item md={4} key={id}>
+                                    <ItemHeaderMenu
+                                        img={img}
+                                        alt={alt}
+                                        nameCategory={nameCategory}
+                                        title={title}
+                                        id={id}
+                                    />
+                                </Grid>
+                            )
+                        )}
+                    </Grid>
+                </Grid>
+            </Grid>
+        </>
     )
 }
 
 export default Carousel
-
-// {
-//     arrMainPageLeft
-//         // .filter(
-//         //     ({ nameCategory }: arrMainPageProps) =>
-//         //         nameCategory === 'FASHION'
-//         // )
-//         .map(({ img, alt, nameCategory, title, id }: arrMainPageProps) => (
-//             <Grid
-//                 key={id}
-//                 container
-//                 spacing={1}
-//                 sx={{
-//                     textAlign: 'center',
-//                     display: 'flex',
-//                 }}
-//             >
-//                 <Grid item md={12}>
-//                     <ItemHeaderMenu
-//                         img={img}
-//                         alt={alt}
-//                         nameCategory={nameCategory}
-//                         title={title}
-//                         id={id}
-//                     />
-//                 </Grid>
-//             </Grid>
-//         ))
-// }

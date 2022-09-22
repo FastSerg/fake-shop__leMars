@@ -1,101 +1,80 @@
-import * as React from 'react'
-import { Box, Grid, Tab, Tabs } from '@mui/material/'
-import { arrMainPageProps } from '../../../../Main/CardMainContent/arrGridContainerMain'
-import ItemHeaderMenu from '../CategoryImgList/ItemHeaderMenu'
-import { arraysAll } from '../../../../../components/Arrays/arraysAll'
+import React from 'react'
+import { Grid } from '@mui/material/'
+import {
+    arraysAll,
+    ArraysAllProps,
+} from '../../../../../components/Arrays/arraysAll'
+import { useState } from 'react'
+import ItemHeaderMenu from 'container/Header/NavbarMenu/ElementsNavbarMenu/CategoryImgList/ItemHeaderMenu'
+import './Carousel.scss'
 
-interface TabPanelProps {
-    children?: React.ReactNode
-    index: number
-    value: number
-}
+const categoryList: CategoryListProps[] = [
+    {
+        key: 1,
+        name: 'ALL',
+    },
+    {
+        key: 2,
+        name: 'BEAUTY',
+    },
+    {
+        key: 3,
+        name: 'FASHION',
+    },
+    {
+        key: 4,
+        name: 'LIFESTYLE',
+    },
+    {
+        key: 5,
+        name: 'TRAVEL',
+    },
+]
+type CategoryListProps = { key: number; name: string }
 
-function TabPanel(props: TabPanelProps) {
-    const { children, value, index, ...other } = props
+const CategoryTab = () => {
+    const [categoryState, setCategoryState] = useState(arraysAll)
 
-    return (
-        <div
-            role="tabpanel"
-            hidden={value !== index}
-            id={`vertical-tabpanel-${index}`}
-            aria-labelledby={`vertical-tab-${index}`}
-            {...other}
-        >
-            {value === index && (
-                <Box
-                    sx={{ p: 3, display: 'flex', gap: '20px', width: '850px' }}
-                >
-                    {children}
-                </Box>
-            )}
-        </div>
-    )
-}
-
-function a11yProps(index: number) {
-    return {
-        id: `vertical-tab-${index}`,
-        'aria-controls': `vertical-tabpanel-${index}`,
-    }
-}
-
-export default function CategoryTab() {
-    const [value, setValue] = React.useState(0)
-
-    const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-        setValue(newValue)
+    const chooseCategory = (category: string) => {
+        let categoryState = arraysAll.filter((el: ArraysAllProps) =>
+            category === 'ALL' ? arraysAll : el.nameCategory === category
+        )
+        setCategoryState(categoryState)
     }
 
     return (
-        <Box
-            sx={{
-                flexGrow: 1,
-                bgcolor: 'background.paper',
-                display: 'flex',
-                height: '260px',
-                maxWidth: '960px',
-                width: '100%',
-            }}
-        >
-            <Tabs
-                orientation="vertical"
-                variant="scrollable"
-                value={value}
-                onChange={handleChange}
-                aria-label="Vertical tabs example"
-                sx={{ borderRight: 1, borderColor: 'divider' }}
-            >
-                <Tab label="All" {...a11yProps(0)} />
-                <Tab label="BEAUTY" {...a11yProps(1)} />
-                <Tab label="FASHION" {...a11yProps(2)} />
-                <Tab label="LIFESTYLE" {...a11yProps(3)} />
-                <Tab label="TRAVEL" {...a11yProps(4)} />
-            </Tabs>
-            <TabPanel value={value} index={0}>
-                {arraysAll
-                    .filter(
-                        ({ nameCategory }: arrMainPageProps) =>
-                            nameCategory === 'FASHION'
-                    )
-                    .map(
-                        ({
-                            img,
-                            alt,
-                            nameCategory,
-                            title,
-                            id,
-                        }: arrMainPageProps) => (
-                            <Grid
-                                key={id}
-                                container
-                                spacing={1}
-                                sx={{
-                                    textAlign: 'center',
-                                    display: 'flex',
-                                    overflow: 'hidden',
-                                }}
-                            >
-                                <Grid item md={12}>
+        <>
+            <Grid container spacing={2}>
+                <Grid item md={2} sx={{}}>
+                    {categoryList.map((el: CategoryListProps) => (
+                        <div
+                            className="gategory-list"
+                            key={el.key}
+                            onClick={() => chooseCategory(el.name)}
+                        >
+                            {el.name}
+                        </div>
+                    ))}
+                </Grid>
+                <Grid item md={10}>
+                    <Grid
+                        container
+                        spacing={2}
+                        sx={{
+                            textAlign: 'center',
+                            display: 'flex',
+                            overflow: 'hidden',
+                        }}
+                    >
+                        {categoryState.map(
+                            ({
+                                img,
+                                alt,
+                                nameCategory,
+                                title,
+                                id,
+                            }: ArraysAllProps) => (
+                                <Grid item md={4} key={id}>
                                     <ItemHeaderMenu
                                         img={img}
                                         alt={alt}
@@ -104,158 +83,13 @@ export default function CategoryTab() {
                                         id={id}
                                     />
                                 </Grid>
-                            </Grid>
-                        )
-                    )}
-            </TabPanel>
-            <TabPanel value={value} index={1}>
-                {arraysAll
-                    .filter(
-                        ({ nameCategory }: arrMainPageProps) =>
-                            nameCategory === 'BEAUTY'
-                    )
-                    .map(
-                        ({
-                            img,
-                            alt,
-                            nameCategory,
-                            title,
-                            id,
-                        }: arrMainPageProps) => (
-                            <Grid
-                                key={id}
-                                container
-                                spacing={1}
-                                sx={{
-                                    textAlign: 'center',
-                                    display: 'flex',
-                                    overflow: 'hidden',
-                                }}
-                            >
-                                <Grid item md={12}>
-                                    <ItemHeaderMenu
-                                        img={img}
-                                        alt={alt}
-                                        nameCategory={nameCategory}
-                                        title={title}
-                                        id={id}
-                                    />
-                                </Grid>
-                            </Grid>
-                        )
-                    )}
-            </TabPanel>
-            <TabPanel value={value} index={2}>
-                {arraysAll
-                    .filter(
-                        ({ nameCategory }: arrMainPageProps) =>
-                            nameCategory === 'FASHION'
-                    )
-                    .map(
-                        ({
-                            img,
-                            alt,
-                            nameCategory,
-                            title,
-                            id,
-                        }: arrMainPageProps) => (
-                            <Grid
-                                key={id}
-                                container
-                                spacing={1}
-                                sx={{
-                                    textAlign: 'center',
-                                    display: 'flex',
-                                    overflow: 'hidden',
-                                }}
-                            >
-                                <Grid item md={12}>
-                                    <ItemHeaderMenu
-                                        img={img}
-                                        alt={alt}
-                                        nameCategory={nameCategory}
-                                        title={title}
-                                        id={id}
-                                    />
-                                </Grid>
-                            </Grid>
-                        )
-                    )}
-            </TabPanel>
-            <TabPanel value={value} index={3}>
-                {arraysAll
-                    .filter(
-                        ({ nameCategory }: arrMainPageProps) =>
-                            nameCategory === 'LIFESTYLE'
-                    )
-                    .map(
-                        ({
-                            img,
-                            alt,
-                            nameCategory,
-                            title,
-                            id,
-                        }: arrMainPageProps) => (
-                            <Grid
-                                key={id}
-                                container
-                                spacing={1}
-                                sx={{
-                                    textAlign: 'center',
-                                    display: 'flex',
-                                    overflow: 'hidden',
-                                }}
-                            >
-                                <Grid item md={12}>
-                                    <ItemHeaderMenu
-                                        img={img}
-                                        alt={alt}
-                                        nameCategory={nameCategory}
-                                        title={title}
-                                        id={id}
-                                    />
-                                </Grid>
-                            </Grid>
-                        )
-                    )}
-            </TabPanel>
-            <TabPanel value={value} index={4}>
-                {arraysAll
-                    .filter(
-                        ({ nameCategory }: arrMainPageProps) =>
-                            nameCategory === 'TRAVEL'
-                    )
-                    .map(
-                        ({
-                            img,
-                            alt,
-                            nameCategory,
-                            title,
-                            id,
-                        }: arrMainPageProps) => (
-                            <Grid
-                                key={id}
-                                container
-                                spacing={1}
-                                sx={{
-                                    textAlign: 'center',
-                                    display: 'flex',
-                                    overflow: 'hidden',
-                                }}
-                            >
-                                <Grid item md={12}>
-                                    <ItemHeaderMenu
-                                        img={img}
-                                        alt={alt}
-                                        nameCategory={nameCategory}
-                                        title={title}
-                                        id={id}
-                                    />
-                                </Grid>
-                            </Grid>
-                        )
-                    )}
-            </TabPanel>
-        </Box>
+                            )
+                        )}
+                    </Grid>
+                </Grid>
+            </Grid>
+        </>
     )
 }
+
+export default CategoryTab

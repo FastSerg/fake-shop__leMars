@@ -1,14 +1,5 @@
+import Carousel from 'components/Carousel/Carousel'
 import React, { useState } from 'react'
-import CategoryTab from './CategoryItemList/CategoryTab'
-
-// const categoryList = [
-//     { name: 'All', id: 1 },
-//     { name: 'BEAUTY', id: 2 },
-//     { name: 'FASHION', id: 3 },
-//     { name: 'LIFESTYLE', id: 4 },
-//     { name: 'TRAVEL', id: 5 },
-// ]
-// type CategoryProps = { name: string; id: number }
 
 type Props = {
     active: { [id: number]: boolean }
@@ -27,7 +18,8 @@ const Category = ({ active, changeState, isActive = false }: Props) => {
         >
             <div className="menu-item">CATEGORY</div>
             <div className={show ? 'lage-menu active' : 'lage-menu'}>
-                <CategoryTab />
+                {/* <CategoryTab /> */}
+                <Carousel />
             </div>
         </li>
     )
