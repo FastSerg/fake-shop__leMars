@@ -1,17 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Grid } from '@mui/material'
 import { NavLink } from 'react-router-dom'
 import { Social } from 'container/Header/Social'
 import { Logo } from 'container/Header/Logo'
 import { NavbarMenu } from 'container/Header/NavbarMenu/NavbarMenu'
+import ModalWindow from 'Pages/Subscribe/ModalWindow'
+import Subscribe from 'Pages/Subscribe/Subscribe'
 
 type Props = {
-    setModalActive: (modalActive: boolean) => void
     active: { [id: number]: boolean }
     changeState: (id: number) => void
 }
 
-const HeaderTop = ({ setModalActive, active, changeState }: Props) => {
+const HeaderTop = ({ active, changeState }: Props) => {
+    const [modalActive, setModalActive] = useState<boolean>(false)
+
     return (
         <>
             <header className="header">
@@ -42,6 +45,9 @@ const HeaderTop = ({ setModalActive, active, changeState }: Props) => {
                         <NavbarMenu active={active} changeState={changeState} />
                     </div>{' '}
                 </div>
+                <Subscribe active={modalActive} setActive={setModalActive}>
+                    <ModalWindow />
+                </Subscribe>
             </header>
         </>
     )

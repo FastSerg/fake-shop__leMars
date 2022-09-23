@@ -1,8 +1,6 @@
 import ButtonFixed from 'components/ButtonFixed/ButtonFixed'
-import HeaderTop from 'components/HeaderTopComponent/HeaderTop'
 import GridContainerBottom from 'container/Main/GridContainerBottom/GridContainerBottom'
-import ModalWindow from 'Pages/Subscribe/ModalWindow'
-import Subscribe from 'Pages/Subscribe/Subscribe'
+
 import React, { useState } from 'react'
 import './Shop.scss'
 import ShopBg from './ProductItem/ShopBg'
@@ -24,19 +22,10 @@ type Props = {
 }
 
 const Products = ({ active, changeState }: Props) => {
-    const [modalActive, setModalActive] = useState<boolean>(false)
-    const changeBoolean = (modalActive: boolean) => {
-        setModalActive(true)
-    }
-
     const [activeProd, setActiveProd] = useState<boolean>(false)
+
     return (
         <>
-            <HeaderTop
-                setModalActive={changeBoolean}
-                active={active}
-                changeState={changeState}
-            />
             <ShopBg />
 
             <div className="container-pages">
@@ -148,9 +137,7 @@ const Products = ({ active, changeState }: Props) => {
                     </Grid>
                 </div>
             </div>
-            <Subscribe active={modalActive} setActive={setModalActive}>
-                <ModalWindow />
-            </Subscribe>
+
             <div className="container bottom">
                 <GridContainerBottom />
             </div>
