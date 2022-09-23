@@ -15,6 +15,8 @@ import ShopScrollItem from './ProductItem/ShopScrollItem'
 import FormatListBulletedOutlinedIcon from '@mui/icons-material/FormatListBulletedOutlined'
 import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined'
 import SelectedControl from './ProductItem/SelectedControl'
+import ShopTileList from './ProductItem/ShopTileList'
+import ShopListContent from './ProductItem/ShopListContent'
 
 type Props = {
     active: { [id: number]: boolean }
@@ -27,6 +29,7 @@ const Products = ({ active, changeState }: Props) => {
         setModalActive(true)
     }
 
+    const [activeProd, setActiveProd] = useState<boolean>(false)
     return (
         <>
             <HeaderTop
@@ -67,21 +70,44 @@ const Products = ({ active, changeState }: Props) => {
                                     }}
                                 >
                                     <FormatListBulletedOutlinedIcon
-                                        sx={{
-                                            fontSize: '40px',
-                                            padding: '5px',
-                                            cursor: 'pointer',
-                                            border: '1px solid #999b9d',
-                                        }}
+                                        onClick={() => setActiveProd(false)}
+                                        sx={
+                                            activeProd
+                                                ? {
+                                                      fontSize: '40px',
+                                                      padding: '8px',
+                                                      cursor: 'pointer',
+                                                      border: '1px solid #999b9d',
+                                                  }
+                                                : {
+                                                      fontSize: '40px',
+                                                      padding: '8px',
+                                                      cursor: 'pointer',
+                                                      border: '1px solid #999b9d',
+                                                      color: 'white',
+                                                      bgcolor: 'black',
+                                                  }
+                                        }
                                     />
                                     <GridViewOutlinedIcon
-                                        sx={{
-                                            fontSize: '40px',
-                                            backgroundColor: 'black',
-                                            color: 'white',
-                                            padding: '10px',
-                                            cursor: 'pointer',
-                                        }}
+                                        onClick={() => setActiveProd(true)}
+                                        sx={
+                                            activeProd
+                                                ? {
+                                                      fontSize: '40px',
+                                                      backgroundColor: 'black',
+                                                      color: 'white',
+                                                      padding: '10px',
+                                                      cursor: 'pointer',
+                                                  }
+                                                : {
+                                                      fontSize: '40px',
+                                                      color: 'black',
+                                                      padding: '10px',
+                                                      cursor: 'pointer',
+                                                      border: '1px solid #999b9d',
+                                                  }
+                                        }
                                     />
                                 </Grid>
 
@@ -93,35 +119,26 @@ const Products = ({ active, changeState }: Props) => {
                                         nameProduct,
                                         price,
                                         discount,
-                                    }: ArrProductsProps) => (
-                                        <Grid item md={4} key={id}>
-                                            <div className="products">
-                                                <div className="product-list">
-                                                    <img src={img} alt={alt} />
-                                                    <div className="overlay-product"></div>
-                                                    <div
-                                                        className={
-                                                            discount ===
-                                                            undefined
-                                                                ? 'd-none'
-                                                                : 'discount'
-                                                        }
-                                                    >
-                                                        <span className="discount-value">
-                                                            {discount}%
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                <div className="product-info">
-                                                    <h5>{nameProduct}</h5>
-                                                    <span className="price">
-                                                        {' '}
-                                                        £{price}
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </Grid>
-                                    )
+                                    }: ArrProductsProps) =>
+                                        activeProd ? (
+                                            <ShopListContent
+                                                id={id}
+                                                img={img}
+                                                alt={alt}
+                                                nameProduct={nameProduct}
+                                                price={price}
+                                                discount={discount}
+                                            />
+                                        ) : (
+                                            <ShopTileList
+                                                id={id}
+                                                img={img}
+                                                alt={alt}
+                                                nameProduct={nameProduct}
+                                                price={price}
+                                                discount={discount}
+                                            />
+                                        )
                                 )}
                             </Grid>
                         </Grid>

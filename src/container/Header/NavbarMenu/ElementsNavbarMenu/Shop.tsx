@@ -27,6 +27,9 @@ const Shop = (props: Props) => {
             <ul className={active ? 'sub-menu active' : 'sub-menu'}>
                 {categoryList.map(({ id, name }: CategoryProps) => (
                     <li className="sub-menu__item" key={id}>
+                        {name === 'Cart' ? (
+                            <NavLink to="/cart">{name}</NavLink>
+                        ) : null}{' '}
                         {name}
                     </li>
                 ))}

@@ -55,6 +55,7 @@ h1 {
  .products {
   max-height: 100%;
   max-width: 100%;
+  
  }
 
  .product-list {
@@ -76,7 +77,7 @@ h1 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
- 
+  padding: 10px;
  }
 
 .product-info h5 {
@@ -84,6 +85,7 @@ h1 {
   line-height: 24px;
   margin-bottom: 10px;
   text-align: center;
+  margin: 10px 0;
 }
 
 .price {
@@ -93,6 +95,14 @@ h1 {
   display: inline-block;
   position: relative;
   line-height: 20px;
+  margin: 0;
+}
+
+.price-sale {
+  color: #c4c4c4;
+  text-decoration: line-through;
+  padding-right: 10px;
+  margin: 0;
 
 }
 
@@ -116,6 +126,36 @@ h1 {
   line-height: 25px;
   margin: 0;
  
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin-bottom: 30px;
+ }
+
+.grid-info {
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  justify-content: start;
+ }
+
+.grid-info h5 {
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 10px;
+  margin: 10px 0;
+}
+
+.grid-text {
+  margin-bottom: 24px;
+  color: #77797c;
+}
+
+.grid-icons {
+  display: flex;
+  gap:10px
 }
 
 .d-none {

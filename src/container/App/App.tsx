@@ -9,6 +9,8 @@ import StylingHarvey from 'Pages/StylingHarvey/StylingHarvey'
 import ContactUs from 'Pages/ContactUs/ContactUs'
 import EverythingCultural from 'Pages/EverythingCultural/EverythingCultural'
 import Products from 'Pages/ShopProd/ProductsShop'
+import Cart from 'Pages/ShopProd/Cart/Cart'
+import HeaderTop from 'components/HeaderTopComponent/HeaderTop'
 
 type listProps = { [id: number]: boolean }
 
@@ -99,6 +101,17 @@ export const App = () => {
                                 active={active}
                                 changeState={changeState}
                             />
+                            <Footer />
+                        </>
+                    }
+                />
+                <Route
+                    path="cart"
+                    element={
+                        <>
+                            <CssBaseline />
+                            {/* <HeaderTop */}
+                            <Cart active={active} changeState={changeState} />
                             <Footer />
                         </>
                     }

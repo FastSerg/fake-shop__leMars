@@ -14,7 +14,6 @@ type Props = {
 const HeaderTop = ({ setModalActive, active, changeState }: Props) => {
     return (
         <>
-            {' '}
             <header className="header">
                 <div className="header-container">
                     <Grid container sx={{ alignItems: 'center' }}>
