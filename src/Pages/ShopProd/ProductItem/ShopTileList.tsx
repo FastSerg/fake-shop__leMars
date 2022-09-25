@@ -11,24 +11,27 @@ const ShopTileList = ({
     nameProduct,
     price,
 }: ArrProductsProps) => {
+    console.log(id)
     return (
         <Grid item md={4} key={id}>
             <div className="products">
                 <div className="product-list">
                     <img src={img} alt={alt} />
-                    {/* <AddShoppingCartOutlinedIcon
-                        classes={'product-list'}
+                    <AddShoppingCartOutlinedIcon
                         sx={{
                             fontSize: '38px',
                             padding: '10px',
-                            border: '1px solid black',
+                            border: '1px solid white',
                             borderRadius: '20px',
                             position: 'absolute',
+                            color: 'white',
                             top: '50%',
                             left: '45%',
-                            opacity: '0',
+                            opacity: '1',
+                            zIndex: '26',
+                            cursor: 'pointer',
                         }}
-                    /> */}
+                    />
                     <div className="overlay-product"></div>
                     <div
                         className={
