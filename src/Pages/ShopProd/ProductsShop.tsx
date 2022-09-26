@@ -18,10 +18,9 @@ import ShopListContent from './ProductItem/ShopListContent'
 
 type Props = {
     addCart: (id: number) => void
-    productsInCart: { [id: number]: number }
 }
 
-const Products = ({ addCart, productsInCart }: Props) => {
+const Products = ({ addCart }: Props) => {
     const [activeProd, setActiveProd] = useState<boolean>(false)
 
     return (

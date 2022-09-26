@@ -18,7 +18,7 @@ const CartItemProd = ({ img, alt, nameProduct, price, count }: Props) => {
             <div className="scroll-products">{nameProduct}</div>
             <div className="price">{price}</div>
             <div className="quantity">{count}</div>
-            <div className="">4444</div>
+            <div className="">{price * count}</div>
             <div className="">
                 <DeleteForeverOutlinedIcon sx={{ cursor: 'pointer' }} />
             </div>

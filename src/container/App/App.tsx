@@ -92,10 +92,7 @@ export const App = () => {
                         <>
                             <CssBaseline />
                             <HeaderTop />
-                            <Products
-                                addCart={addCart}
-                                productsInCart={productsInCart}
-                            />
+                            <Products addCart={addCart} />
                             <Footer />
                         </>
                     }
