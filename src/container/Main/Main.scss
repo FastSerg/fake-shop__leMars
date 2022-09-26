@@ -56,9 +56,14 @@ body {
 }
 
 .item__img img {
+   
   height: 325px;
+  max-width: 320px;
   width: 100%;
+  object-fit: cover;
 }
+
+
 
 .header-overlay--post {
   background-color: gray;
@@ -80,6 +85,10 @@ body {
   right: 0;
   color: #fff;
   width: 100%;
+}
+
+.item__text a {
+  color:#fff;
 }
 
 .category-style {
@@ -108,3 +117,4 @@ body {
 .container-pages {
   margin-top: 280px;
 }
+ 

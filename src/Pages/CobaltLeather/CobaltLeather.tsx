@@ -3,13 +3,12 @@ import PageProto from 'components/PageProto/PageProto'
 
 type Props = { heightImg: string }
 
-const EverythingCultural = ({ heightImg }: Props) => {
+const CobaltLeather = ({ heightImg }: Props) => {
     return (
         <>
             {arraysAll
                 .filter(
-                    ({ title }: ArraysAllProps) =>
-                        title === 'Everything About Cultural'
+                    ({ title }: ArraysAllProps) => title === 'Cobalt Leather'
                 )
                 .map(
                     ({
@@ -35,4 +34,4 @@ const EverythingCultural = ({ heightImg }: Props) => {
     )
 }
 
-export default EverythingCultural
+export default CobaltLeather

@@ -82,7 +82,7 @@ export const arraysAll:ArraysAllProps[] = [
   },
   {
     id: 7,
-    img: 'img/wooman-face.jpg',
+    img: 'img/wooman-face_full.jpg',
     nameCategory: 'BEAUTY',
     title: 'Cobalt Leather',
     readMore: 'READ MORE',

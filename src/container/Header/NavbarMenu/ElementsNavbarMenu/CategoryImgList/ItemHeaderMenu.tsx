@@ -2,6 +2,7 @@ import React from 'react'
 import { CardMedia, Card, CardContent, Typography, Grid } from '@mui/material'
 
 import { arrMainPageProps } from '../../../../Main/CardMainContent/arrGridContainerMain'
+import { Link } from 'react-router-dom'
 
 type Props = {}
 
@@ -16,13 +17,15 @@ const ItemHeaderMenu = ({
     return (
         <Grid container>
             <Card>
-                <CardMedia
-                    component="img"
-                    height="170px"
-                    image={img}
-                    alt={alt}
-                    sx={{ width: '220px', backgroundSize: 'cover' }}
-                />
+                <Link to={alt}>
+                    <CardMedia
+                        component="img"
+                        height="170px"
+                        image={img}
+                        alt={alt}
+                        sx={{ width: '220px', backgroundSize: 'cover' }}
+                    />
+                </Link>
                 <CardContent>
                     <Typography
                         sx={{

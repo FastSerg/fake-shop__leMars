@@ -8,32 +8,27 @@ const ContainerMainCategory = () => {
         <>
             <div className="container top">
                 <div className="container__post">
-                    {imgListArr
-                        // .filter(
-                        //     ({ nameCategory }: imgListProps) =>
-                        //         nameCategory === 'LIFESTYLE'
-                        // )
-                        .map(
-                            ({
-                                id,
-                                img,
-                                nameCategory,
-                                title,
-                                readMore,
-                                alt,
-                            }: imgListProps) => (
-                                <div className="post__item" key={id}>
-                                    <ContainerMainItem
-                                        id={id}
-                                        img={img}
-                                        alt={alt}
-                                        nameCategory={nameCategory}
-                                        title={title}
-                                        readMore={readMore}
-                                    />
-                                </div>
-                            )
-                        )}
+                    {imgListArr.map(
+                        ({
+                            id,
+                            img,
+                            nameCategory,
+                            title,
+                            readMore,
+                            alt,
+                        }: imgListProps) => (
+                            <div className="post__item" key={id}>
+                                <ContainerMainItem
+                                    id={id}
+                                    img={img}
+                                    alt={alt}
+                                    nameCategory={nameCategory}
+                                    title={title}
+                                    readMore={readMore}
+                                />
+                            </div>
+                        )
+                    )}
                 </div>
             </div>
         </>

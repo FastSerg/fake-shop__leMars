@@ -11,6 +11,7 @@ import EverythingCultural from 'Pages/EverythingCultural/EverythingCultural'
 import Products from 'Pages/ShopProd/ProductsShop'
 import Cart from 'Pages/ShopProd/Cart/Cart'
 import HeaderTop from 'components/HeaderTopComponent/HeaderTop'
+import CobaltLeather from 'Pages/CobaltLeather/CobaltLeather'
 
 type ProductsInCartProps = { [id: number]: number }
 
@@ -60,6 +61,17 @@ export const App = () => {
                             <CssBaseline />
                             <HeaderTop />
                             <StylingHarvey heightImg={'1271px'} />
+                            <Footer />
+                        </>
+                    }
+                />
+                <Route
+                    path="wooman-face"
+                    element={
+                        <>
+                            <CssBaseline />
+                            <HeaderTop />
+                            <CobaltLeather heightImg={'1271px'} />
                             <Footer />
                         </>
                     }
