@@ -1,14 +1,23 @@
 import React from 'react'
 import './Cart.scss'
-import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined'
+import {
+    arrProducts,
+    ArrProductsProps,
+    getProductObject,
+} from '../../../components/Arrays/arraysProducts'
 import GridContainerBottom from 'container/Main/GridContainerBottom/GridContainerBottom'
+import CartItemProd from './CartItemProd'
 
 type Props = {
-    active: { [id: number]: boolean }
-    changeState: (id: number) => void
+    productsInCart: { [id: number]: number }
+    productObject?: { [id: number]: ArrProductsProps }
 }
 
-const Cart = ({ active, changeState }: Props) => {
+const Cart = ({
+    productObject = getProductObject(arrProducts),
+    productsInCart,
+}: Props) => {
+    console.log(productsInCart)
     return (
         <>
             <div className="container-pages">
@@ -20,30 +29,25 @@ const Cart = ({ active, changeState }: Props) => {
                         <h5 className="message">fsdf</h5>
                     </div>
                     <div className="cart-container">
-                        <span></span>
+                        <span> </span>
                         <div className="cart-title">Product</div>
                         <div className="cart-title">Price</div>
                         <div className="cart-title">Quantity</div>
                         <div className="cart-title">Total</div>
                         <span></span>
                     </div>
-                    <div className="cart-container">
-                        <div className="cart-image">
-                            <img
-                                src="/img/productList/capCamouflage.jpg"
-                                alt="capCamouflage"
-                            />
-                        </div>
-                        <div className="scroll-products">Cap Camouflage</div>
-                        <div className="price">£60.00</div>
-                        <div className="quantity">1</div>
-                        <div className="">4444</div>
-                        <div className="">
-                            <DeleteForeverOutlinedIcon
-                                sx={{ cursor: 'pointer' }}
-                            />
-                        </div>
-                    </div>
+                    {Object.keys(productsInCart).map((productId) => (
+                        <CartItemProd
+                            key={productId}
+                            img={productObject[parseInt(productId)].img}
+                            count={productsInCart[parseInt(productId)]}
+                            alt={productObject[parseInt(productId)].alt}
+                            price={productObject[parseInt(productId)].price}
+                            nameProduct={
+                                productObject[parseInt(productId)].nameProduct
+                            }
+                        />
+                    ))}
                     <div className="coupon">
                         {/* submit={couponSubmit} */}
                         <form>

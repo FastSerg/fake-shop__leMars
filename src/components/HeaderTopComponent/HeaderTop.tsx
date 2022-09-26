@@ -7,12 +7,9 @@ import { NavbarMenu } from 'container/Header/NavbarMenu/NavbarMenu'
 import ModalWindow from 'Pages/Subscribe/ModalWindow'
 import Subscribe from 'Pages/Subscribe/Subscribe'
 
-type Props = {
-    active: { [id: number]: boolean }
-    changeState: (id: number) => void
-}
+type Props = {}
 
-const HeaderTop = ({ active, changeState }: Props) => {
+const HeaderTop = () => {
     const [modalActive, setModalActive] = useState<boolean>(false)
 
     return (
@@ -42,7 +39,7 @@ const HeaderTop = ({ active, changeState }: Props) => {
                         </Grid>
                     </Grid>
                     <div className="navbar-menu__bottom">
-                        <NavbarMenu active={active} changeState={changeState} />
+                        <NavbarMenu />
                     </div>{' '}
                 </div>
                 <Subscribe active={modalActive} setActive={setModalActive}>

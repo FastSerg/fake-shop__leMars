@@ -1,13 +1,9 @@
 import Carousel from 'components/Carousel/Carousel'
 import React, { useState } from 'react'
 
-type Props = {
-    active: { [id: number]: boolean }
-    changeState: (id: number) => void
-    isActive?: boolean
-}
+type Props = {}
 
-const Category = ({ active, changeState, isActive = false }: Props) => {
+const Category = () => {
     const [show, setShow] = useState<boolean>(false)
 
     return (

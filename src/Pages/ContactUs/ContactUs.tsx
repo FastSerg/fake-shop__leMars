@@ -2,12 +2,9 @@ import React from 'react'
 import GridContainerBottom from 'container/Main/GridContainerBottom/GridContainerBottom'
 import ContactContent from './ContactContent'
 
-type Props = {
-    active: { [id: number]: boolean }
-    changeState: (id: number) => void
-}
+type Props = {}
 
-const ContactUs = ({ changeState, active }: Props) => {
+const ContactUs = () => {
     return (
         <>
             <div className="container-pages">

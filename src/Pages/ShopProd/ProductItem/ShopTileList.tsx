@@ -3,6 +3,17 @@ import { Grid } from '@mui/material'
 import { ArrProductsProps } from '../../../components/Arrays/arraysProducts'
 import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined'
 
+type Props = {
+    addCart: (id: number) => void
+
+    id: number
+    img: string
+    alt: string
+    discount?: number
+    nameProduct: string
+    price: number
+}
+
 const ShopTileList = ({
     id,
     img,
@@ -10,14 +21,15 @@ const ShopTileList = ({
     discount,
     nameProduct,
     price,
-}: ArrProductsProps) => {
-    console.log(id)
+    addCart,
+}: Props) => {
     return (
         <Grid item md={4} key={id}>
             <div className="products">
                 <div className="product-list">
                     <img src={img} alt={alt} />
                     <AddShoppingCartOutlinedIcon
+                        onClick={() => addCart(id)}
                         sx={{
                             fontSize: '38px',
                             padding: '10px',

@@ -77,3 +77,10 @@ export const arrProducts:ArrProductsProps[] = [
   },
 
 ] 
+
+export const getProductObject = (array:ArrProductsProps[]) => {
+  return array.reduce((object,product) => ({
+    ...object,
+    [product.id]:product
+  }),{})
+}

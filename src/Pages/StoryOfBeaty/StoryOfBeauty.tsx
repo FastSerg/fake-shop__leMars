@@ -2,12 +2,9 @@ import React from 'react'
 import GridContainerBottom from 'container/Main/GridContainerBottom/GridContainerBottom'
 import StoryMainContent from './StoryMainContent'
 
-type Props = {
-    active: { [id: number]: boolean }
-    changeState: (id: number) => void
-}
+type Props = {}
 
-const StoryOfBeauty = ({ active, changeState }: Props) => {
+const StoryOfBeauty = () => {
     return (
         <>
             <div className="container-pages">

@@ -1,12 +1,9 @@
 import GridContainerBottom from 'container/Main/GridContainerBottom/GridContainerBottom'
 import CulturalContent from './CulturalContent'
 
-type Props = {
-    active: { [id: number]: boolean }
-    changeState: (id: number) => void
-}
+type Props = {}
 
-const EverythingCultural = ({ active, changeState }: Props) => {
+const EverythingCultural = () => {
     return (
         <>
             <div className="container-pages">

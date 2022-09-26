@@ -12,19 +12,21 @@ import Products from 'Pages/ShopProd/ProductsShop'
 import Cart from 'Pages/ShopProd/Cart/Cart'
 import HeaderTop from 'components/HeaderTopComponent/HeaderTop'
 
-type listProps = { [id: number]: boolean }
+type ProductsInCartProps = { [id: number]: number }
 
 export const App = () => {
-    const [active, setActive] = useState<listProps>({
-        1: false,
-        2: false,
+    const [productsInCart, setProductsInCart] = useState<ProductsInCartProps>({
+        1: 1,
     })
 
-    const changeState = (id: number) => {
-        setActive((prevState: listProps) => ({
-            [id]: prevState[id] !== (true || false) ? true : false,
+    const addCart = (id: number) => {
+        setProductsInCart((prevState: ProductsInCartProps) => ({
+            ...prevState,
+            [id]: (prevState[id] || 0) + 1,
         }))
     }
+
+    console.log(productsInCart)
 
     return (
         <>
@@ -33,8 +35,8 @@ export const App = () => {
                     path="/"
                     element={
                         <>
-                            <CssBaseline />{' '}
-                            <Header active={active} changeState={changeState} />{' '}
+                            <CssBaseline />
+                            <Header />
                             <Main />
                             <Footer />
                         </>
@@ -45,14 +47,8 @@ export const App = () => {
                     element={
                         <>
                             <CssBaseline />
-                            <HeaderTop
-                                active={active}
-                                changeState={changeState}
-                            />
-                            <StoryOfBeauty
-                                active={active}
-                                changeState={changeState}
-                            />
+                            <HeaderTop />
+                            <StoryOfBeauty />
                             <Footer />
                         </>
                     }
@@ -62,14 +58,8 @@ export const App = () => {
                     element={
                         <>
                             <CssBaseline />
-                            <HeaderTop
-                                active={active}
-                                changeState={changeState}
-                            />
-                            <StylingHarvey
-                                active={active}
-                                changeState={changeState}
-                            />
+                            <HeaderTop />
+                            <StylingHarvey />
                             <Footer />
                         </>
                     }
@@ -79,14 +69,8 @@ export const App = () => {
                     element={
                         <>
                             <CssBaseline />
-                            <HeaderTop
-                                active={active}
-                                changeState={changeState}
-                            />
-                            <ContactUs
-                                active={active}
-                                changeState={changeState}
-                            />
+                            <HeaderTop />
+                            <ContactUs />
                             <Footer />
                         </>
                     }
@@ -96,14 +80,8 @@ export const App = () => {
                     element={
                         <>
                             <CssBaseline />
-                            <HeaderTop
-                                active={active}
-                                changeState={changeState}
-                            />
-                            <EverythingCultural
-                                active={active}
-                                changeState={changeState}
-                            />
+                            <HeaderTop />
+                            <EverythingCultural />
                             <Footer />
                         </>
                     }
@@ -113,13 +91,10 @@ export const App = () => {
                     element={
                         <>
                             <CssBaseline />
-                            <HeaderTop
-                                active={active}
-                                changeState={changeState}
-                            />
+                            <HeaderTop />
                             <Products
-                                active={active}
-                                changeState={changeState}
+                                addCart={addCart}
+                                productsInCart={productsInCart}
                             />
                             <Footer />
                         </>
@@ -130,11 +105,8 @@ export const App = () => {
                     element={
                         <>
                             <CssBaseline />
-                            <HeaderTop
-                                active={active}
-                                changeState={changeState}
-                            />
-                            <Cart active={active} changeState={changeState} />
+                            <HeaderTop />
+                            <Cart productsInCart={productsInCart} />
                             <Footer />
                         </>
                     }

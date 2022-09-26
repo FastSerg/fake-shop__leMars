@@ -5,12 +5,9 @@ import { Social } from './Social'
 import { Logo } from './Logo'
 import { NavLink } from 'react-router-dom'
 
-type Props = {
-    active: { [id: number]: boolean }
-    changeState: (id: number) => void
-}
+type Props = {}
 
-const Header = ({ changeState, active }: Props) => {
+const Header = () => {
     return (
         <header className="header">
             <div className="header-container">
@@ -18,7 +15,7 @@ const Header = ({ changeState, active }: Props) => {
                     <NavLink to="/">
                         <Logo />
                     </NavLink>
-                    <NavbarMenu active={active} changeState={changeState} />
+                    <NavbarMenu />
                     <Social />
                 </div>
             </div>
