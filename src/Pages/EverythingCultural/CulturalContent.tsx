@@ -42,7 +42,7 @@ const CulturalContent = (props: Props) => {
                                         variant="h6"
                                         component="div"
                                     >
-                                        TRAVEL
+                                        FASHION
                                     </Typography>
 
                                     <Typography
@@ -56,7 +56,7 @@ const CulturalContent = (props: Props) => {
                                             textAlign: 'center',
                                         }}
                                     >
-                                        Styling Harvey
+                                        Everything About Cultural
                                     </Typography>
                                 </CardContent>
                                 <CardMedia

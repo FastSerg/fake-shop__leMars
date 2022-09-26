@@ -1,21 +1,36 @@
 import React from 'react'
-import GridContainerBottom from 'container/Main/GridContainerBottom/GridContainerBottom'
-import StoryMainContent from './StoryMainContent'
+import PageProto from 'components/PageProto/PageProto'
+import { arraysAll, ArraysAllProps } from '../../components/Arrays/arraysAll'
 
-type Props = {}
+type Props = { heightImg: string }
 
-const StoryOfBeauty = () => {
+const StoryOfBeauty = ({ heightImg }: Props) => {
     return (
         <>
-            <div className="container-pages">
-                <div className="container">
-                    <StoryMainContent />
-
-                    <div className="container bottom">
-                        <GridContainerBottom />
-                    </div>
-                </div>
-            </div>
+            {arraysAll
+                .filter(
+                    ({ title }: ArraysAllProps) => title === 'Story Of Beauty'
+                )
+                .map(
+                    ({
+                        id,
+                        img,
+                        title,
+                        nameCategory,
+                        text,
+                        alt,
+                    }: ArraysAllProps) => (
+                        <PageProto
+                            key={id}
+                            img={img}
+                            title={title}
+                            nameCategory={nameCategory}
+                            alt={alt}
+                            text={text}
+                            heightImg={heightImg}
+                        />
+                    )
+                )}
         </>
     )
 }

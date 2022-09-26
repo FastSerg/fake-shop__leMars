@@ -108,10 +108,11 @@ export const arraysAll:ArraysAllProps[] = [
     alt: 'man_see',
   },{
     id: 11,
-    img: '/img/ledy_in_white.jpg',
+    img: '/img/ledy_in_white_full.jpg',
     nameCategory: 'BEAUTY',
     title: 'Story Of Beauty',
     alt: 'ledy_in_white',
+    text: 'Donec sed lacus eu massa commodo interdum non id mauris. Etiam eu dignissim elit. Nulla cursus neque adictum quam tristique ac. Pellentesque habitant morbi tristique senectus et netus lalesuada fames ac turpis egestas. Donec ornare enim felis, non faucibus eros mattis vel. Suspendisse sollicitudin, nisi non interdum pharetra, libero lectus sollicitudin est, quis imperdiet nibh nulla non metus. Fusce accumsan in leo eu porttitor. Sed eget neque aliquam sequat bibendum.'
   },{
     id: 12,
     img: '/img/motoki-tonn.jpg',

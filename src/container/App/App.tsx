@@ -48,7 +48,7 @@ export const App = () => {
                         <>
                             <CssBaseline />
                             <HeaderTop />
-                            <StoryOfBeauty />
+                            <StoryOfBeauty heightImg={'1060px'} />
                             <Footer />
                         </>
                     }
@@ -59,7 +59,7 @@ export const App = () => {
                         <>
                             <CssBaseline />
                             <HeaderTop />
-                            <StylingHarvey />
+                            <StylingHarvey heightImg={'1271px'} />
                             <Footer />
                         </>
                     }
@@ -81,7 +81,7 @@ export const App = () => {
                         <>
                             <CssBaseline />
                             <HeaderTop />
-                            <EverythingCultural />
+                            <EverythingCultural heightImg={'850px'} />
                             <Footer />
                         </>
                     }

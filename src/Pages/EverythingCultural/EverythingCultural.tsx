@@ -1,20 +1,38 @@
+import { arraysAll, ArraysAllProps } from 'components/Arrays/arraysAll'
+import PageProto from 'components/PageProto/PageProto'
 import GridContainerBottom from 'container/Main/GridContainerBottom/GridContainerBottom'
 import CulturalContent from './CulturalContent'
 
-type Props = {}
+type Props = { heightImg: string }
 
-const EverythingCultural = () => {
+const EverythingCultural = ({ heightImg }: Props) => {
     return (
         <>
-            <div className="container-pages">
-                <div className="container">
-                    <CulturalContent />
-
-                    <div className="container bottom">
-                        <GridContainerBottom />
-                    </div>
-                </div>
-            </div>
+            {arraysAll
+                .filter(
+                    ({ title }: ArraysAllProps) =>
+                        title === 'Everything About Cultural'
+                )
+                .map(
+                    ({
+                        id,
+                        img,
+                        title,
+                        nameCategory,
+                        text,
+                        alt,
+                    }: ArraysAllProps) => (
+                        <PageProto
+                            key={id}
+                            img={img}
+                            title={title}
+                            nameCategory={nameCategory}
+                            alt={alt}
+                            text={text}
+                            heightImg={heightImg}
+                        />
+                    )
+                )}
         </>
     )
 }

@@ -1,20 +1,37 @@
 import React from 'react'
-import GridContainerBottom from 'container/Main/GridContainerBottom/GridContainerBottom'
-import StylingMainContent from './StylingMainContent'
 
-type Props = {}
+import PageProto from 'components/PageProto/PageProto'
+import { arraysAll, ArraysAllProps } from 'components/Arrays/arraysAll'
 
-const StylingHarvey = () => {
+type Props = { heightImg: string }
+
+const StylingHarvey = ({ heightImg }: Props) => {
     return (
         <>
-            <div className="container-pages">
-                <div className="container">
-                    <StylingMainContent />
-                    <div className="container bottom">
-                        <GridContainerBottom />
-                    </div>
-                </div>
-            </div>
+            {arraysAll
+                .filter(
+                    ({ title }: ArraysAllProps) => title === 'Styling Harvey'
+                )
+                .map(
+                    ({
+                        id,
+                        img,
+                        title,
+                        nameCategory,
+                        text,
+                        alt,
+                    }: ArraysAllProps) => (
+                        <PageProto
+                            key={id}
+                            img={img}
+                            title={title}
+                            nameCategory={nameCategory}
+                            alt={alt}
+                            text={text}
+                            heightImg={heightImg}
+                        />
+                    )
+                )}
         </>
     )
 }
