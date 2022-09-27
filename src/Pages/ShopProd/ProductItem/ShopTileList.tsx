@@ -1,6 +1,5 @@
 import React from 'react'
 import { Grid } from '@mui/material'
-import { ArrProductsProps } from '../../../components/Arrays/arraysProducts'
 import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined'
 import { addCart1 } from 'redux/productsCartReducer'
 import { useAppDispatch } from 'redux/hooks'

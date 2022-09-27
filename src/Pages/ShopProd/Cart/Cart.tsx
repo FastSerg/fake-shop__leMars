@@ -18,7 +18,7 @@ const Cart = ({
     productObject = getProductObject(arrProducts),
     productsInCart,
 }: Props) => {
-    const productsInCart1 = useAppSelector((state) => state.ProductsState)
+    const productsInCart1 = useAppSelector((state) => state.cartProductsState)
     console.log(productsInCart1)
     return (
         <>
@@ -40,7 +40,7 @@ const Cart = ({
                     </div>
                     {Object.keys(productsInCart1).map((productId) => (
                         <CartItemProd
-                            key={productId}
+                            key={parseInt(productId)}
                             img={productObject[parseInt(productId)].img}
                             count={productsInCart1[parseInt(productId)]}
                             alt={productObject[parseInt(productId)].alt}
