@@ -6,6 +6,7 @@ import FooterPost from './FooterMenu/FooterPost'
 import FooterBlogs from './FooterMenu/FooterBlogs'
 import FooterSocialIcon from './FooterMenu/FooterSocialIcon'
 import FooterBottom from './FooterBottom'
+import ButtonFixed from 'components/ButtonFixed/ButtonFixed'
 
 type Props = {}
 
@@ -22,6 +23,7 @@ const Footer = (props: Props) => {
                     </Grid>
                 </div>
             </div>
+            <ButtonFixed />
             <FooterBottom />
         </div>
     )

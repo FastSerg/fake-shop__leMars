@@ -1,6 +1,4 @@
-import ButtonFixed from 'components/ButtonFixed/ButtonFixed'
 import GridContainerBottom from 'container/Main/GridContainerBottom/GridContainerBottom'
-
 import React, { useState } from 'react'
 import './Shop.scss'
 import ShopBg from './ProductItem/ShopBg'
@@ -146,7 +144,6 @@ const Products = ({ addCart }: Props) => {
             <div className="container bottom">
                 <GridContainerBottom />
             </div>
-            <ButtonFixed />
         </>
     )
 }
