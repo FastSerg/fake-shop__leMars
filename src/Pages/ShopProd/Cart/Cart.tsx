@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import './Cart.scss'
 import {
     arrProducts,
@@ -8,6 +8,7 @@ import {
 import GridContainerBottom from 'container/Main/GridContainerBottom/GridContainerBottom'
 import CartItemProd from './CartItemProd'
 import { useAppSelector } from 'redux/hooks'
+import { Link } from 'react-router-dom'
 
 type Props = {
     productsInCart: { [id: number]: number }
@@ -39,16 +40,19 @@ const Cart = ({
                         <span></span>
                     </div>
                     {Object.keys(productsInCart1).map((productId) => (
-                        <CartItemProd
-                            key={parseInt(productId)}
-                            img={productObject[parseInt(productId)].img}
-                            count={productsInCart1[parseInt(productId)]}
-                            alt={productObject[parseInt(productId)].alt}
-                            price={productObject[parseInt(productId)].price}
-                            nameProduct={
-                                productObject[parseInt(productId)].nameProduct
-                            }
-                        />
+                        <Fragment key={parseInt(productId)}>
+                            <CartItemProd
+                                id={parseInt(productId)}
+                                img={productObject[parseInt(productId)].img}
+                                // count={productsInCart1[parseInt(productId)]}
+                                alt={productObject[parseInt(productId)].alt}
+                                price={productObject[parseInt(productId)].price}
+                                nameProduct={
+                                    productObject[parseInt(productId)]
+                                        .nameProduct
+                                }
+                            />
+                        </Fragment>
                     ))}
                     <div className="coupon">
                         {/* submit={couponSubmit} */}
@@ -81,9 +85,11 @@ const Cart = ({
                                 <span className="price">£ pice</span>
                             </div>
                             <div className="btn-box">
-                                <button className="btn-total">
-                                    Proceed To Checkout
-                                </button>{' '}
+                                <Link to="/checkout">
+                                    <button className="btn-total">
+                                        Proceed To Checkout
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     </div>

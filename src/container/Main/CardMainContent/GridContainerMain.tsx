@@ -23,7 +23,7 @@ const GridContainerMain = (props: Props) => {
         <>
             <Grid container spacing={4} sx={{ padding: '70px 0' }}>
                 <Grid item md={12}>
-                    <NavLink to="/storyOfBeaty">
+                    <NavLink to="/storyOfBeauty">
                         <Card sx={{ maxWidth: 840 }}>
                             <CardActionArea>
                                 <CardContent>
@@ -78,7 +78,7 @@ const GridContainerMain = (props: Props) => {
                         }: arrMainPageProps) => (
                             <Grid item md={12} key={id}>
                                 {title === 'Styling Harvey' ? (
-                                    <NavLink to="/StylingHarvey">
+                                    <NavLink to="/harvey">
                                         {' '}
                                         <CardMediaProtoMain
                                             id={id}
@@ -90,7 +90,7 @@ const GridContainerMain = (props: Props) => {
                                         />
                                     </NavLink>
                                 ) : title === 'Everything About Cultural' ? (
-                                    <NavLink to="/cultural">
+                                    <NavLink to="/everything">
                                         {' '}
                                         <CardMediaProtoMain
                                             id={id}

@@ -8,11 +8,11 @@ type Props = {
     alt: string
     nameProduct: string
     price: number
-    count: number
-    key: number
+    // count: number
+    id: number
 }
 
-const CartItemProd = ({ img, alt, nameProduct, price, count, key }: Props) => {
+const CartItemProd = ({ img, alt, nameProduct, price, id }: Props) => {
     const dispatch = useAppDispatch()
     return (
         <div className="cart-container">
@@ -21,11 +21,11 @@ const CartItemProd = ({ img, alt, nameProduct, price, count, key }: Props) => {
             </div>
             <div className="scroll-products">{nameProduct}</div>
             <div className="price">{price}</div>
-            <div className="quantity">{count}</div>
-            <div className="">{price * count}</div>
+            <div className="quantity">{1}</div>
+            <div className="">{price * 2}</div>
             <div className="">
                 <DeleteForeverOutlinedIcon
-                    onClick={() => dispatch(removeProductsCart(key))}
+                    onClick={() => dispatch(removeProductsCart(id))}
                     sx={{ cursor: 'pointer' }}
                 />
             </div>

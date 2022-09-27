@@ -16,6 +16,7 @@ import JacksonWang from 'Pages/JacksonWang/JacksonWang'
 import Parisian from 'Pages/Parisian/Parisian'
 import Marsara from 'Pages/Marsara/Marsara'
 import CatalinesWelcome from 'Pages/CatalinesWelcome/CatalinesWelcome'
+import Checkout from 'Pages/Checkout/Checkout'
 
 type ProductsInCartProps = { [id: number]: number }
 
@@ -164,6 +165,17 @@ export const App = () => {
                             <CssBaseline />
                             <HeaderTop />
                             <Cart productsInCart={productsInCart} />
+                            <Footer />
+                        </>
+                    }
+                />
+                <Route
+                    path="checkout"
+                    element={
+                        <>
+                            <CssBaseline />
+                            <HeaderTop />
+                            <Checkout />
                             <Footer />
                         </>
                     }
