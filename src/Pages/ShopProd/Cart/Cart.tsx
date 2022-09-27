@@ -7,6 +7,7 @@ import {
 } from '../../../components/Arrays/arraysProducts'
 import GridContainerBottom from 'container/Main/GridContainerBottom/GridContainerBottom'
 import CartItemProd from './CartItemProd'
+import { useAppSelector } from 'redux/hooks'
 
 type Props = {
     productsInCart: { [id: number]: number }
@@ -17,7 +18,8 @@ const Cart = ({
     productObject = getProductObject(arrProducts),
     productsInCart,
 }: Props) => {
-    console.log(productsInCart)
+    const productsInCart1 = useAppSelector((state) => state.ProductsState)
+    console.log(productsInCart1)
     return (
         <>
             <div className="container-pages">
@@ -36,11 +38,11 @@ const Cart = ({
                         <div className="cart-title">Total</div>
                         <span></span>
                     </div>
-                    {Object.keys(productsInCart).map((productId) => (
+                    {Object.keys(productsInCart1).map((productId) => (
                         <CartItemProd
                             key={productId}
                             img={productObject[parseInt(productId)].img}
-                            count={productsInCart[parseInt(productId)]}
+                            count={productsInCart1[parseInt(productId)]}
                             alt={productObject[parseInt(productId)].alt}
                             price={productObject[parseInt(productId)].price}
                             nameProduct={

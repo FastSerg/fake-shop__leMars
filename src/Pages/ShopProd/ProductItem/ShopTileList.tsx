@@ -2,6 +2,8 @@ import React from 'react'
 import { Grid } from '@mui/material'
 import { ArrProductsProps } from '../../../components/Arrays/arraysProducts'
 import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined'
+import { addCart1 } from 'redux/productsCartReducer'
+import { useAppDispatch } from 'redux/hooks'
 
 type Props = {
     addCart: (id: number) => void
@@ -23,13 +25,15 @@ const ShopTileList = ({
     price,
     addCart,
 }: Props) => {
+    const dispatch = useAppDispatch()
+
     return (
         <Grid item md={4} key={id}>
             <div className="products">
                 <div className="product-list">
                     <img src={img} alt={alt} />
                     <AddShoppingCartOutlinedIcon
-                        onClick={() => addCart(id)}
+                        onClick={() => dispatch(addCart1(id))}
                         sx={{
                             fontSize: '38px',
                             padding: '10px',
