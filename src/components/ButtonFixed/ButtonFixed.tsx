@@ -9,7 +9,7 @@ import './ButtomFixed.scss'
 // ]
 
 // type Props2 = { className: string; text: string; id: number }
-// type fixedPropc = { [id: number]: boolean }
+type fixedPropc = { [id: number]: boolean }
 
 const ButtonFixed = () => {
     const [fixedState, setFixedState] = useState<boolean>(false)

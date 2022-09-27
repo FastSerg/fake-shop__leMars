@@ -16,6 +16,7 @@ const ContainerMainCategory = () => {
                             title,
                             readMore,
                             alt,
+                            namePage,
                         }: imgListProps) => (
                             <div className="post__item" key={id}>
                                 <ContainerMainItem
@@ -25,6 +26,7 @@ const ContainerMainCategory = () => {
                                     nameCategory={nameCategory}
                                     title={title}
                                     readMore={readMore}
+                                    namePage={namePage}
                                 />
                             </div>
                         )

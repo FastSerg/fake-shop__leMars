@@ -1,10 +1,7 @@
 import React from 'react'
 import { CardMedia, Card, CardContent, Typography, Grid } from '@mui/material'
-
-import { arrMainPageProps } from '../../../../Main/CardMainContent/arrGridContainerMain'
+import { ArraysAllProps } from '../../../../../components/Arrays/arraysAll'
 import { Link } from 'react-router-dom'
-
-type Props = {}
 
 const ItemHeaderMenu = ({
     id,
@@ -13,11 +10,12 @@ const ItemHeaderMenu = ({
     text,
     nameCategory,
     title,
-}: arrMainPageProps) => {
+    namePage,
+}: ArraysAllProps) => {
     return (
         <Grid container>
             <Card>
-                <Link to={alt}>
+                <Link to={`/${namePage}`}>
                     <CardMedia
                         component="img"
                         height="170px"

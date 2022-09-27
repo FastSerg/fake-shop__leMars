@@ -65,11 +65,12 @@ const Carousel = () => {
                     >
                         {categoryState.map(
                             ({
+                                id,
                                 img,
-                                alt,
                                 nameCategory,
                                 title,
-                                id,
+                                alt,
+                                namePage,
                             }: ArraysAllProps) => (
                                 <Grid item md={4} key={id}>
                                     <ItemHeaderMenu
@@ -78,6 +79,7 @@ const Carousel = () => {
                                         nameCategory={nameCategory}
                                         title={title}
                                         id={id}
+                                        namePage={namePage}
                                     />
                                 </Grid>
                             )

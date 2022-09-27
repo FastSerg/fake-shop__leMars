@@ -9,6 +9,7 @@ const ContainerMainItem = ({
     title,
     readMore,
     alt,
+    namePage,
 }: imgListProps) => {
     return (
         <>
@@ -19,7 +20,7 @@ const ContainerMainItem = ({
             <div className="item__text">
                 <div className="category-style">{nameCategory}</div>
                 <h6 className="title-post">
-                    <Link to={alt}>{title}</Link>
+                    <Link to={namePage}>{title}</Link>
                 </h6>
                 <div className="category-style">{readMore}</div>
             </div>

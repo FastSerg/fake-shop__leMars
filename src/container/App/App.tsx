@@ -12,13 +12,17 @@ import Products from 'Pages/ShopProd/ProductsShop'
 import Cart from 'Pages/ShopProd/Cart/Cart'
 import HeaderTop from 'components/HeaderTopComponent/HeaderTop'
 import CobaltLeather from 'Pages/CobaltLeather/CobaltLeather'
+import JacksonWang from 'Pages/JacksonWang/JacksonWang'
+import Parisian from 'Pages/Parisian/Parisian'
+import Marsara from 'Pages/Marsara/Marsara'
+import CatalinesWelcome from 'Pages/CatalinesWelcome/CatalinesWelcome'
 
 type ProductsInCartProps = { [id: number]: number }
 
 export const App = () => {
-    const [productsInCart, setProductsInCart] = useState<ProductsInCartProps>({
-        1: 1,
-    })
+    const [productsInCart, setProductsInCart] = useState<ProductsInCartProps>(
+        {}
+    )
 
     const addCart = (id: number) => {
         setProductsInCart((prevState: ProductsInCartProps) => ({
@@ -44,7 +48,7 @@ export const App = () => {
                     }
                 ></Route>
                 <Route
-                    path="storyOfBeaty"
+                    path="storyOfBeauty"
                     element={
                         <>
                             <CssBaseline />
@@ -55,7 +59,7 @@ export const App = () => {
                     }
                 />
                 <Route
-                    path="StylingHarvey"
+                    path="/harvey"
                     element={
                         <>
                             <CssBaseline />
@@ -66,12 +70,45 @@ export const App = () => {
                     }
                 />
                 <Route
-                    path="wooman-face"
+                    path="/cobalt"
                     element={
                         <>
                             <CssBaseline />
                             <HeaderTop />
                             <CobaltLeather heightImg={'1271px'} />
+                            <Footer />
+                        </>
+                    }
+                />
+                <Route
+                    path="/parisian"
+                    element={
+                        <>
+                            <CssBaseline />
+                            <HeaderTop />
+                            <Parisian heightImg={'517px'} />
+                            <Footer />
+                        </>
+                    }
+                />
+                <Route
+                    path="/mascara"
+                    element={
+                        <>
+                            <CssBaseline />
+                            <HeaderTop />
+                            <Marsara heightImg={'470px'} />
+                            <Footer />
+                        </>
+                    }
+                />
+                <Route
+                    path="/catalines"
+                    element={
+                        <>
+                            <CssBaseline />
+                            <HeaderTop />
+                            <CatalinesWelcome heightImg={'1096px'} />
                             <Footer />
                         </>
                     }
@@ -88,12 +125,23 @@ export const App = () => {
                     }
                 />
                 <Route
-                    path="cultural"
+                    path="/everything"
                     element={
                         <>
                             <CssBaseline />
                             <HeaderTop />
                             <EverythingCultural heightImg={'850px'} />
+                            <Footer />
+                        </>
+                    }
+                />
+                <Route
+                    path="/jackson"
+                    element={
+                        <>
+                            <CssBaseline />
+                            <HeaderTop />
+                            <JacksonWang heightImg={'1271px'} />
                             <Footer />
                         </>
                     }

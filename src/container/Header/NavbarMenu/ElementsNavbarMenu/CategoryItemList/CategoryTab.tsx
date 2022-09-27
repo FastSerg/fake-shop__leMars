@@ -73,6 +73,7 @@ const CategoryTab = () => {
                                 nameCategory,
                                 title,
                                 id,
+                                namePage,
                             }: ArraysAllProps) => (
                                 <Grid item md={4} key={id}>
                                     <ItemHeaderMenu
@@ -81,6 +82,7 @@ const CategoryTab = () => {
                                         nameCategory={nameCategory}
                                         title={title}
                                         id={id}
+                                        namePage={namePage}
                                     />
                                 </Grid>
                             )

@@ -6,6 +6,7 @@ export type ArrProductsProps = {
   nameProduct:string,
   price: number,
   discount?: number,
+  namePage?:string
 }
 
 export const arrProducts:ArrProductsProps[] = [
