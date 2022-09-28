@@ -94,6 +94,14 @@
   
 } 
 
+.quantity {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+
+}
+
 .btn-box {
   padding: 10px 20px;
   
@@ -115,6 +123,11 @@
 
 span {
   margin: 0;
+}
+
+.flex-button {
+  display: flex;
+  flex-direction: column;
 }
 
 .message-container {

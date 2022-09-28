@@ -1,5 +1,58 @@
 .form-order {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-auto-rows: 300px;
+  // grid-auto-rows: 300px;
+}
+
+.order-input {
+  margin-top: 10px;
+  height: 40px;
+  padding: 8px 20px;
+}
+
+.user-data {
+  padding: 0 20px;
+  height: 100%;
+}
+
+.container-name {
+  display: flex;
+  gap:20px;
+}
+
+.d-flex {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+
+.order-info {
+  padding: 0 20px;
+}
+
+.input-info {
+  min-height: 93px;
+  padding: 8px 10px;
+  margin-top: 10px;
+}
+
+
+.product-data {
+  margin-bottom: 20px;
+  border: 1px solid rgba(128, 128, 128, 0.8);
+}
+
+.product-col {
+  max-width: 640px;
+  padding: 8px 20px;
+  width: 100%;
+}
+
+.subtotal-col {
+  width: 100%;
+  max-width: 470px;
+  padding: 8px 20px;
+
 }

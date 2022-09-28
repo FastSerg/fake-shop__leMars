@@ -14,11 +14,9 @@ import SelectedControl from './ProductItem/SelectedControl'
 import ShopTileList from './ProductItem/ShopTileList'
 import ShopListContent from './ProductItem/ShopListContent'
 
-type Props = {
-    addCart: (id: number) => void
-}
+type Props = {}
 
-const Products = ({ addCart }: Props) => {
+const Products = (props: Props) => {
     const [activeProd, setActiveProd] = useState<boolean>(false)
 
     return (
@@ -115,7 +113,6 @@ const Products = ({ addCart }: Props) => {
                                                     nameProduct={nameProduct}
                                                     price={price}
                                                     discount={discount}
-                                                    addCart={addCart}
                                                 />
                                             </React.Fragment>
                                         ) : (
@@ -127,7 +124,6 @@ const Products = ({ addCart }: Props) => {
                                                     nameProduct={nameProduct}
                                                     price={price}
                                                     discount={discount}
-                                                    addCart={addCart}
                                                 />
                                             </React.Fragment>
                                         )

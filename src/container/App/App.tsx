@@ -153,7 +153,7 @@ export const App = () => {
                         <>
                             <CssBaseline />
                             <HeaderTop />
-                            <Products addCart={addCart} />
+                            <Products />
                             <Footer />
                         </>
                     }
@@ -164,7 +164,7 @@ export const App = () => {
                         <>
                             <CssBaseline />
                             <HeaderTop />
-                            <Cart productsInCart={productsInCart} />
+                            <Cart />
                             <Footer />
                         </>
                     }

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import './Cart.scss'
 import {
     arrProducts,
@@ -8,19 +8,16 @@ import {
 import GridContainerBottom from 'container/Main/GridContainerBottom/GridContainerBottom'
 import CartItemProd from './CartItemProd'
 import { useAppSelector } from 'redux/hooks'
-import { Link } from 'react-router-dom'
+import CartTotal from './CartTotal'
 
 type Props = {
-    productsInCart: { [id: number]: number }
     productObject?: { [id: number]: ArrProductsProps }
 }
 
-const Cart = ({
-    productObject = getProductObject(arrProducts),
-    productsInCart,
-}: Props) => {
-    const productsInCart1 = useAppSelector((state) => state.cartProductsState)
-    console.log(productsInCart1)
+const Cart = ({ productObject = getProductObject(arrProducts) }: Props) => {
+    const productsInCart = useAppSelector((state) => state.cartProductsState)
+    console.log(productsInCart)
+
     return (
         <>
             <div className="container-pages">
@@ -39,12 +36,12 @@ const Cart = ({
                         <div className="cart-title">Total</div>
                         <span></span>
                     </div>
-                    {Object.keys(productsInCart1).map((productId) => (
+                    {Object.keys(productsInCart).map((productId) => (
                         <Fragment key={parseInt(productId)}>
                             <CartItemProd
                                 id={parseInt(productId)}
                                 img={productObject[parseInt(productId)].img}
-                                // count={productsInCart1[parseInt(productId)]}
+                                count={productsInCart[parseInt(productId)]}
                                 alt={productObject[parseInt(productId)].alt}
                                 price={productObject[parseInt(productId)].price}
                                 nameProduct={
@@ -54,6 +51,7 @@ const Cart = ({
                             />
                         </Fragment>
                     ))}
+
                     <div className="coupon">
                         {/* submit={couponSubmit} */}
                         <form>
@@ -62,7 +60,6 @@ const Cart = ({
                                 name="coupon_code"
                                 className="coupon-input"
                                 id="coupon_code"
-                                // value=""
                                 placeholder="Coupon code"
                             />{' '}
                             <button type="submit" className="coupon-btn">
@@ -73,26 +70,16 @@ const Cart = ({
                             Update Cart
                         </button>
                     </div>
-                    <div className="cart-box">
-                        <div className="cart-total">
-                            <div className="total-title">Cart Totals</div>
-                            <div className="subtotal">
-                                <span className="cart-title">Subtotal</span>
-                                <span className="price">£ pice</span>{' '}
-                            </div>
-                            <div className="total">
-                                <span className="cart-title">Total</span>
-                                <span className="price">£ pice</span>
-                            </div>
-                            <div className="btn-box">
-                                <Link to="/checkout">
-                                    <button className="btn-total">
-                                        Proceed To Checkout
-                                    </button>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
+                    <CartTotal
+                        total={Object.keys(productsInCart).reduce(
+                            (total, productId) =>
+                                total +
+                                productObject[parseInt(productId)].price *
+                                    productsInCart[parseInt(productId)],
+                            0
+                        )}
+                    />
+
                     <div className="container bottom">
                         <GridContainerBottom />
                     </div>

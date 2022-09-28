@@ -1,26 +1,31 @@
-
 import {createSlice} from '@reduxjs/toolkit'
 import {omit} from 'lodash'
 
 type ProductsState = { [id: number]: number }
 
-const initialState:ProductsState = {2:1}
+const initialState:ProductsState = {5:2}
 
 export const productsCartSlice = createSlice({
   name:'product',
   initialState,
   reducers:{
-    addCart1: (state, action) => ({
+    addCart: (state, action) => ({
     ...state,
-    [action.payload]:(state[action.payload ]|| 0) + 1
+    [action.payload]:(state[action.payload ]|| 0) + action.payload.count
   }),
   removeProductsCart: (state,action) => (
   omit(state,action.payload)
-)
+),
+// changeProductQuantity: (state,action) => (
+//  { ...state,
+ 
+//   [action.payload]:action.payload.count
+//   }
+// )
 }
 
 })
 
-export const {addCart1,removeProductsCart} = productsCartSlice.actions
+export const {addCart,removeProductsCart } = productsCartSlice.actions
 
 export default productsCartSlice.reducer
