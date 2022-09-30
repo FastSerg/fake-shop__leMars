@@ -4,6 +4,9 @@ import { arraysAll, ArraysAllProps } from '../Arrays/arraysAll'
 import { useState } from 'react'
 import ItemHeaderMenu from 'container/Header/NavbarMenu/ElementsNavbarMenu/CategoryImgList/ItemHeaderMenu'
 import './Carousel.scss'
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
 const categoryList: CategoryListProps[] = [
     {
@@ -27,6 +30,19 @@ const categoryList: CategoryListProps[] = [
         name: 'TRAVEL',
     },
 ]
+
+type settingsProps = {
+    dots: boolean
+    infinite: boolean
+    slidesToShow: number
+    slidesToScroll: number
+    autoplay: boolean
+    speed: number
+    variableWidth: boolean
+    autoplaySpeed: number
+    cssEase: string
+}
+
 type CategoryListProps = { key: number; name: string }
 
 const Carousel = () => {
@@ -38,11 +54,22 @@ const Carousel = () => {
         )
         setCategoryState(categoryState)
     }
+    const settings: settingsProps = {
+        dots: false,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        speed: 3000,
+        variableWidth: true,
+        autoplaySpeed: 2000,
+        cssEase: 'linear',
+    }
 
     return (
         <>
             <Grid container spacing={2}>
-                <Grid item md={2} sx={{}}>
+                <Grid item md={2}>
                     {categoryList.map((el: CategoryListProps) => (
                         <div
                             className="gategory-list"
@@ -56,34 +83,36 @@ const Carousel = () => {
                 <Grid item md={10}>
                     <Grid
                         container
-                        spacing={2}
+                        spacing={1}
                         sx={{
                             textAlign: 'center',
                             display: 'flex',
                             overflow: 'hidden',
                         }}
                     >
-                        {categoryState.map(
-                            ({
-                                id,
-                                img,
-                                nameCategory,
-                                title,
-                                alt,
-                                namePage,
-                            }: ArraysAllProps) => (
-                                <Grid item md={4} key={id}>
-                                    <ItemHeaderMenu
-                                        img={img}
-                                        alt={alt}
-                                        nameCategory={nameCategory}
-                                        title={title}
-                                        id={id}
-                                        namePage={namePage}
-                                    />
-                                </Grid>
-                            )
-                        )}
+                        <Slider {...settings}>
+                            {categoryState.map(
+                                ({
+                                    id,
+                                    img,
+                                    nameCategory,
+                                    title,
+                                    alt,
+                                    namePage,
+                                }: ArraysAllProps) => (
+                                    <Grid item md={12} key={id}>
+                                        <ItemHeaderMenu
+                                            img={img}
+                                            alt={alt}
+                                            nameCategory={nameCategory}
+                                            title={title}
+                                            id={id}
+                                            namePage={namePage}
+                                        />
+                                    </Grid>
+                                )
+                            )}
+                        </Slider>
                     </Grid>
                 </Grid>
             </Grid>

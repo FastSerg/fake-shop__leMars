@@ -1,9 +1,131 @@
 import GridContainerBottom from 'container/Main/GridContainerBottom/GridContainerBottom'
-import React from 'react'
+import React, { useState } from 'react'
 import './Checkout.scss'
-type Props = {}
+import CheckoutForm from './CheckoutForm'
+import MessageOrder from './MessageOrder'
+import axios from 'axios'
 
+type Props = {}
+type OrderData = {
+    name: string
+    lastName: string
+    company?: string
+    StreetAddress?: string //
+    ApartmentAddress?: string //
+    city?: string //
+    county?: string
+    postcode?: string //
+    phone?: string //
+    emeil?: any //
+    text?: string //
+}
 const Checkout = (props: Props) => {
+    const [formState, setFormState] = useState<boolean>(false)
+
+    const [orderData, setOrderData] = useState<OrderData>({
+        name: '',
+        lastName: '',
+        company: '',
+        StreetAddress: '',
+        ApartmentAddress: '',
+        city: '',
+        county: '',
+        postcode: '',
+        phone: '+380',
+        emeil: '',
+        text: '',
+    })
+
+    const handleName = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setOrderData((prevState: OrderData) => ({
+            ...prevState,
+            name: e.target.value,
+        }))
+    }
+
+    const handleLastName = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setOrderData((prevState: OrderData) => ({
+            ...prevState,
+            lastName: e.target.value,
+        }))
+    }
+
+    const handleCompany = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setOrderData((prevState: OrderData) => ({
+            ...prevState,
+            company: e.target.value,
+        }))
+    }
+
+    const handleStreetAddress = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setOrderData((prevState: OrderData) => ({
+            ...prevState,
+            StreetAddress: e.target.value,
+        }))
+    }
+
+    const handleApartmentAddress = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setOrderData((prevState: OrderData) => ({
+            ...prevState,
+            ApartmentAddress: e.target.value,
+        }))
+    }
+
+    const handleCity = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setOrderData((prevState: OrderData) => ({
+            ...prevState,
+            city: e.target.value,
+        }))
+    }
+
+    const handleCounty = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setOrderData((prevState: OrderData) => ({
+            ...prevState,
+            county: e.target.value,
+        }))
+    }
+
+    const handlePostcode = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setOrderData((prevState: OrderData) => ({
+            ...prevState,
+            postcode: e.target.value,
+        }))
+    }
+
+    const handlePhone = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setOrderData((prevState: OrderData) => ({
+            ...prevState,
+            phone: e.target.value,
+        }))
+    }
+
+    const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setOrderData((prevState: OrderData) => ({
+            ...prevState,
+            emeil: e.target.value,
+        }))
+    }
+
+    const handleText = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+        setOrderData((prevState: OrderData) => ({
+            ...prevState,
+            text: e.target.value,
+        }))
+    }
+
+    const orderSend = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        axios
+            .post(
+                'https://my-json-server.typicode.com/kznkv-skillup/server/orders',
+                { name: orderData.name, lastName: orderData.lastName }
+            )
+            .then((res) => res.data)
+            .then(({ name, lastName }) => {
+                setOrderData({ name, lastName })
+                setFormState(true)
+            })
+    }
     return (
         <div>
             {' '}
@@ -14,158 +136,28 @@ const Checkout = (props: Props) => {
                             Have a coupon? Click here to enter your code
                         </h5>
                     </div>
-
-                    <form>
-                        <div className="form-order">
-                            <div className="user-data">
-                                <h3>Billing details</h3>
-                                <div className="container-name">
-                                    <div className="d-flex">
-                                        <label>First Name *</label>
-                                        <input
-                                            type="text"
-                                            name="order-name"
-                                            className="order-input"
-                                            id="order-name"
-                                            placeholder="Name"
-                                            required
-                                        />
-                                    </div>
-                                    <div className="d-flex">
-                                        <label>Last Name *</label>
-                                        <input
-                                            type="text"
-                                            name="order-last-name"
-                                            className="order-input"
-                                            id="order-last-name"
-                                            placeholder="Last Name"
-                                            required
-                                        />
-                                    </div>
-                                </div>
-                                <div className="d-flex">
-                                    <label htmlFor="">
-                                        Company Name (Optional)
-                                    </label>
-                                    <input
-                                        type="text"
-                                        name="order-company"
-                                        className="order-input"
-                                        id="order-company"
-                                        placeholder="Company Name"
-                                    />
-                                </div>
-                                <div className="d-flex">
-                                    <label htmlFor="">Street Address *</label>
-                                    <input
-                                        type="text"
-                                        name="address-house"
-                                        className="order-input"
-                                        id="address-house"
-                                        placeholder="House number and street name"
-                                        required
-                                    />
-                                    <input
-                                        type="text"
-                                        name="address-apartment"
-                                        className="order-input"
-                                        id="address-apartment"
-                                        placeholder="Apartment, suite, unit, etc. (optional)"
-                                        required
-                                    />
-                                </div>
-                                <div className="d-flex">
-                                    <label htmlFor="">Town / City *</label>
-                                    <input
-                                        type="text"
-                                        name="order-city"
-                                        className="order-input"
-                                        id="order-city"
-                                        placeholder="Town / City"
-                                        required
-                                    />
-                                </div>
-                                <div className="d-flex">
-                                    <label htmlFor="">County (Optional)</label>
-                                    <input
-                                        type="text"
-                                        name="order-county"
-                                        className="order-input"
-                                        id="order-county"
-                                        placeholder="Company Name"
-                                    />
-                                </div>
-                                <div className="d-flex">
-                                    <label htmlFor="">Postcode *</label>
-                                    <input
-                                        type="password"
-                                        name="order-postcode"
-                                        className="order-input"
-                                        id="order-postcode"
-                                        placeholder="Postcode"
-                                        required
-                                    />
-                                </div>
-                                <div className="d-flex">
-                                    <label htmlFor="">Phone *</label>
-                                    <input
-                                        type="phone"
-                                        name="order-phone"
-                                        className="order-input"
-                                        id="order-phone"
-                                        placeholder="Phone"
-                                        required
-                                    />
-                                </div>
-                                <div className="d-flex">
-                                    <label htmlFor="">Email Address *</label>
-                                    <input
-                                        type="email"
-                                        name="order-email"
-                                        className="order-input"
-                                        id="order-email"
-                                        placeholder="Email"
-                                        required
-                                    />
-                                </div>
-                            </div>
-                            <div className="order-info">
-                                <h3>Additional information</h3>
-                                <div className="d-flex">
-                                    <label>Order Notes (Optional)</label>
-                                    <textarea
-                                        name="info-textarea"
-                                        className="input-info"
-                                        id="info-textarea"
-                                        placeholder="Notes about your order, e.g. special notes for delivery."
-                                        rows={2}
-                                        cols={5}
-                                    ></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <h3>YOUR ORDER</h3>
-                        <div className="product-data">
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td className="product-col">Product</td>
-                                        <td className="subtotal-col">
-                                            Subtotal
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td className="product-col">
-                                            Ячейка 4
-                                        </td>
-                                        <td className="subtotal-col">
-                                            Ячейка 5
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </form>
+                    {formState ? (
+                        <MessageOrder
+                            orderData={orderData}
+                            setFormState={setFormState}
+                        />
+                    ) : (
+                        <CheckoutForm
+                            orderData={orderData}
+                            handleName={handleName}
+                            handleLastName={handleLastName}
+                            handleCompany={handleCompany}
+                            handleStreetAddress={handleStreetAddress}
+                            handleApartmentAddress={handleApartmentAddress}
+                            orderSend={orderSend}
+                            handleCity={handleCity}
+                            handleCounty={handleCounty}
+                            handlePostcode={handlePostcode}
+                            handlePhone={handlePhone}
+                            handleEmail={handleEmail}
+                            handleText={handleText}
+                        />
+                    )}
 
                     <div className="container bottom">
                         <GridContainerBottom />

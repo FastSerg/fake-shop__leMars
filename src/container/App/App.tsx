@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import CssBaseline from '@mui/material/CssBaseline'
 import Header from 'container/Header/Header'
 import Main from 'container/Main/Main'
@@ -18,22 +17,7 @@ import Marsara from 'Pages/Marsara/Marsara'
 import CatalinesWelcome from 'Pages/CatalinesWelcome/CatalinesWelcome'
 import Checkout from 'Pages/Checkout/Checkout'
 
-type ProductsInCartProps = { [id: number]: number }
-
 export const App = () => {
-    const [productsInCart, setProductsInCart] = useState<ProductsInCartProps>(
-        {}
-    )
-
-    const addCart = (id: number) => {
-        setProductsInCart((prevState: ProductsInCartProps) => ({
-            ...prevState,
-            [id]: (prevState[id] || 0) + 1,
-        }))
-    }
-
-    console.log(productsInCart)
-
     return (
         <>
             <Routes>
@@ -148,7 +132,7 @@ export const App = () => {
                     }
                 />
                 <Route
-                    path="products"
+                    path="Shop"
                     element={
                         <>
                             <CssBaseline />
@@ -159,7 +143,7 @@ export const App = () => {
                     }
                 />
                 <Route
-                    path="cart"
+                    path="Cart"
                     element={
                         <>
                             <CssBaseline />

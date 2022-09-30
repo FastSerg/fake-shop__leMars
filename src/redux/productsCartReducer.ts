@@ -11,12 +11,12 @@ export const productsCartSlice = createSlice({
   reducers:{
     addCart: (state, action) => ({
     ...state,
-    [action.payload]:(state[action.payload ]|| 0) + action.payload.count
+    [action.payload]:(state[action.payload ]|| 0) + 1
   }),
   removeProductsCart: (state,action) => (
   omit(state,action.payload)
 ),
-// changeProductQuantity: (state,action) => (
+// changeProductQuantity: (state,action) => (action.payload.count
 //  { ...state,
  
 //   [action.payload]:action.payload.count

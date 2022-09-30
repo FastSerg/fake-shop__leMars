@@ -14,7 +14,6 @@ const Category = () => {
         >
             <div className="menu-item">CATEGORY</div>
             <div className={show ? 'lage-menu active' : 'lage-menu'}>
-                {/* <CategoryTab /> */}
                 <Carousel />
             </div>
         </li>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const categoryList = [
     { name: 'Shop', id: 1 },
@@ -21,16 +21,11 @@ const Shop = (props: Props) => {
             onMouseEnter={() => setActive(true)}
             onMouseLeave={() => setActive(false)}
         >
-            <div className="menu-item">
-                <NavLink to="/products">SHOP</NavLink>
-            </div>
+            <div className="menu-item">SHOP</div>
             <ul className={active ? 'sub-menu active' : 'sub-menu'}>
                 {categoryList.map(({ id, name }: CategoryProps) => (
                     <li className="sub-menu__item" key={id}>
-                        {name === 'Cart' ? (
-                            <NavLink to="/cart">{name}</NavLink>
-                        ) : null}{' '}
-                        {name}
+                        <Link to={`/${name}`}> {name}</Link>
                     </li>
                 ))}
             </ul>
