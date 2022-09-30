@@ -4,6 +4,7 @@ import './GridContainerScrolling.scss'
 import ScrollForm from './ScrollForm'
 import ScrollGalleryPost from './ScrollGalleryPost'
 import ScrollSocialIcon from './ScrollSocialIcon'
+import ScrolSlider from './ScrolSlider'
 
 type Props = {}
 
@@ -17,6 +18,7 @@ const GritContainerScrolling = (props: Props) => {
                 <ScrollForm />
                 <ScrollGalleryPost />
                 <ScrollSocialIcon />
+                <ScrolSlider />
             </Grid>
         </>
     )
