@@ -1,10 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
+import buttonsLikeState from "./buttonsLikeState";
 import productsCartReducer from "./productsCartReducer";
+import productsReduser from "./productsReduser";
 
 
 export const store = configureStore({
   reducer: {
-    cartProductsState: productsCartReducer
+    cartProductsState: productsCartReducer,
+    products:productsReduser,
+    buttonsState: buttonsLikeState
   }
 })
 

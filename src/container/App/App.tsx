@@ -16,8 +16,17 @@ import Parisian from 'Pages/Parisian/Parisian'
 import Marsara from 'Pages/Marsara/Marsara'
 import CatalinesWelcome from 'Pages/CatalinesWelcome/CatalinesWelcome'
 import Checkout from 'Pages/Checkout/Checkout'
+import { useAppDispatch } from 'redux/hooks'
+import { fetchProducts } from 'redux/productsReduser'
+import { useEffect } from 'react'
 
 export const App = () => {
+    const dispatch = useAppDispatch()
+
+    useEffect(() => {
+        dispatch(fetchProducts())
+    }, [dispatch])
+
     return (
         <>
             <Routes>

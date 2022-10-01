@@ -2,7 +2,8 @@ import React from 'react'
 import { Grid } from '@mui/material'
 import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined'
 import { addCart } from 'redux/productsCartReducer'
-import { useAppDispatch } from 'redux/hooks'
+import { useAppDispatch, useAppSelector } from 'redux/hooks'
+import { changeStateButtons } from 'redux/buttonsLikeState'
 
 type Props = {
     id: number
@@ -22,28 +23,51 @@ const ShopTileList = ({
     price,
 }: Props) => {
     const dispatch = useAppDispatch()
+    const cartShowState = useAppSelector((state) => state.buttonsState)
 
     return (
         <Grid item md={4} key={id}>
             <div className="products">
-                <div className="product-list">
+                <div
+                    className="product-list"
+                    onMouseEnter={() => dispatch(changeStateButtons(id))}
+                    onMouseLeave={() => dispatch(changeStateButtons(id))}
+                >
                     <img src={img} alt={alt} />
+
                     <AddShoppingCartOutlinedIcon
                         onClick={() => dispatch(addCart(id))}
-                        sx={{
-                            fontSize: '38px',
-                            padding: '10px',
-                            border: '1px solid white',
-                            borderRadius: '20px',
-                            position: 'absolute',
-                            color: 'white',
-                            top: '50%',
-                            left: '45%',
-                            opacity: '1',
-                            zIndex: '26',
-                            cursor: 'pointer',
-                        }}
+                        sx={
+                            cartShowState[id]
+                                ? {
+                                      fontSize: '38px',
+                                      padding: '5px',
+                                      border: '1px solid white',
+                                      borderRadius: '20px',
+                                      position: 'absolute',
+                                      color: 'white',
+                                      top: '50%',
+                                      left: '45%',
+                                      opacity: '2',
+                                      cursor: 'pointer',
+                                      zIndex: '11',
+                                  }
+                                : {
+                                      fontSize: '38px',
+                                      padding: '10px',
+                                      border: '1px solid white',
+                                      borderRadius: '20px',
+                                      position: 'absolute',
+                                      color: 'white',
+                                      top: '50%',
+                                      left: '45%',
+                                      opacity: '0',
+                                      zIndex: '0',
+                                      cursor: 'pointer',
+                                  }
+                        }
                     />
+
                     <div className="overlay-product"></div>
                     <div
                         className={

@@ -20,7 +20,7 @@ type settingsProps = {
 }
 const ScrolSlider = (props: Props) => {
     const settings: settingsProps = {
-        dots: true,
+        dots: false,
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,

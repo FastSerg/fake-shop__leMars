@@ -1,8 +1,8 @@
-import React from 'react'
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined'
 import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined'
-import { useAppDispatch } from 'redux/hooks'
+import { useAppDispatch, useAppSelector } from 'redux/hooks'
 import { addCart } from 'redux/productsCartReducer'
+import { changeStateButtons } from 'redux/buttonsLikeState'
 
 type Props = {
     id: number
@@ -22,6 +22,8 @@ const ShopListContent = ({
     price,
 }: Props) => {
     const dispatch = useAppDispatch()
+    const isLike = useAppSelector((state) => state.buttonsState)
+
     return (
         <div className="products-grid" key={id}>
             <div className="product-list">
@@ -54,20 +56,29 @@ const ShopListContent = ({
                         onClick={() => dispatch(addCart(id))}
                         sx={{
                             fontSize: '38px',
-                            padding: '10px',
+                            padding: '7px',
                             border: '1px solid black',
                             borderRadius: '20px',
                             cursor: 'pointer',
                         }}
                     />
                     <FavoriteOutlinedIcon
-                        sx={{
-                            fontSize: '38px',
-                            padding: '10px',
-                            border: '1px solid black',
-                            cursor: 'pointer',
-                            borderRadius: '20px',
-                        }}
+                        onClick={() => dispatch(changeStateButtons(id))}
+                        sx={
+                            isLike[id]
+                                ? {
+                                      fontSize: '38px',
+                                      cursor: 'pointer',
+                                      color: 'rgba(255, 0, 0, 0.8)',
+                                      borderRadius: '20px',
+                                      transform: 'scale(1.2)',
+                                  }
+                                : {
+                                      fontSize: '38px',
+                                      cursor: 'pointer',
+                                      borderRadius: '20px',
+                                  }
+                        }
                     />
                 </div>
             </div>

@@ -21,19 +21,7 @@ export const arraysAll:ArraysAllProps[] = [
       Etiam eu dignissim elit. Nulla cursus neque adictum quam
       tristique ac. Pellentesque habitant morbi tristique`,
   },
-  // {
-  //     id: 2,
-  //     img: '/img/motoki-tonn.jpg',
-  //     alt: 'motoki-tonn',
-  //     nameCategory: 'TRAVEL',
-  //     namePage:'jackson',
-  //     title: 'Watch Jackson Wang',
-  //     text: `Donec sed lacus eu massa commodo
-  //     interdum non id mauris. Etiam eu
-  //     dignissim elit. Nulla cursus neque
-  //     adictum quam tristique ac. Pellentesque
-  //     habitant morbi tristique`,
-  // },
+  
   {
       id: 3,
       img: '/img/horse.jpg',
@@ -138,18 +126,7 @@ export const arraysAll:ArraysAllProps[] = [
     adictum quam tristique ac. Pellentesque
     habitant morbi tristique`,
 },
-// {
-//     id: 13,
-//     img: '/img/horse.jpg',
-//     alt: 'horse',
-//     nameCategory: 'TRAVEL',
-//       namePage:'harvey',
-//       title: 'Styling Harvey',
-//     text: `Donec sed lacus eu massa commodo
-//   interdum non id mauris. Etiam eu
-//   dignissim elit. Nulla cursus neque
-//   adictum quam tristique ac. Pellentesque
-//   habitant morbi tristique`,
-// },
+ 
 ] 
  
+

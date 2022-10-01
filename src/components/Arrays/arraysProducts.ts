@@ -17,13 +17,15 @@ export const arrProducts:ArrProductsProps[] = [
     nameProduct:'Jacket Female Pink',
     price: 379,
     discount: 5,
-  }, {
+  }, 
+  {
     id:2,
     img: '/img/productList/grennPullover.jpg',
     alt: 'Sweater',
     nameProduct:'Surround Sweater',
     price: 79,
-  }, {
+  }, 
+  {
     id:3,
     img: '/img/productList/blueShirt.jpg',
     alt: 'blueShirt',
@@ -45,7 +47,8 @@ export const arrProducts:ArrProductsProps[] = [
     alt: 'brouwnGloves',
     nameProduct:'Brown Leather Gloves',
     price: 60,
-  }, {
+  }, 
+  {
     id:6,
     img: '/img/productList/ScarfHomut.jpg',
     alt: 'ScarfHomut',
@@ -85,3 +88,5 @@ export const getProductObject = (array:ArrProductsProps[]) => {
     [product.id]:product
   }),{})
 }
+
+
