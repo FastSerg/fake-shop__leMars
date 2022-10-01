@@ -15,10 +15,11 @@ import JacksonWang from 'Pages/JacksonWang/JacksonWang'
 import Parisian from 'Pages/Parisian/Parisian'
 import Marsara from 'Pages/Marsara/Marsara'
 import CatalinesWelcome from 'Pages/CatalinesWelcome/CatalinesWelcome'
-import Checkout from 'Pages/Checkout/Checkout'
+import Checkout from 'Pages/ShopProd/Checkout/Checkout'
 import { useAppDispatch } from 'redux/hooks'
 import { fetchProducts } from 'redux/productsReduser'
 import { useEffect } from 'react'
+import LikesProducts from 'Pages/ShopProd/ProductItem/LikesProducts/LikesProducts'
 
 export const App = () => {
     const dispatch = useAppDispatch()
@@ -147,6 +148,17 @@ export const App = () => {
                             <CssBaseline />
                             <HeaderTop />
                             <Products />
+                            <Footer />
+                        </>
+                    }
+                />
+                <Route
+                    path="LikesProducts"
+                    element={
+                        <>
+                            <CssBaseline />
+                            <HeaderTop />
+                            <LikesProducts />
                             <Footer />
                         </>
                     }

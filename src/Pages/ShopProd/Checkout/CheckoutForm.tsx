@@ -4,7 +4,7 @@ import {
     arrProducts,
     ArrProductsProps,
     getProductObject,
-} from '../../components/Arrays/arraysProducts'
+} from '../../../components/Arrays/arraysProducts'
 
 type Props = {
     orderData: {

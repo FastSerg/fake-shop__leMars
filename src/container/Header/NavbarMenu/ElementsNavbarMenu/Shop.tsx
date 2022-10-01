@@ -6,7 +6,7 @@ const categoryList = [
     { name: 'Product Detail', id: 2 },
     { name: 'Cart', id: 3 },
     { name: 'Checkout', id: 4 },
-    { name: 'My Account', id: 5 },
+    { name: 'LikesProducts', id: 5 },
 ]
 
 type CategoryProps = { name: string; id: number }
