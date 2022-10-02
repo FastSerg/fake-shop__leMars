@@ -1,5 +1,5 @@
 import React from 'react'
-import { CardMedia, Card, CardContent, Typography, Grid } from '@mui/material'
+import { CardMedia, CardContent, Typography, Grid } from '@mui/material'
 import { ArraysAllProps } from '../../../../../components/Arrays/arraysAll'
 import { Link } from 'react-router-dom'
 
@@ -15,7 +15,7 @@ const ItemHeaderMenu = ({
     return (
         <>
             <Grid container>
-                <Card>
+                <div>
                     <Link to={`/${namePage}`}>
                         <CardMedia
                             component="img"
@@ -64,7 +64,7 @@ const ItemHeaderMenu = ({
                             {text}
                         </Typography>
                     </CardContent>
-                </Card>
+                </div>
             </Grid>
         </>
     )

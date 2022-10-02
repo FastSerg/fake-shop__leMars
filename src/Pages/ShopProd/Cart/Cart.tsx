@@ -79,10 +79,6 @@ const Cart = ({ productObject = getProductObject(arrProducts) }: Props) => {
                             0
                         )}
                     />
-
-                    <div className="container bottom">
-                        <GridContainerBottom />
-                    </div>
                 </div>
             </div>
         </>

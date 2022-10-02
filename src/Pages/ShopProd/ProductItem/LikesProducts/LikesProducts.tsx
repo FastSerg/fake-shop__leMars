@@ -53,9 +53,6 @@ const LikesProducts = ({
                     </div>
                 )} */}
             </div>
-            <div className="container bottom">
-                <GridContainerBottom />
-            </div>
         </>
     )
 }

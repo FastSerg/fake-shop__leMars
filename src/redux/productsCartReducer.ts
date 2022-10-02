@@ -20,12 +20,6 @@ changeProductQuantity: (state,action) => ({
   ...state,
   [action.payload.id]: action.payload.count
       }) 
-// changeProductQuantity: (state,action) => (action.payload.count
-//  { ...state,
- 
-//   [action.payload]:action.payload.count
-//   }
-// )
 }
 
 })

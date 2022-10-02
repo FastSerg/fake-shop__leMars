@@ -1,4 +1,3 @@
-import GridContainerBottom from 'container/Main/GridContainerBottom/GridContainerBottom'
 import React, { useState } from 'react'
 import './Shop.scss'
 import ShopBg from './ProductItem/ShopBg'
@@ -132,10 +131,6 @@ const Products = (props: Props) => {
                         <ShopScrollItem />
                     </Grid>
                 </Grid>
-            </div>
-
-            <div className="container bottom">
-                <GridContainerBottom />
             </div>
         </>
     )

@@ -1,8 +1,6 @@
 import Carousel from 'components/Carousel/Carousel'
 import React, { useState } from 'react'
 
-type Props = {}
-
 const Category = () => {
     const [show, setShow] = useState<boolean>(false)
 

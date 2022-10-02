@@ -14,6 +14,7 @@ type Props = {}
 const Footer = (props: Props) => {
     return (
         <>
+            <GridContainerBottom />
             <div className="footer-site">
                 <div className="footer-container">
                     <div className="footer-top">

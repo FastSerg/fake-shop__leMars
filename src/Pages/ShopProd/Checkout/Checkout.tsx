@@ -1,4 +1,3 @@
-import GridContainerBottom from 'container/Main/GridContainerBottom/GridContainerBottom'
 import React, { useState } from 'react'
 import './Checkout.scss'
 import CheckoutForm from './CheckoutForm'
@@ -158,10 +157,6 @@ const Checkout = (props: Props) => {
                             handleText={handleText}
                         />
                     )}
-
-                    <div className="container bottom">
-                        <GridContainerBottom />
-                    </div>
                 </div>
             </div>
         </div>

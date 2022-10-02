@@ -22,9 +22,6 @@ const Conteiner = (props: Props) => {
                     </Grid>
                 </Grid>
             </div>
-            <div className="container bottom">
-                <GridContainerBottom />
-            </div>
         </>
     )
 }

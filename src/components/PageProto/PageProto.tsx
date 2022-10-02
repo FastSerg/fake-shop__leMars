@@ -201,9 +201,6 @@ const PageProto = ({
                         <GritContainerScrolling />
                     </Grid>
                 </Grid>
-                <div className="container bottom">
-                    <GridContainerBottom />
-                </div>
             </div>
         </div>
     )
