@@ -20,6 +20,7 @@ import { useAppDispatch } from 'redux/hooks'
 import { fetchProducts } from 'redux/productsReduser'
 import { useEffect } from 'react'
 import LikesProducts from 'Pages/ShopProd/ProductItem/LikesProducts/LikesProducts'
+import Creativity from 'Pages/Creativity/Creativity'
 
 export const App = () => {
     const dispatch = useAppDispatch()
@@ -137,6 +138,17 @@ export const App = () => {
                             <CssBaseline />
                             <HeaderTop />
                             <JacksonWang heightImg={'1271px'} />
+                            <Footer />
+                        </>
+                    }
+                />
+                <Route
+                    path="/creativity"
+                    element={
+                        <>
+                            <CssBaseline />
+                            <HeaderTop />
+                            <Creativity />
                             <Footer />
                         </>
                     }

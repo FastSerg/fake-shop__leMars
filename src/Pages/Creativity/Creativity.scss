@@ -1,0 +1,84 @@
+.creativity-bg {
+  position: relative;
+  top:0;
+  margin-top: 275px;
+  height: 860px;
+  background-size: cover;
+  background-position: center center;  
+  background-image: url('../../../public/img/man_see_full.jpg');
+  width: 100%;
+  text-align: center;
+  margin-bottom: 60px
+}
+
+.creativity-overlay {
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(63, 63, 63, 0.6);
+  z-index: 0;
+  height: inherit;
+}
+
+.category-info {
+  position: absolute;
+    z-index: 1;
+    padding: 20px;
+    text-align: center;
+    right: 0;
+    color: #fff;
+    width: 100%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    bottom: auto;
+}
+
+.category-style {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2.5px;
+}
+
+.category-title {
+  font-size: 52px;
+  line-height: 62px;
+  font-weight: 600;
+}
+
+.container-content {
+  width: 100%;
+  max-width: 845px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  color: #77797c;
+  line-height: 1.7;
+}
+
+.content-title {
+  font-size: 22px;
+  line-height: 32px;
+  font-weight: 600;
+  color: #2b2d2e;
+}
+
+.creativity-list {
+   margin: 30px 0;
+}
+
+.creativity-list > li {
+  padding: 5px;
+  position: relative;
+  line-height: 1.8;
+  
+}
+
+.content-image {
+  margin-bottom: 30px;
+  max-width: 100%;
+  height: auto;
+}
