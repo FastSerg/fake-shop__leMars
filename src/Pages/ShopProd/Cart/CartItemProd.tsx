@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
 import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined'
-import { useAppDispatch } from 'redux/hooks'
-import { removeProductsCart } from 'redux/productsCartReducer'
+import { useAppDispatch, useAppSelector } from 'redux/hooks'
+import {
+    changeProductQuantity,
+    removeProductsCart,
+} from 'redux/productsCartReducer'
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
 
@@ -16,18 +18,8 @@ type Props = {
 
 const CartItemProd = ({ img, alt, nameProduct, price, count, id }: Props) => {
     const dispatch = useAppDispatch()
-    const [countState, setCountState] = useState<number>(count)
+    const countState = useAppSelector((state) => state.cartProductsState[id])
 
-    const onIncrementClick = () => {
-        setCountState((prevState: number) => prevState + 1)
-    }
-
-    const onDecrementClick = () => {
-        setCountState((prevState: number) =>
-            prevState > 0 ? prevState - 1 : 0
-        )
-    }
-    console.log(countState)
     return (
         <>
             <div className="cart-container">
@@ -41,11 +33,25 @@ const CartItemProd = ({ img, alt, nameProduct, price, count, id }: Props) => {
                     <div className="flex-button">
                         <ArrowDropUpIcon
                             sx={{ fontSize: '15px', cursor: 'pointer' }}
-                            onClick={() => onIncrementClick()}
+                            onClick={() =>
+                                dispatch(
+                                    changeProductQuantity({
+                                        id: id,
+                                        count: count + 1,
+                                    })
+                                )
+                            }
                         />
                         <ArrowDropDownIcon
                             sx={{ fontSize: '15px', cursor: 'pointer' }}
-                            onClick={() => onDecrementClick()}
+                            onClick={() =>
+                                dispatch(
+                                    changeProductQuantity({
+                                        id: id,
+                                        count: count - 1,
+                                    })
+                                )
+                            }
                         />
                     </div>
                 </div>

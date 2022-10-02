@@ -16,7 +16,7 @@ type Props = {
 
 const Cart = ({ productObject = getProductObject(arrProducts) }: Props) => {
     const productsInCart = useAppSelector((state) => state.cartProductsState)
-    console.log(productsInCart)
+    const totalCount = useAppSelector((state) => state.cartProductsState)
 
     return (
         <>
@@ -75,7 +75,7 @@ const Cart = ({ productObject = getProductObject(arrProducts) }: Props) => {
                             (total, productId) =>
                                 total +
                                 productObject[parseInt(productId)].price *
-                                    productsInCart[parseInt(productId)],
+                                    totalCount[parseInt(productId)],
                             0
                         )}
                     />

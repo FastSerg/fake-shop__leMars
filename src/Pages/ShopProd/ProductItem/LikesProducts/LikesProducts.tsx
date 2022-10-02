@@ -21,49 +21,38 @@ const LikesProducts = ({
     return (
         <>
             <ShopBg />
-
-            {/* <div className="container-pages"> */}
             <div className="container">
-                {likesProductsShow ? (
-                    <div className="">
-                        {Object.keys(likesProductsShow).map((productId) => (
-                            <Fragment key={parseInt(productId)}>
-                                {likesProductsShow[parseInt(productId)] ===
-                                true ? (
-                                    <ShopListContent
-                                        id={parseInt(productId)}
-                                        img={
-                                            productObject[parseInt(productId)]
-                                                .img
-                                        }
-                                        alt={
-                                            productObject[parseInt(productId)]
-                                                .alt
-                                        }
-                                        price={
-                                            productObject[parseInt(productId)]
-                                                .price
-                                        }
-                                        discount={
-                                            productObject[parseInt(productId)]
-                                                .discount
-                                        }
-                                        nameProduct={
-                                            productObject[parseInt(productId)]
-                                                .nameProduct
-                                        }
-                                    />
-                                ) : undefined}
-                            </Fragment>
-                        ))}
-                    </div>
-                ) : (
+                {/* {likesProductsShow ? ( */}
+                <div className="">
+                    {Object.keys(likesProductsShow).map((productId) => (
+                        <Fragment key={parseInt(productId)}>
+                            {likesProductsShow[parseInt(productId)] === true ? (
+                                <ShopListContent
+                                    id={parseInt(productId)}
+                                    img={productObject[parseInt(productId)].img}
+                                    alt={productObject[parseInt(productId)].alt}
+                                    price={
+                                        productObject[parseInt(productId)].price
+                                    }
+                                    discount={
+                                        productObject[parseInt(productId)]
+                                            .discount
+                                    }
+                                    nameProduct={
+                                        productObject[parseInt(productId)]
+                                            .nameProduct
+                                    }
+                                />
+                            ) : null}
+                        </Fragment>
+                    ))}
+                </div>
+                {/* ) : (
                     <div style={{ fontSize: '48px', textAlign: 'center' }}>
                         There are no likes-products on this page
                     </div>
-                )}
+                )} */}
             </div>
-            {/* </div> */}
             <div className="container bottom">
                 <GridContainerBottom />
             </div>

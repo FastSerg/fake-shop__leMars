@@ -54,6 +54,8 @@ const CheckoutForm = ({
     console.log(orderData.name)
 
     const productsInCart = useAppSelector((state) => state.cartProductsState)
+    const totalCount = useAppSelector((state) => state.cartProductsState)
+
     return (
         <form onSubmit={orderSend}>
             <div className="form-order">
@@ -218,7 +220,7 @@ const CheckoutForm = ({
                         <div className="product-item">
                             <span className="price-subtotal">
                                 £
-                                {productsInCart[parseInt(productId)] *
+                                {totalCount[parseInt(productId)] *
                                     productObject[parseInt(productId)].price}
                             </span>
                         </div>
@@ -233,7 +235,7 @@ const CheckoutForm = ({
                             (total, productId) =>
                                 total +
                                 productObject[parseInt(productId)].price *
-                                    productsInCart[parseInt(productId)],
+                                    totalCount[parseInt(productId)],
                             0
                         )}
                     </span>
@@ -247,7 +249,7 @@ const CheckoutForm = ({
                             (total, productId) =>
                                 total +
                                 productObject[parseInt(productId)].price *
-                                    productsInCart[parseInt(productId)],
+                                    totalCount[parseInt(productId)],
                             0
                         )}
                     </span>

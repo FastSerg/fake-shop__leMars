@@ -3,7 +3,7 @@ import {omit} from 'lodash'
 
 type ProductsState = { [id: number]: number }
 
-const initialState:ProductsState = {5:2}
+const initialState:ProductsState = {}
 
 export const productsCartSlice = createSlice({
   name:'product',
@@ -16,6 +16,10 @@ export const productsCartSlice = createSlice({
   removeProductsCart: (state,action) => (
   omit(state,action.payload)
 ),
+changeProductQuantity: (state,action) => ({
+  ...state,
+  [action.payload.id]: action.payload.count
+      }) 
 // changeProductQuantity: (state,action) => (action.payload.count
 //  { ...state,
  
@@ -26,6 +30,6 @@ export const productsCartSlice = createSlice({
 
 })
 
-export const {addCart,removeProductsCart } = productsCartSlice.actions
+export const {addCart,removeProductsCart,changeProductQuantity } = productsCartSlice.actions
 
 export default productsCartSlice.reducer

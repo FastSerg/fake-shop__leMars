@@ -22,119 +22,116 @@ const Products = (props: Props) => {
     return (
         <>
             <ShopBg />
-
-            <div className="container-pages">
-                <div className="container">
-                    <Grid container sx={{ padding: '50px 0' }} spacing={2}>
-                        <Grid item md={12}>
-                            <Typography
-                                variant="h2"
-                                component="h1"
+            <div className="container">
+                <Grid container sx={{ padding: '50px 0' }} spacing={2}>
+                    <Grid item md={12}>
+                        <Typography
+                            variant="h2"
+                            component="h1"
+                            sx={{
+                                textAlign: 'center',
+                                marginBottom: '50px',
+                            }}
+                        >
+                            Product
+                        </Typography>
+                    </Grid>
+                    <Grid item md={9}>
+                        <Grid container spacing={3}>
+                            <Grid item md={8} sx={{ marginBottom: '30px' }}>
+                                <SelectedControl />
+                            </Grid>
+                            <Grid
+                                item
+                                md={4}
                                 sx={{
-                                    textAlign: 'center',
-                                    marginBottom: '50px',
+                                    display: 'flex',
+                                    justifyContent: 'flex-end',
+                                    gap: '10px',
+                                    marginBottom: '30px',
                                 }}
                             >
-                                Product
-                            </Typography>
-                        </Grid>
-                        <Grid item md={9}>
-                            <Grid container spacing={3}>
-                                <Grid item md={8} sx={{ marginBottom: '30px' }}>
-                                    <SelectedControl />
-                                </Grid>
-                                <Grid
-                                    item
-                                    md={4}
-                                    sx={{
-                                        display: 'flex',
-                                        justifyContent: 'flex-end',
-                                        gap: '10px',
-                                        marginBottom: '30px',
-                                    }}
-                                >
-                                    <FormatListBulletedOutlinedIcon
-                                        onClick={() => setActiveProd(false)}
-                                        sx={
-                                            activeProd
-                                                ? {
-                                                      fontSize: '40px',
-                                                      padding: '8px',
-                                                      cursor: 'pointer',
-                                                      border: '1px solid #999b9d',
-                                                  }
-                                                : {
-                                                      fontSize: '40px',
-                                                      padding: '8px',
-                                                      cursor: 'pointer',
-                                                      border: '1px solid #999b9d',
-                                                      color: 'white',
-                                                      bgcolor: 'black',
-                                                  }
-                                        }
-                                    />
-                                    <GridViewOutlinedIcon
-                                        onClick={() => setActiveProd(true)}
-                                        sx={
-                                            activeProd
-                                                ? {
-                                                      fontSize: '40px',
-                                                      backgroundColor: 'black',
-                                                      color: 'white',
-                                                      padding: '10px',
-                                                      cursor: 'pointer',
-                                                  }
-                                                : {
-                                                      fontSize: '40px',
-                                                      color: 'black',
-                                                      padding: '10px',
-                                                      cursor: 'pointer',
-                                                      border: '1px solid #999b9d',
-                                                  }
-                                        }
-                                    />
-                                </Grid>
-
-                                {arrProducts.map(
-                                    ({
-                                        id,
-                                        img,
-                                        alt,
-                                        nameProduct,
-                                        price,
-                                        discount,
-                                    }: ArrProductsProps) =>
-                                        activeProd ? (
-                                            <React.Fragment key={id}>
-                                                <ShopListContent
-                                                    id={id}
-                                                    img={img}
-                                                    alt={alt}
-                                                    nameProduct={nameProduct}
-                                                    price={price}
-                                                    discount={discount}
-                                                />
-                                            </React.Fragment>
-                                        ) : (
-                                            <React.Fragment key={id}>
-                                                <ShopTileList
-                                                    id={id}
-                                                    img={img}
-                                                    alt={alt}
-                                                    nameProduct={nameProduct}
-                                                    price={price}
-                                                    discount={discount}
-                                                />
-                                            </React.Fragment>
-                                        )
-                                )}
+                                <FormatListBulletedOutlinedIcon
+                                    onClick={() => setActiveProd(false)}
+                                    sx={
+                                        activeProd
+                                            ? {
+                                                  fontSize: '40px',
+                                                  padding: '8px',
+                                                  cursor: 'pointer',
+                                                  border: '1px solid #999b9d',
+                                              }
+                                            : {
+                                                  fontSize: '40px',
+                                                  padding: '8px',
+                                                  cursor: 'pointer',
+                                                  border: '1px solid #999b9d',
+                                                  color: 'white',
+                                                  bgcolor: 'black',
+                                              }
+                                    }
+                                />
+                                <GridViewOutlinedIcon
+                                    onClick={() => setActiveProd(true)}
+                                    sx={
+                                        activeProd
+                                            ? {
+                                                  fontSize: '40px',
+                                                  backgroundColor: 'black',
+                                                  color: 'white',
+                                                  padding: '10px',
+                                                  cursor: 'pointer',
+                                              }
+                                            : {
+                                                  fontSize: '40px',
+                                                  color: 'black',
+                                                  padding: '10px',
+                                                  cursor: 'pointer',
+                                                  border: '1px solid #999b9d',
+                                              }
+                                    }
+                                />
                             </Grid>
-                        </Grid>
-                        <Grid item md={3}>
-                            <ShopScrollItem />
+
+                            {arrProducts.map(
+                                ({
+                                    id,
+                                    img,
+                                    alt,
+                                    nameProduct,
+                                    price,
+                                    discount,
+                                }: ArrProductsProps) =>
+                                    activeProd ? (
+                                        <React.Fragment key={id}>
+                                            <ShopListContent
+                                                id={id}
+                                                img={img}
+                                                alt={alt}
+                                                nameProduct={nameProduct}
+                                                price={price}
+                                                discount={discount}
+                                            />
+                                        </React.Fragment>
+                                    ) : (
+                                        <React.Fragment key={id}>
+                                            <ShopTileList
+                                                id={id}
+                                                img={img}
+                                                alt={alt}
+                                                nameProduct={nameProduct}
+                                                price={price}
+                                                discount={discount}
+                                            />
+                                        </React.Fragment>
+                                    )
+                            )}
                         </Grid>
                     </Grid>
-                </div>
+                    <Grid item md={3}>
+                        <ShopScrollItem />
+                    </Grid>
+                </Grid>
             </div>
 
             <div className="container bottom">

@@ -65,8 +65,7 @@ const GridContainerMain = (props: Props) => {
                             </CardActionArea>
                         </Card>
                     </Link>
-                    npm storyOfBeauty
-                </Grid>{' '}
+                </Grid>
                 <Grid item md={6}>
                     {arrMainPageLeft.map(
                         ({
