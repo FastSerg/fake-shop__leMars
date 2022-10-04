@@ -5,6 +5,7 @@
   font-size: 16px;
   letter-spacing: 2.5px;
   font-weight: 700;
+  width: 100%;
 }
 
 .fon-scroll {
@@ -13,5 +14,22 @@
   height: 335px;
   width: 100%;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items:center;
+  padding: 0 20px;
+}
+ 
+.img-box {
+  overflow: hidden;
+}
+
+.img-box__item {
+  transition: all 1.2s;
+  width: 117px;
+  height: 123px;
+}
+
+ .img-box:hover img{
+  transform: scale(1.2);
 }

@@ -40,6 +40,9 @@ const ScrolSlider = (props: Props) => {
                     overflow: 'hidden',
                 }}
             >
+                <h6 className="widget-title">
+                    <span>Gallery Post-List</span>
+                </h6>
                 <Slider {...settings}>
                     {arraysAll.map(
                         ({

@@ -92,39 +92,41 @@ const Products = (props: Props) => {
                                 />
                             </Grid>
 
-                            {arrProducts.map(
-                                ({
-                                    id,
-                                    img,
-                                    alt,
-                                    nameProduct,
-                                    price,
-                                    discount,
-                                }: ArrProductsProps) =>
-                                    activeProd ? (
-                                        <React.Fragment key={id}>
-                                            <ShopListContent
-                                                id={id}
-                                                img={img}
-                                                alt={alt}
-                                                nameProduct={nameProduct}
-                                                price={price}
-                                                discount={discount}
-                                            />
-                                        </React.Fragment>
-                                    ) : (
-                                        <React.Fragment key={id}>
-                                            <ShopTileList
-                                                id={id}
-                                                img={img}
-                                                alt={alt}
-                                                nameProduct={nameProduct}
-                                                price={price}
-                                                discount={discount}
-                                            />
-                                        </React.Fragment>
-                                    )
-                            )}
+                            {arrProducts
+                                // .sort((a, b) => (a.price > b.price ? 1 : -1))
+                                .map(
+                                    ({
+                                        id,
+                                        img,
+                                        alt,
+                                        nameProduct,
+                                        price,
+                                        discount,
+                                    }: ArrProductsProps) =>
+                                        activeProd ? (
+                                            <React.Fragment key={id}>
+                                                <ShopListContent
+                                                    id={id}
+                                                    img={img}
+                                                    alt={alt}
+                                                    nameProduct={nameProduct}
+                                                    price={price}
+                                                    discount={discount}
+                                                />
+                                            </React.Fragment>
+                                        ) : (
+                                            <React.Fragment key={id}>
+                                                <ShopTileList
+                                                    id={id}
+                                                    img={img}
+                                                    alt={alt}
+                                                    nameProduct={nameProduct}
+                                                    price={price}
+                                                    discount={discount}
+                                                />
+                                            </React.Fragment>
+                                        )
+                                )}
                         </Grid>
                     </Grid>
                     <Grid item md={3}>

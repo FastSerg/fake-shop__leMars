@@ -140,7 +140,7 @@ const CulturalContent = (props: Props) => {
                         </Typography>
                     </Grid>
                     <Grid item md={12}>
-                        <Typography
+                        {/* <Typography
                             sx={{
                                 marginBottom: '30px',
                                 lineHeight: '1.7',
@@ -154,7 +154,7 @@ const CulturalContent = (props: Props) => {
                             magna sapien, dignissim vel tortor ut, hendrerit
                             pellentesque velit. Mauris porttitor maximus gilla
                             massa imperdiet in.
-                        </Typography>
+                        </Typography> */}
                     </Grid>
                     <Grid item md={12} container>
                         <Grid item md={3} sx={{ padding: '10px' }}>

@@ -46,24 +46,15 @@ const ScrollGalleryPost = (props: Props) => {
                 </h6>
             </Grid>
             {itemData.map(({ id, img, alt, name }: itemDataProps) => (
-                <Grid item md={6} sm={3} key={id}>
-                    <Card
-                        sx={{
-                            padding: '10px',
-                        }}
-                    >
+                <Grid item md={6} sm={3} key={id} sx={{ padding: '5px' }}>
+                    <Card className="img-box">
                         <Link to={`/${name}`}>
-                            {' '}
                             <CardMedia
+                                className={'img-box__item'}
                                 component="img"
                                 height="100%"
                                 image={img}
                                 alt={alt}
-                                sx={{
-                                    width: '117px',
-                                    height: '123px',
-                                    backgroundSize: 'cover',
-                                }}
                             />
                         </Link>
                     </Card>

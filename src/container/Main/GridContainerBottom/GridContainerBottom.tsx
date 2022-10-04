@@ -1,6 +1,6 @@
 import React from 'react'
-import { Grid, CardMedia, TextField, IconButton, Box } from '@mui/material'
-import SendIcon from '@mui/icons-material/Send'
+import { Grid, CardMedia } from '@mui/material'
+import FormEmail from 'components/FormEmail/FormEmail'
 
 type Props = {}
 
@@ -26,48 +26,11 @@ const GridContainerBottom = (props: Props) => {
                             alt="girl_in_glass"
                         />
                     </Grid>
-                    <Grid item md={6}>
+                    <Grid item md={6} sx={{ padding: '0 40px' }}>
                         <h2 className="title-form-bottom">
                             Subscribe to My Blog
                         </h2>
-                        <Grid
-                            container
-                            spacing={1}
-                            sx={{
-                                alignItems: 'center',
-                            }}
-                        >
-                            <Grid item md={10}>
-                                <Box
-                                    component="form"
-                                    sx={{
-                                        '& > :not(style)': {
-                                            m: 1,
-                                            width: '100%',
-                                        },
-
-                                        textAlign: 'center',
-                                    }}
-                                    noValidate
-                                    autoComplete="off"
-                                >
-                                    <TextField
-                                        id="filled-basic"
-                                        label="Your Email"
-                                        variant="filled"
-                                    />
-                                </Box>
-                            </Grid>
-                            <Grid item md={2}>
-                                <IconButton
-                                    aria-label="fingerprint"
-                                    color="inherit"
-                                    sx={{ marginLeft: '-55px' }}
-                                >
-                                    <SendIcon />
-                                </IconButton>
-                            </Grid>
-                        </Grid>
+                        <FormEmail />
                     </Grid>
                 </Grid>
             </div>

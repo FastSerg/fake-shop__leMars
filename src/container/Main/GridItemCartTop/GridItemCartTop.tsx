@@ -1,6 +1,7 @@
 import React from 'react'
 import { Grid, CardActionArea, CardMedia, Card } from '@mui/material'
 import CardMediaProto from '../CartMediaTop/CardMediaProtoTop'
+import { Link } from 'react-router-dom'
 
 type Props = {}
 
@@ -54,12 +55,14 @@ const GridItemCartTop = (props: Props) => {
                     />
                 </Grid>
                 <Grid item md={4}>
-                    <CardMediaProto
-                        catagory={'BEAUTY'}
-                        img={'/img/man_see.jpg'}
-                        alt={'man_with_bag'}
-                        text={'New Year Creativity'}
-                    />
+                    <Link to={'/creativity'}>
+                        <CardMediaProto
+                            catagory={'BEAUTY'}
+                            img={'/img/man_see.jpg'}
+                            alt={'man_with_bag'}
+                            text={'New Year Creativity'}
+                        />
+                    </Link>
                 </Grid>
             </Grid>
         </>

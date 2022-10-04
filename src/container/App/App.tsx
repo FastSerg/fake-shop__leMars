@@ -3,24 +3,17 @@ import Header from 'container/Header/Header'
 import Main from 'container/Main/Main'
 import Footer from 'container/Footer/Footer'
 import { Routes, Route } from 'react-router-dom'
-import StoryOfBeauty from 'Pages/StoryOfBeaty/StoryOfBeauty'
-import StylingHarvey from 'Pages/StylingHarvey/StylingHarvey'
 import ContactUs from 'Pages/ContactUs/ContactUs'
-import EverythingCultural from 'Pages/EverythingCultural/EverythingCultural'
 import Products from 'Pages/ShopProd/ProductsShop'
 import Cart from 'Pages/ShopProd/Cart/Cart'
 import HeaderTop from 'components/HeaderTopComponent/HeaderTop'
-import CobaltLeather from 'Pages/CobaltLeather/CobaltLeather'
-import JacksonWang from 'Pages/JacksonWang/JacksonWang'
-import Parisian from 'Pages/Parisian/Parisian'
-import Marsara from 'Pages/Marsara/Marsara'
-import CatalinesWelcome from 'Pages/CatalinesWelcome/CatalinesWelcome'
 import Checkout from 'Pages/ShopProd/Checkout/Checkout'
 import { useAppDispatch } from 'redux/hooks'
 import { fetchProducts } from 'redux/productsReduser'
 import { useEffect } from 'react'
 import LikesProducts from 'Pages/ShopProd/ProductItem/LikesProducts/LikesProducts'
 import Creativity from 'Pages/Creativity/Creativity'
+import LeMarsPages from 'Pages/LeMarsPages/LeMarsPages'
 
 export const App = () => {
     const dispatch = useAppDispatch()
@@ -49,7 +42,10 @@ export const App = () => {
                         <>
                             <CssBaseline />
                             <HeaderTop />
-                            <StoryOfBeauty heightImg={'1060px'} />
+                            <LeMarsPages
+                                heightImg={'1060px'}
+                                titlePage={'Story Of Beauty'}
+                            />
                             <Footer />
                         </>
                     }
@@ -60,7 +56,10 @@ export const App = () => {
                         <>
                             <CssBaseline />
                             <HeaderTop />
-                            <StylingHarvey heightImg={'1271px'} />
+                            <LeMarsPages
+                                heightImg={'1271px'}
+                                titlePage={'Styling Harvey'}
+                            />
                             <Footer />
                         </>
                     }
@@ -71,7 +70,10 @@ export const App = () => {
                         <>
                             <CssBaseline />
                             <HeaderTop />
-                            <CobaltLeather heightImg={'1271px'} />
+                            <LeMarsPages
+                                heightImg={'1271px'}
+                                titlePage={'Cobalt Leather'}
+                            />
                             <Footer />
                         </>
                     }
@@ -82,7 +84,10 @@ export const App = () => {
                         <>
                             <CssBaseline />
                             <HeaderTop />
-                            <Parisian heightImg={'517px'} />
+                            <LeMarsPages
+                                heightImg={'517px'}
+                                titlePage={'Dress Like a Parisian'}
+                            />
                             <Footer />
                         </>
                     }
@@ -93,7 +98,10 @@ export const App = () => {
                         <>
                             <CssBaseline />
                             <HeaderTop />
-                            <Marsara heightImg={'470px'} />
+                            <LeMarsPages
+                                heightImg={'470px'}
+                                titlePage={'Clarins Mascara'}
+                            />
                             <Footer />
                         </>
                     }
@@ -104,7 +112,10 @@ export const App = () => {
                         <>
                             <CssBaseline />
                             <HeaderTop />
-                            <CatalinesWelcome heightImg={'1096px'} />
+                            <LeMarsPages
+                                heightImg={'1096px'}
+                                titlePage={'Las Catalines Welcome'}
+                            />
                             <Footer />
                         </>
                     }
@@ -126,7 +137,10 @@ export const App = () => {
                         <>
                             <CssBaseline />
                             <HeaderTop />
-                            <EverythingCultural heightImg={'850px'} />
+                            <LeMarsPages
+                                heightImg={'850px'}
+                                titlePage={'Everything About Cultural'}
+                            />
                             <Footer />
                         </>
                     }
@@ -137,7 +151,10 @@ export const App = () => {
                         <>
                             <CssBaseline />
                             <HeaderTop />
-                            <JacksonWang heightImg={'1271px'} />
+                            <LeMarsPages
+                                heightImg={'1271px'}
+                                titlePage={'Watch Jackson Wang'}
+                            />
                             <Footer />
                         </>
                     }

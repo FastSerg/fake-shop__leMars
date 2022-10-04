@@ -75,9 +75,10 @@ const GridContainerMain = (props: Props) => {
                             text,
                             nameCategory,
                             alt,
+                            namePage,
                         }: arrMainPageProps) => (
                             <Grid item md={12} key={id}>
-                                <Link to="/harvey">
+                                <Link to={`/${namePage}`}>
                                     <CardMediaProtoMain
                                         id={id}
                                         img={img}
@@ -100,16 +101,19 @@ const GridContainerMain = (props: Props) => {
                             text,
                             nameCategory,
                             alt,
+                            namePage,
                         }: arrMainPageProps) => (
                             <Grid item md={12} key={id}>
-                                <CardMediaProtoMain
-                                    id={id}
-                                    img={img}
-                                    title={title}
-                                    text={text}
-                                    alt={alt}
-                                    nameCategory={nameCategory}
-                                />
+                                <Link to={`/${namePage}`}>
+                                    <CardMediaProtoMain
+                                        id={id}
+                                        img={img}
+                                        title={title}
+                                        text={text}
+                                        alt={alt}
+                                        nameCategory={nameCategory}
+                                    />
+                                </Link>
                             </Grid>
                         )
                     )}

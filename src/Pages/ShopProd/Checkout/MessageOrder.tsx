@@ -1,4 +1,10 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import { useAppSelector } from 'redux/hooks'
+import {
+    arrProducts,
+    ArrProductsProps,
+    getProductObject,
+} from '../../../components/Arrays/arraysProducts'
 
 type Props = {
     orderData: {
@@ -15,9 +21,16 @@ type Props = {
         text?: string //
     }
     setFormState: (formState: boolean) => void
+    productObject?: { [id: number]: ArrProductsProps }
 }
 
-const MessageOrder = ({ orderData, setFormState }: Props) => {
+const MessageOrder = ({
+    orderData,
+    setFormState,
+    productObject = getProductObject(arrProducts),
+}: Props) => {
+    const productsInCart = useAppSelector((state) => state.cartProductsState)
+
     return (
         <div className="massage-order">
             <div className="massage-content">
@@ -25,7 +38,24 @@ const MessageOrder = ({ orderData, setFormState }: Props) => {
                     Thanks for your order, {orderData.name}!
                 </h3>
                 <div className="content-text">
-                    We will contact you to confirm your order
+                    <p> We will contact you to confirm your order</p>
+                    {Object.keys(productsInCart).map((productId) => (
+                        <Fragment key={parseInt(productId)}>
+                            <div className="product-item">
+                                <span>
+                                    {
+                                        productObject[parseInt(productId)]
+                                            .nameProduct
+                                    }{' '}
+                                    -
+                                </span>
+
+                                <span className="price-subtotal">
+                                    {productsInCart[parseInt(productId)]}
+                                </span>
+                            </div>
+                        </Fragment>
+                    ))}
                 </div>
                 <button
                     onClick={() => setFormState(false)}

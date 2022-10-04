@@ -1,4 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
+// import { reducer as  formReducer} from "redux-form";
 import buttonsLikeState from "./buttonsLikeState";
 import productsCartReducer from "./productsCartReducer";
 import productsReduser from "./productsReduser";
@@ -8,7 +9,8 @@ export const store = configureStore({
   reducer: {
     cartProductsState: productsCartReducer,
     products:productsReduser,
-    buttonsState: buttonsLikeState
+    buttonsState: buttonsLikeState,
+    // form:formReducer,
   }
 })
 

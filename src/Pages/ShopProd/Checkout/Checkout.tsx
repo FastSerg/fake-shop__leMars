@@ -127,7 +127,6 @@ const Checkout = (props: Props) => {
     }
     return (
         <div>
-            {' '}
             <div className="container-pages">
                 <div className="container">
                     <div className="message-container">
