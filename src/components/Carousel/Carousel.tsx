@@ -1,12 +1,13 @@
 import React from 'react'
 import { Grid } from '@mui/material/'
-import { arraysAll, ArraysAllProps } from '../Arrays/arraysAll'
+import { ArraysAllProps } from '../Arrays/arraysAll'
 import { useState } from 'react'
 import ItemHeaderMenu from 'container/Header/NavbarMenu/ElementsNavbarMenu/CategoryImgList/ItemHeaderMenu'
 import './Carousel.scss'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import { useAppSelector } from 'redux/hooks'
 
 const categoryList: CategoryListProps[] = [
     {
@@ -46,6 +47,7 @@ type settingsProps = {
 type CategoryListProps = { key: number; name: string }
 
 const Carousel = () => {
+    const arraysAll = useAppSelector((state) => state.products)
     const [categoryState, setCategoryState] = useState(arraysAll)
 
     const chooseCategory = (category: string) => {

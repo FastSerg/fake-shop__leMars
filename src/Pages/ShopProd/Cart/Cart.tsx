@@ -1,22 +1,21 @@
 import React, { Fragment } from 'react'
 import './Cart.scss'
 import {
-    arrProducts,
     ArrProductsProps,
     getProductObject,
 } from '../../../components/Arrays/arraysProducts'
-import GridContainerBottom from 'container/Main/GridContainerBottom/GridContainerBottom'
 import CartItemProd from './CartItemProd'
 import { useAppSelector } from 'redux/hooks'
 import CartTotal from './CartTotal'
 
-type Props = {
-    productObject?: { [id: number]: ArrProductsProps }
-}
+type productObjectProps = { [key: number]: ArrProductsProps }
+type Props = {}
 
-const Cart = ({ productObject = getProductObject(arrProducts) }: Props) => {
+const Cart = (props: Props) => {
     const productsInCart = useAppSelector((state) => state.cartProductsState)
     const totalCount = useAppSelector((state) => state.cartProductsState)
+    const arrProducts = useAppSelector((state) => state.shopList)
+    const productObject: productObjectProps = getProductObject(arrProducts)
 
     return (
         <>

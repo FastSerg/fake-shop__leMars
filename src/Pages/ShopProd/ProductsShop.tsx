@@ -2,20 +2,19 @@ import React, { useState } from 'react'
 import './Shop.scss'
 import ShopBg from './ProductItem/ShopBg'
 import { Grid, Typography } from '@mui/material'
-import {
-    arrProducts,
-    ArrProductsProps,
-} from '../../components/Arrays/arraysProducts'
+import { ArrProductsProps } from '../../components/Arrays/arraysProducts'
 import ShopScrollItem from './ProductItem/ShopScrollItem'
 import FormatListBulletedOutlinedIcon from '@mui/icons-material/FormatListBulletedOutlined'
 import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined'
 import SelectedControl from './ProductItem/SelectedControl'
 import ShopTileList from './ProductItem/ShopTileList'
 import ShopListContent from './ProductItem/ShopListContent'
+import { useAppSelector } from 'redux/hooks'
 
 type Props = {}
 
 const Products = (props: Props) => {
+    const shopProducts = useAppSelector((state) => state.shopList)
     const [activeProd, setActiveProd] = useState<boolean>(false)
 
     return (
@@ -92,41 +91,39 @@ const Products = (props: Props) => {
                                 />
                             </Grid>
 
-                            {arrProducts
-                                // .sort((a, b) => (a.price > b.price ? 1 : -1))
-                                .map(
-                                    ({
-                                        id,
-                                        img,
-                                        alt,
-                                        nameProduct,
-                                        price,
-                                        discount,
-                                    }: ArrProductsProps) =>
-                                        activeProd ? (
-                                            <React.Fragment key={id}>
-                                                <ShopListContent
-                                                    id={id}
-                                                    img={img}
-                                                    alt={alt}
-                                                    nameProduct={nameProduct}
-                                                    price={price}
-                                                    discount={discount}
-                                                />
-                                            </React.Fragment>
-                                        ) : (
-                                            <React.Fragment key={id}>
-                                                <ShopTileList
-                                                    id={id}
-                                                    img={img}
-                                                    alt={alt}
-                                                    nameProduct={nameProduct}
-                                                    price={price}
-                                                    discount={discount}
-                                                />
-                                            </React.Fragment>
-                                        )
-                                )}
+                            {shopProducts.map(
+                                ({
+                                    id,
+                                    img,
+                                    alt,
+                                    nameProduct,
+                                    price,
+                                    discount,
+                                }: ArrProductsProps) =>
+                                    activeProd ? (
+                                        <React.Fragment key={id}>
+                                            <ShopListContent
+                                                id={id}
+                                                img={img}
+                                                alt={alt}
+                                                nameProduct={nameProduct}
+                                                price={price}
+                                                discount={discount}
+                                            />
+                                        </React.Fragment>
+                                    ) : (
+                                        <React.Fragment key={id}>
+                                            <ShopTileList
+                                                id={id}
+                                                img={img}
+                                                alt={alt}
+                                                nameProduct={nameProduct}
+                                                price={price}
+                                                discount={discount}
+                                            />
+                                        </React.Fragment>
+                                    )
+                            )}
                         </Grid>
                     </Grid>
                     <Grid item md={3}>

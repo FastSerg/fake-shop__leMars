@@ -1,10 +1,11 @@
 import React from 'react'
-import { Grid, CardMedia, Card } from '@mui/material'
-import { arraysAll, ArraysAllProps } from '../../../components/Arrays/arraysAll'
+import { Grid, CardMedia } from '@mui/material'
+import { ArraysAllProps } from '../../../components/Arrays/arraysAll'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { Link } from 'react-router-dom'
+import { useAppSelector } from 'redux/hooks'
 
 type Props = {}
 type settingsProps = {
@@ -19,6 +20,8 @@ type settingsProps = {
     cssEase: string
 }
 const ScrolSlider = (props: Props) => {
+    const arraysAll = useAppSelector((state) => state.products)
+
     const settings: settingsProps = {
         dots: false,
         infinite: true,
@@ -45,14 +48,7 @@ const ScrolSlider = (props: Props) => {
                 </h6>
                 <Slider {...settings}>
                     {arraysAll.map(
-                        ({
-                            id,
-                            img,
-                            nameCategory,
-                            title,
-                            alt,
-                            namePage,
-                        }: ArraysAllProps) => (
+                        ({ id, img, nameCategory, title, alt, namePage }) => (
                             <Grid item md={12} key={id}>
                                 <Link to={`/${namePage}`}>
                                     {' '}

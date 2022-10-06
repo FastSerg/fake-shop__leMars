@@ -3,6 +3,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import buttonsLikeState from "./buttonsLikeState";
 import productsCartReducer from "./productsCartReducer";
 import productsReduser from "./productsReduser";
+import shopProducts from "./shopProducts";
 
 
 export const store = configureStore({
@@ -10,6 +11,7 @@ export const store = configureStore({
     cartProductsState: productsCartReducer,
     products:productsReduser,
     buttonsState: buttonsLikeState,
+    shopList: shopProducts
     // form:formReducer,
   }
 })

@@ -6,9 +6,8 @@ const initialState: ArraysAllProps[]=[]
 
 export const fetchProducts = createAsyncThunk<ArraysAllProps[], undefined>('products/fetchProducts', 
 async () => {
-  const response = await axios.get('https://run.mocky.io/v3/73f702ed-6ad2-46dc-94ce-6eba9f17172a')
-  console.log(response.data)  
-  return response.data
+  const response = await axios.get('https://run.mocky.io/v3/adde1b76-3a6f-4c8b-916b-4653471f7f83')
+  return response.data.products
 })
 
 export const productsSlice = createSlice({

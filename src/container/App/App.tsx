@@ -14,12 +14,16 @@ import { useEffect } from 'react'
 import LikesProducts from 'Pages/ShopProd/ProductItem/LikesProducts/LikesProducts'
 import Creativity from 'Pages/Creativity/Creativity'
 import LeMarsPages from 'Pages/LeMarsPages/LeMarsPages'
+import { fetchShopProducts } from 'redux/shopProducts'
 
 export const App = () => {
     const dispatch = useAppDispatch()
 
     useEffect(() => {
         dispatch(fetchProducts())
+    }, [dispatch])
+    useEffect(() => {
+        dispatch(fetchShopProducts())
     }, [dispatch])
 
     return (

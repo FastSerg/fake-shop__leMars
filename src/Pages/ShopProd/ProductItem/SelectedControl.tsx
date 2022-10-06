@@ -167,11 +167,13 @@ const selectSortArr: SortProps[] = [
         id: 4,
     },
     {
-        title: `Sort by price: low to high`,
+        title: `price`,
+        // title: `Sort by price: low to high`,
         id: 5,
     },
     {
         title: `Sort by price: high to low`,
+        // title: `Sort by price: high to low`,
         id: 6,
     },
 ]
