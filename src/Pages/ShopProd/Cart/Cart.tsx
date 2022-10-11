@@ -52,7 +52,6 @@ const Cart = (props: Props) => {
                     ))}
 
                     <div className="coupon">
-                        {/* submit={couponSubmit} */}
                         <form>
                             <input
                                 type="text"
@@ -60,7 +59,7 @@ const Cart = (props: Props) => {
                                 className="coupon-input"
                                 id="coupon_code"
                                 placeholder="Coupon code"
-                            />{' '}
+                            />
                             <button type="submit" className="coupon-btn">
                                 Apply coupon
                             </button>

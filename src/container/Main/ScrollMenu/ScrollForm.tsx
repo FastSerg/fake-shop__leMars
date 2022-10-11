@@ -1,6 +1,5 @@
 import React from 'react'
-import { Typography, IconButton } from '@mui/material'
-import SendIcon from '@mui/icons-material/Send'
+import { Typography } from '@mui/material'
 import FormEmail from 'components/FormEmail/FormEmail'
 
 type Props = {}

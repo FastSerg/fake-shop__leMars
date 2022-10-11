@@ -1,5 +1,5 @@
 import React from 'react'
-import { imgListProps } from '../MainCatagory/imgListArr'
+import { imgListProps } from '../../../components/Arrays/imgListArr'
 import { Link } from 'react-router-dom'
 
 const ContainerMainItem = ({
@@ -20,7 +20,7 @@ const ContainerMainItem = ({
             <div className="item__text">
                 <div className="category-style">{nameCategory}</div>
                 <h6 className="title-post">
-                    <Link to={namePage}>{title}</Link>
+                    <Link to={`/${namePage}`}>{title}</Link>
                 </h6>
                 <div className="category-style">{readMore}</div>
             </div>

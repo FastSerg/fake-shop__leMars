@@ -48,7 +48,7 @@ const CartItemProd = ({ img, alt, nameProduct, price, count, id }: Props) => {
                                 dispatch(
                                     changeProductQuantity({
                                         id: id,
-                                        count: count - 1,
+                                        count: count > 0 ? count - 1 : 0,
                                     })
                                 )
                             }

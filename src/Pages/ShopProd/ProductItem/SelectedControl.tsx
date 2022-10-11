@@ -150,30 +150,27 @@ const CustomSelect = React.forwardRef(function CustomSelect<TValue extends {}>(
 ) => JSX.Element
 
 const selectSortArr: SortProps[] = [
+    { sort: 'Default', title: 'Default sorting', id: 1 },
     {
-        title: 'Default sorting',
-        id: 1,
-    },
-    {
+        sort: 'popularity',
         title: 'Sort by popularity',
         id: 2,
     },
     {
+        sort: 'rating',
         title: 'Sort by average rating',
         id: 3,
     },
+
+    { sort: 'rating', title: 'Sort by latest', id: 4 },
     {
-        title: 'Sort by latest',
-        id: 4,
-    },
-    {
-        title: `price`,
-        // title: `Sort by price: low to high`,
+        sort: 'price',
+        title: `Sort by price: low to high`,
         id: 5,
     },
     {
+        sort: 'price',
         title: `Sort by price: high to low`,
-        // title: `Sort by price: high to low`,
         id: 6,
     },
 ]
@@ -181,12 +178,13 @@ const selectSortArr: SortProps[] = [
 type SortProps = {
     id: number
     title: string
+    sort: string
 }
 
 function SelectedControl() {
     return (
         <CustomSelect defaultValue={1}>
-            {selectSortArr.map(({ title, id }: SortProps) => (
+            {selectSortArr.map(({ title, id, sort }: SortProps) => (
                 <StyledOption key={id} value={id}>
                     {title}
                 </StyledOption>

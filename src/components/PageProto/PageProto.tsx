@@ -10,7 +10,6 @@ import {
 
 import GritContainerScrolling from 'container/Main/ScrollMenu/GritContainerScrolling'
 import CommentsForm from '../../Pages/CommentsForm/CommentsForm'
-import GridContainerBottom from 'container/Main/GridContainerBottom/GridContainerBottom'
 
 type Props = {
     id?: number

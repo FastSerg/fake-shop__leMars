@@ -8,15 +8,15 @@ type Props = {}
 type OrderData = {
     name: string
     lastName: string
-    company?: string
-    StreetAddress?: string //
-    ApartmentAddress?: string //
-    city?: string //
-    county?: string
-    postcode?: string //
-    phone?: string //
-    emeil?: any //
-    text?: string //
+    company: string
+    StreetAddress: string
+    ApartmentAddress: string
+    city: string
+    county: string
+    postcode: string
+    phone: string
+    email: any
+    text?: string
 }
 const Checkout = (props: Props) => {
     const [formState, setFormState] = useState<boolean>(false)
@@ -31,10 +31,10 @@ const Checkout = (props: Props) => {
         county: '',
         postcode: '',
         phone: '+380',
-        emeil: '',
+        email: '',
         text: '',
     })
-
+    console.log(formState)
     const handleName = (e: React.ChangeEvent<HTMLInputElement>) => {
         setOrderData((prevState: OrderData) => ({
             ...prevState,
@@ -120,10 +120,36 @@ const Checkout = (props: Props) => {
                 { name: orderData.name, lastName: orderData.lastName }
             )
             .then((res) => res.data)
-            .then(({ name, lastName }) => {
-                setOrderData({ name, lastName })
-                setFormState(true)
-            })
+            .then(
+                ({
+                    name,
+                    lastName,
+                    company,
+                    StreetAddress,
+                    ApartmentAddress,
+                    city,
+                    county,
+                    postcode,
+                    phone,
+                    email,
+                    text,
+                }) => {
+                    setOrderData({
+                        name,
+                        lastName,
+                        company,
+                        StreetAddress,
+                        ApartmentAddress,
+                        city,
+                        county,
+                        postcode,
+                        phone,
+                        email,
+                        text,
+                    })
+                    setFormState(true)
+                }
+            )
     }
     return (
         <div>

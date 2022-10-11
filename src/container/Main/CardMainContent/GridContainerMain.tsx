@@ -118,22 +118,6 @@ const GridContainerMain = (props: Props) => {
                         )
                     )}
                 </Grid>
-                <Grid
-                    item
-                    md={12}
-                    sx={{ textAlign: 'center', marginTop: '60px' }}
-                >
-                    <Button
-                        variant="contained"
-                        sx={{
-                            color: 'white',
-                            backgroundColor: 'black',
-                            borderRadius: '16px',
-                        }}
-                    >
-                        LOAD MORE
-                    </Button>
-                </Grid>
             </Grid>
         </>
     )

@@ -1,10 +1,12 @@
 import React from 'react'
 import PageProto from 'components/PageProto/PageProto'
-import { arraysAll, ArraysAllProps } from '../../components/Arrays/arraysAll'
+import { ArraysAllProps } from '../../components/Arrays/arraysAll'
+import { useAppSelector } from 'redux/hooks'
 
 type Props = { heightImg: string; titlePage: string }
 
 const LeMarsPages = ({ heightImg, titlePage }: Props) => {
+    const arraysAll = useAppSelector((state) => state.products)
     return (
         <>
             {arraysAll

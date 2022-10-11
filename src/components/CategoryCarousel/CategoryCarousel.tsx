@@ -3,7 +3,7 @@ import { Grid } from '@mui/material/'
 import { ArraysAllProps } from '../Arrays/arraysAll'
 import { useState } from 'react'
 import ItemHeaderMenu from 'container/Header/NavbarMenu/ElementsNavbarMenu/CategoryImgList/ItemHeaderMenu'
-import './Carousel.scss'
+import './CategoryCarousel.scss'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -46,7 +46,7 @@ type settingsProps = {
 
 type CategoryListProps = { key: number; name: string }
 
-const Carousel = () => {
+const CategoryCarousel = () => {
     const arraysAll = useAppSelector((state) => state.products)
     const [categoryState, setCategoryState] = useState(arraysAll)
 
@@ -122,4 +122,4 @@ const Carousel = () => {
     )
 }
 
-export default Carousel
+export default CategoryCarousel

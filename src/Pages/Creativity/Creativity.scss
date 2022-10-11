@@ -5,7 +5,6 @@
   height: 860px;
   background-size: cover;
   background-position: center center;  
-  background-image: url('../../../public/img/man_see_full.jpg');
   width: 100%;
   text-align: center;
   margin-bottom: 60px
@@ -79,6 +78,11 @@
 
 .content-image {
   margin-bottom: 30px;
-  max-width: 100%;
+  // max-width: 100%;
   height: auto;
+}
+
+.float-img {
+  float:right; 
+  padding-left: 30px;
 }

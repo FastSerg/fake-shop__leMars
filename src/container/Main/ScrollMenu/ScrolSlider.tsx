@@ -1,6 +1,5 @@
 import React from 'react'
 import { Grid, CardMedia } from '@mui/material'
-import { ArraysAllProps } from '../../../components/Arrays/arraysAll'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'

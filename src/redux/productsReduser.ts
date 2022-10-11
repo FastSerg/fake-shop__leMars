@@ -1,7 +1,7 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
 import axios from 'axios'
 import {ArraysAllProps} from '../components/Arrays/arraysAll'
- 
+  
 const initialState: ArraysAllProps[]=[]
 
 export const fetchProducts = createAsyncThunk<ArraysAllProps[], undefined>('products/fetchProducts', 

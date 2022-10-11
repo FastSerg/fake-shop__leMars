@@ -1,25 +1,27 @@
 import React, { Fragment } from 'react'
 import { useAppSelector } from 'redux/hooks'
 import {
-    arrProducts,
     ArrProductsProps,
     getProductObject,
 } from '../../../components/Arrays/arraysProducts'
+
+type productObjectProps = { [key: number]: ArrProductsProps }
 
 type Props = {
     orderData: {
         name: string
         lastName: string
-        company?: string
-        StreetAddress?: string //
-        ApartmentAddress?: string //
-        city?: string //
-        county?: string
-        postcode?: string //
-        phone?: string //
-        emeil?: any //
-        text?: string //
+        company: string
+        StreetAddress: string
+        ApartmentAddress: string
+        city: string
+        county: string
+        postcode: string
+        phone: string
+        email: any
+        text?: string
     }
+
     handleName: (e: React.ChangeEvent<HTMLInputElement>) => void
     handleLastName: (e: React.ChangeEvent<HTMLInputElement>) => void
     handleCompany: (e: React.ChangeEvent<HTMLInputElement>) => void
@@ -32,7 +34,6 @@ type Props = {
     handlePhone: (e: React.ChangeEvent<HTMLInputElement>) => void
     handleEmail: (e: React.ChangeEvent<HTMLInputElement>) => void
     handleText: (e: React.ChangeEvent<HTMLTextAreaElement>) => void
-    productObject?: { [id: number]: ArrProductsProps }
 }
 
 const CheckoutForm = ({
@@ -49,12 +50,11 @@ const CheckoutForm = ({
     handlePhone,
     handleEmail,
     handleText,
-    productObject = getProductObject(arrProducts),
 }: Props) => {
-    console.log(orderData.name)
-
     const productsInCart = useAppSelector((state) => state.cartProductsState)
     const totalCount = useAppSelector((state) => state.cartProductsState)
+    const shopProd = useAppSelector((state) => state.shopList)
+    const productObject: productObjectProps = getProductObject(shopProd)
 
     return (
         <form onSubmit={orderSend}>
@@ -177,7 +177,7 @@ const CheckoutForm = ({
                             name="order-email"
                             className="order-input"
                             id="order-email"
-                            value={orderData.emeil}
+                            value={orderData.email}
                             placeholder="Email"
                             onChange={handleEmail}
                         />
@@ -229,7 +229,6 @@ const CheckoutForm = ({
                 <div className="product-item">Subtotal</div>
                 <div className="product-item">
                     <span className="checkout-subtotal">
-                        {' '}
                         £{' '}
                         {Object.keys(productsInCart).reduce(
                             (total, productId) =>
@@ -243,7 +242,6 @@ const CheckoutForm = ({
                 <div className="product-item">Total</div>
                 <div className="product-item">
                     <span className="checkout-total">
-                        {' '}
                         £{' '}
                         {Object.keys(productsInCart).reduce(
                             (total, productId) =>

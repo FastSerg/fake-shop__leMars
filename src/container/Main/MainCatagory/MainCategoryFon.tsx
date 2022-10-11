@@ -1,7 +1,7 @@
 import React from 'react'
 import ContainerMainItem from '../CardMainContent/ContainerMainItem'
-import imgListArr from './imgListArr'
-import { imgListProps } from './imgListArr'
+import imgListArr from '../../../components/Arrays/imgListArr'
+import { imgListProps } from '../../../components/Arrays/imgListArr'
 
 const ContainerMainCategory = () => {
     return (

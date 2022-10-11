@@ -3,10 +3,9 @@ import { Link } from 'react-router-dom'
 
 const categoryList = [
     { name: 'Shop', id: 1 },
-    { name: 'Product Detail', id: 2 },
-    { name: 'Cart', id: 3 },
-    { name: 'Checkout', id: 4 },
-    { name: 'LikesProducts', id: 5 },
+    { name: 'Cart', id: 2 },
+    { name: 'Checkout', id: 3 },
+    { name: 'LikesProducts', id: 4 },
 ]
 
 type CategoryProps = { name: string; id: number }

@@ -23,6 +23,7 @@ const ShopListContent = ({
 }: Props) => {
     const dispatch = useAppDispatch()
     const isLike = useAppSelector((state) => state.buttonsState)
+    const isCartContent = useAppSelector((state) => state.cartProductsState)
 
     return (
         <div className="products-grid" key={id}>
@@ -54,13 +55,25 @@ const ShopListContent = ({
                 <div className="grid-icons">
                     <AddShoppingCartOutlinedIcon
                         onClick={() => dispatch(addCart(id))}
-                        sx={{
-                            fontSize: '38px',
-                            padding: '7px',
-                            border: '1px solid black',
-                            borderRadius: '20px',
-                            cursor: 'pointer',
-                        }}
+                        sx={
+                            isCartContent[id]
+                                ? {
+                                      fontSize: '38px',
+                                      padding: '5px',
+                                      border: '1px solid black',
+                                      borderRadius: '20px',
+                                      cursor: 'pointer',
+                                      bgcolor: 'rgba(0, 255, 200, 0.3)',
+                                      transform: 'scale(1.1)',
+                                  }
+                                : {
+                                      fontSize: '38px',
+                                      padding: '7px',
+                                      border: '1px solid black',
+                                      borderRadius: '20px',
+                                      cursor: 'pointer',
+                                  }
+                        }
                     />
                     <FavoriteOutlinedIcon
                         onClick={() => dispatch(changeStateButtons(id))}

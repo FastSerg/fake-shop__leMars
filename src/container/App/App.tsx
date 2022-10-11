@@ -164,12 +164,65 @@ export const App = () => {
                     }
                 />
                 <Route
+                    path="/summer"
+                    element={
+                        <>
+                            <CssBaseline />
+                            <HeaderTop />
+                            <LeMarsPages
+                                heightImg={'850px'}
+                                titlePage={'Ready for the Summer'}
+                            />
+                            <Footer />
+                        </>
+                    }
+                />
+                <Route
                     path="/creativity"
                     element={
                         <>
                             <CssBaseline />
                             <HeaderTop />
-                            <Creativity />
+                            <Creativity
+                                imageCategory={'/img/man_see_full.jpg'}
+                                category={'BEAUTY'}
+                                titleCategory={'New Year Creativity'}
+                                imageContent={'/img/stoune_fog.jpg'}
+                            />
+                            <Footer />
+                        </>
+                    }
+                />
+                <Route
+                    path="/newLook"
+                    element={
+                        <>
+                            <CssBaseline />
+                            <HeaderTop />
+                            <Creativity
+                                imageCategory={'/img/man_with_bag.jpg'}
+                                category={'LIFESTYLE'}
+                                titleCategory={'Makeup for new Look'}
+                                imageContent={'/img/phone.jpg'}
+                                classImg={'float-img'}
+                            />
+                            <Footer />
+                        </>
+                    }
+                />
+                <Route
+                    path="/valley"
+                    element={
+                        <>
+                            <CssBaseline />
+                            <HeaderTop />
+                            <Creativity
+                                imageCategory={'/img/sity_palm.jpg'}
+                                category={'LIFESTYLE'}
+                                titleCategory={'Sonoma Valley Lancome'}
+                                imageContent={'/img/phone.jpg'}
+                                classImg={'float-img'}
+                            />
                             <Footer />
                         </>
                     }

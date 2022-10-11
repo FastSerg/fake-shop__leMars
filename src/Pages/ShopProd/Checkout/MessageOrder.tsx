@@ -1,35 +1,34 @@
 import React, { Fragment } from 'react'
 import { useAppSelector } from 'redux/hooks'
 import {
-    arrProducts,
     ArrProductsProps,
     getProductObject,
 } from '../../../components/Arrays/arraysProducts'
+
+type productObjectProps = { [key: number]: ArrProductsProps }
 
 type Props = {
     orderData: {
         name: string
         lastName: string
-        company?: string
-        StreetAddress?: string //
-        ApartmentAddress?: string //
-        city?: string //
-        county?: string
-        postcode?: string //
-        phone?: string //
-        emeil?: any //
-        text?: string //
+        company: string
+        StreetAddress: string
+        ApartmentAddress: string
+        city: string
+        county: string
+        postcode: string
+        phone: string
+        email: any
+        text?: string
     }
     setFormState: (formState: boolean) => void
-    productObject?: { [id: number]: ArrProductsProps }
 }
 
-const MessageOrder = ({
-    orderData,
-    setFormState,
-    productObject = getProductObject(arrProducts),
-}: Props) => {
+const MessageOrder = ({ orderData, setFormState }: Props) => {
     const productsInCart = useAppSelector((state) => state.cartProductsState)
+    const shopProd = useAppSelector((state) => state.shopList)
+    const productObject: productObjectProps = getProductObject(shopProd)
+    console.log(orderData)
 
     return (
         <div className="massage-order">
@@ -46,11 +45,11 @@ const MessageOrder = ({
                                     {
                                         productObject[parseInt(productId)]
                                             .nameProduct
-                                    }{' '}
+                                    }
                                     -
                                 </span>
 
-                                <span className="price-subtotal">
+                                <span>
                                     {productsInCart[parseInt(productId)]}
                                 </span>
                             </div>

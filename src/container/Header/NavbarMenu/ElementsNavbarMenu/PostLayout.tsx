@@ -5,16 +5,9 @@ const postLayoutList = [
     { name: 'Post Left Sidebar', id: 2 },
     { name: 'Post Full Width', id: 3 },
     { name: 'Post Slide Show', id: 4 },
-    { name: 'Post Small Side Image', id: 5 },
-    { name: 'Post Gallery', id: 6 },
-    { name: 'Post Gallery Alt', id: 7 },
-    { name: 'Post Link', id: 8 },
-    { name: 'Post Quote', id: 9 },
-    { name: 'Post Audio', id: 10 },
-    { name: 'Post Open Gutenberg', id: 11 },
 ]
-type PostLayoutProps = { name: string; id: number }
 
+type PostLayoutProps = { name: string; id: number }
 type Props = {}
 
 const PostLayout = (props: Props) => {

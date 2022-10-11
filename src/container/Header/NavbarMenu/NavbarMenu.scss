@@ -20,7 +20,7 @@
   margin: 0;
   padding: 0;
   align-items: center;
-
+  cursor: default;
 }
 
 .sub-menu {
@@ -76,6 +76,7 @@
   text-align: left;
   transition: all 1s;
   color:rgb(128, 128, 128,);
+  cursor: pointer;
 }
 
 .gategory-list:hover {

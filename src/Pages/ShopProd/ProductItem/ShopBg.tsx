@@ -13,7 +13,7 @@ const ShopBg = (props: Props) => {
                         <div className="list-inline">
                             <div className="home-link">
                                 <HouseOutlinedIcon />
-                                <span>HOME</span>{' '}
+                                <span>HOME</span>
                             </div>
                             <span>Jacket Female Pink</span>
                         </div>

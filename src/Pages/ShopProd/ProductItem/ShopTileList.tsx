@@ -1,4 +1,3 @@
-import React from 'react'
 import { Grid } from '@mui/material'
 import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined'
 import { addCart } from 'redux/productsCartReducer'
@@ -49,7 +48,7 @@ const ShopTileList = ({
                                           position: 'absolute',
                                           color: 'white',
                                           top: '50%',
-                                          left: 'Calc(50% - 26px)',
+                                          left: 'Calc(50% - 15px)',
                                           opacity: '2',
                                           cursor: 'pointer',
                                           zIndex: '11',
@@ -62,7 +61,7 @@ const ShopTileList = ({
                                           position: 'absolute',
                                           color: 'white',
                                           top: '50%',
-                                          left: '45%',
+                                          left: 'Calc(50% - 15px)',
                                           opacity: '0',
                                           zIndex: '0',
                                           cursor: 'pointer',
@@ -78,7 +77,7 @@ const ShopTileList = ({
                                         position: 'absolute',
                                         color: 'white',
                                         top: '70%',
-                                        left: 'Calc(50% - 42px)',
+                                        left: 'Calc(50% - 35px)',
                                         opacity: '2',
                                         cursor: 'pointer',
                                         zIndex: '11',

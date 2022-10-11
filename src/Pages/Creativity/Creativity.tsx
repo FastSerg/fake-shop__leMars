@@ -1,16 +1,34 @@
 import CommentsForm from 'Pages/CommentsForm/CommentsForm'
 import React from 'react'
-import './Creativity.scss'
-type Props = {}
 
-const Creativity = (props: Props) => {
+import './Creativity.scss'
+type Props = {
+    category: string
+    titleCategory: string
+    imageCategory: string
+    imageContent: string
+    classImg?: string
+}
+
+const Creativity = ({
+    category,
+    titleCategory,
+    imageCategory,
+    imageContent,
+    classImg,
+}: Props) => {
     return (
         <div className="container-pages">
-            <div className="creativity-bg">
+            <div
+                className="creativity-bg"
+                style={{
+                    backgroundImage: `URL(${imageCategory})`,
+                }}
+            >
                 <div className="creativity-overlay"></div>
                 <div className="category-info">
-                    <div className="category-style">BEAUTY</div>
-                    <div className="category-title">New Year Creativity</div>
+                    <div className="category-style">{category}</div>
+                    <div className="category-title">{titleCategory}</div>
                 </div>
             </div>
             <div className="container">
@@ -63,8 +81,8 @@ const Creativity = (props: Props) => {
                         faucibus Praesent suscipit lectus id augue auctor
                         consectetur. Aliquam ultricies venenatis.
                     </p>
-                    <div className="content-image">
-                        <img src="/img/stoune_fog.jpg" alt="stoune_fog" />
+                    <div className={`content-image ${classImg}`}>
+                        <img src={imageContent} alt="img" />
                     </div>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
