@@ -68,8 +68,8 @@ export const arrMainPageRight = [
         img: '/img/bridge.jpg',
         alt: 'bridge',
         nameCategory: 'LIFESTYLE',
-        namePage: 'marcara',
-        title: 'Clarins Marcara',
+        namePage: 'mascara',
+        title: 'Clarins Mascara',
         text: `Donec sed lacus eu massa commodo
       interdum non id mauris. Etiam eu
       dignissim elit. Nulla cursus neque
