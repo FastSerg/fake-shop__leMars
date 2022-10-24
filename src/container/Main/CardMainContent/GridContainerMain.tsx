@@ -6,7 +6,6 @@ import {
     Card,
     CardContent,
     Typography,
-    Button,
 } from '@mui/material'
 import CardMediaProtoMain from './CardMediaProtoMain'
 import {

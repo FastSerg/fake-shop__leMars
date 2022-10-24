@@ -21,7 +21,19 @@ type Props = {
         email: any
         text?: string
     }
-
+    error: {
+        name: string
+        lastName: string
+        company: string
+        StreetAddress: string
+        ApartmentAddress: string
+        city: string
+        county: string
+        postcode: string
+        phone: string
+        email: any
+        text?: string
+    }
     handleName: (e: React.ChangeEvent<HTMLInputElement>) => void
     handleLastName: (e: React.ChangeEvent<HTMLInputElement>) => void
     handleCompany: (e: React.ChangeEvent<HTMLInputElement>) => void
@@ -50,6 +62,7 @@ const CheckoutForm = ({
     handlePhone,
     handleEmail,
     handleText,
+    error,
 }: Props) => {
     const productsInCart = useAppSelector((state) => state.cartProductsState)
     const totalCount = useAppSelector((state) => state.cartProductsState)
@@ -74,6 +87,12 @@ const CheckoutForm = ({
                                 required
                                 onChange={handleName}
                             />
+
+                            {error.name && (
+                                <span style={{ color: 'red' }}>
+                                    * {error.name}
+                                </span>
+                            )}
                         </div>
                         <div className="d-flex">
                             <label>Last Name *</label>
@@ -87,6 +106,11 @@ const CheckoutForm = ({
                                 required
                                 onChange={handleLastName}
                             />
+                            {error.lastName && (
+                                <span style={{ color: 'red' }}>
+                                    * {error.lastName}
+                                </span>
+                            )}
                         </div>
                     </div>
                     <div className="d-flex">
@@ -157,6 +181,12 @@ const CheckoutForm = ({
                             onChange={handlePostcode}
                             placeholder="Postcode"
                         />
+
+                        {error.postcode && (
+                            <span style={{ color: 'red' }}>
+                                * {error.postcode}
+                            </span>
+                        )}
                     </div>
                     <div className="d-flex">
                         <label htmlFor="">Phone *</label>
@@ -181,6 +211,11 @@ const CheckoutForm = ({
                             placeholder="Email"
                             onChange={handleEmail}
                         />
+                        {error.email && (
+                            <span style={{ color: 'red' }}>
+                                * {error.email}
+                            </span>
+                        )}
                     </div>
                 </div>
                 <div className="order-info">
