@@ -2,7 +2,6 @@ import React from 'react'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import FacebookIcon from '@mui/icons-material/Facebook'
 import TwitterIcon from '@mui/icons-material/Twitter'
-// import { NavLink } from 'react-router-dom'
 
 const arrSocial = [
     { id: 1, name: <FacebookIcon />, src: 'https://www.facebook.com/' },
@@ -19,7 +18,7 @@ export const Social = (props: Props) => {
                 <div key={id}>
                     <a href={src} target="_blank">
                         {name}
-                    </a>{' '}
+                    </a>
                 </div>
             ))}
         </div>

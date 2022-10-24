@@ -10,7 +10,6 @@ import {
 
 import GritContainerScrolling from 'container/Main/ScrollMenu/GritContainerScrolling'
 import CommentsForm from '../../Pages/CommentsForm/CommentsForm'
-import GridContainerBottom from 'container/Main/GridContainerBottom/GridContainerBottom'
 
 type Props = {
     id?: number
@@ -201,9 +200,6 @@ const PageProto = ({
                         <GritContainerScrolling />
                     </Grid>
                 </Grid>
-                <div className="container bottom">
-                    <GridContainerBottom />
-                </div>
             </div>
         </div>
     )

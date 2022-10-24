@@ -1,10 +1,10 @@
-import React from 'react'
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined'
 import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined'
+import { useAppDispatch, useAppSelector } from 'redux/hooks'
+import { addCart } from 'redux/productsCartReducer'
+import { changeStateButtons } from 'redux/buttonsLikeState'
 
 type Props = {
-    addCart: (id: number) => void
-
     id: number
     img: string
     alt: string
@@ -20,8 +20,11 @@ const ShopListContent = ({
     discount,
     nameProduct,
     price,
-    addCart,
 }: Props) => {
+    const dispatch = useAppDispatch()
+    const isLike = useAppSelector((state) => state.buttonsState)
+    const isCartContent = useAppSelector((state) => state.cartProductsState)
+
     return (
         <div className="products-grid" key={id}>
             <div className="product-list">
@@ -51,23 +54,44 @@ const ShopListContent = ({
                 </p>
                 <div className="grid-icons">
                     <AddShoppingCartOutlinedIcon
-                        onClick={() => addCart(id)}
-                        sx={{
-                            fontSize: '38px',
-                            padding: '10px',
-                            border: '1px solid black',
-                            borderRadius: '20px',
-                            cursor: 'pointer',
-                        }}
+                        onClick={() => dispatch(addCart(id))}
+                        sx={
+                            isCartContent[id]
+                                ? {
+                                      fontSize: '38px',
+                                      padding: '5px',
+                                      border: '1px solid black',
+                                      borderRadius: '20px',
+                                      cursor: 'pointer',
+                                      bgcolor: 'rgba(0, 255, 200, 0.3)',
+                                      transform: 'scale(1.1)',
+                                  }
+                                : {
+                                      fontSize: '38px',
+                                      padding: '7px',
+                                      border: '1px solid black',
+                                      borderRadius: '20px',
+                                      cursor: 'pointer',
+                                  }
+                        }
                     />
                     <FavoriteOutlinedIcon
-                        sx={{
-                            fontSize: '38px',
-                            padding: '10px',
-                            border: '1px solid black',
-                            cursor: 'pointer',
-                            borderRadius: '20px',
-                        }}
+                        onClick={() => dispatch(changeStateButtons(id))}
+                        sx={
+                            isLike[id]
+                                ? {
+                                      fontSize: '38px',
+                                      cursor: 'pointer',
+                                      color: 'rgba(255, 0, 0, 0.8)',
+                                      borderRadius: '20px',
+                                      transform: 'scale(1.2)',
+                                  }
+                                : {
+                                      fontSize: '38px',
+                                      cursor: 'pointer',
+                                      borderRadius: '20px',
+                                  }
+                        }
                     />
                 </div>
             </div>

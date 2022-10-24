@@ -1,6 +1,7 @@
 import React from 'react'
 import { Grid, CardActionArea, CardMedia, Card } from '@mui/material'
 import CardMediaProto from '../CartMediaTop/CardMediaProtoTop'
+import { Link } from 'react-router-dom'
 
 type Props = {}
 
@@ -11,12 +12,14 @@ const GridItemCartTop = (props: Props) => {
                 <Grid item md={6}>
                     <Card sx={{ maxWidth: '100%' }}>
                         <CardActionArea>
-                            <CardMedia
-                                component="img"
-                                height="100%"
-                                image="/img/man_with_bag.jpg"
-                                alt="man_with_bag"
-                            />
+                            <Link to="/newLook">
+                                <CardMedia
+                                    component="img"
+                                    height="100%"
+                                    image="/img/man_with_bag.jpg"
+                                    alt="man_with_bag"
+                                />
+                            </Link>
                         </CardActionArea>
                     </Card>
                 </Grid>
@@ -38,28 +41,34 @@ const GridItemCartTop = (props: Props) => {
                 </Grid>
 
                 <Grid item md={4}>
-                    <CardMediaProto
-                        catagory={'FASHION'}
-                        img={'/img/wooman_legs.jpg'}
-                        alt={'man_with_bag'}
-                        text={'Ready for the Summer'}
-                    />
+                    <Link to={'/summer'}>
+                        <CardMediaProto
+                            catagory={'FASHION'}
+                            img={'/img/wooman_legs.jpg'}
+                            alt={'man_with_bag'}
+                            text={'Ready for the Summer'}
+                        />
+                    </Link>
                 </Grid>
                 <Grid item md={4}>
-                    <CardMediaProto
-                        catagory={'LIFESTYLE'}
-                        img={'/img/sity_palm.jpg'}
-                        alt={'man_with_bag'}
-                        text={'Sonoma Valley Lancome'}
-                    />
+                    <Link to={'/valley'}>
+                        <CardMediaProto
+                            catagory={'LIFESTYLE'}
+                            img={'/img/sity_palm.jpg'}
+                            alt={'man_with_bag'}
+                            text={'Sonoma Valley Lancome'}
+                        />
+                    </Link>
                 </Grid>
                 <Grid item md={4}>
-                    <CardMediaProto
-                        catagory={'BEAUTY'}
-                        img={'/img/man_see.jpg'}
-                        alt={'man_with_bag'}
-                        text={'New Year Creativity'}
-                    />
+                    <Link to={'/creativity'}>
+                        <CardMediaProto
+                            catagory={'BEAUTY'}
+                            img={'/img/man_see.jpg'}
+                            alt={'man_with_bag'}
+                            text={'New Year Creativity'}
+                        />
+                    </Link>
                 </Grid>
             </Grid>
         </>

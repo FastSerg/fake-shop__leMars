@@ -1,4 +1,3 @@
-import React from 'react'
 import Category from './ElementsNavbarMenu/Category'
 import Home from './ElementsNavbarMenu/Home'
 import './NavbarMenu.scss'
@@ -6,8 +5,6 @@ import Pages from './ElementsNavbarMenu/Pages'
 import PostLayout from './ElementsNavbarMenu/PostLayout'
 import Shop from './ElementsNavbarMenu/Shop'
 import { NavLink } from 'react-router-dom'
-
-type Props = {}
 
 export const NavbarMenu = () => {
     return (

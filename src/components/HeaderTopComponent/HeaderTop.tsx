@@ -7,8 +7,6 @@ import { NavbarMenu } from 'container/Header/NavbarMenu/NavbarMenu'
 import ModalWindow from 'Pages/Subscribe/ModalWindow'
 import Subscribe from 'Pages/Subscribe/Subscribe'
 
-type Props = {}
-
 const HeaderTop = () => {
     const [modalActive, setModalActive] = useState<boolean>(false)
 
@@ -40,7 +38,7 @@ const HeaderTop = () => {
                     </Grid>
                     <div className="navbar-menu__bottom">
                         <NavbarMenu />
-                    </div>{' '}
+                    </div>
                 </div>
                 <Subscribe active={modalActive} setActive={setModalActive}>
                     <ModalWindow />

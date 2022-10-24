@@ -1,16 +1,16 @@
 import React from 'react'
 import PageProto from 'components/PageProto/PageProto'
-import { arraysAll, ArraysAllProps } from '../../components/Arrays/arraysAll'
+import { ArraysAllProps } from '../../components/Arrays/arraysAll'
+import { useAppSelector } from 'redux/hooks'
 
-type Props = { heightImg: string }
+type Props = { heightImg: string; titlePage: string }
 
-const StoryOfBeauty = ({ heightImg }: Props) => {
+const LeMarsPages = ({ heightImg, titlePage }: Props) => {
+    const arraysAll = useAppSelector((state) => state.products)
     return (
         <>
             {arraysAll
-                .filter(
-                    ({ title }: ArraysAllProps) => title === 'Story Of Beauty'
-                )
+                .filter(({ title }: ArraysAllProps) => title === titlePage)
                 .map(
                     ({
                         id,
@@ -35,4 +35,4 @@ const StoryOfBeauty = ({ heightImg }: Props) => {
     )
 }
 
-export default StoryOfBeauty
+export default LeMarsPages

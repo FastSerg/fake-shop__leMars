@@ -7,25 +7,29 @@ import FooterBlogs from './FooterMenu/FooterBlogs'
 import FooterSocialIcon from './FooterMenu/FooterSocialIcon'
 import FooterBottom from './FooterBottom'
 import ButtonFixed from 'components/ButtonFixed/ButtonFixed'
+import GridContainerBottom from 'container/Main/GridContainerBottom/GridContainerBottom'
 
 type Props = {}
 
 const Footer = (props: Props) => {
     return (
-        <div className="footer-site">
-            <div className="footer-container">
-                <div className="footer-top">
-                    <Grid container spacing={2}>
-                        <LogoFooter />
-                        <FooterPost />
-                        <FooterBlogs />
-                        <FooterSocialIcon />
-                    </Grid>
+        <>
+            <GridContainerBottom />
+            <div className="footer-site">
+                <div className="footer-container">
+                    <div className="footer-top">
+                        <Grid container spacing={2}>
+                            <LogoFooter />
+                            <FooterPost />
+                            <FooterBlogs />
+                            <FooterSocialIcon />
+                        </Grid>
+                    </div>
                 </div>
+                <ButtonFixed />
+                <FooterBottom />
             </div>
-            <ButtonFixed />
-            <FooterBottom />
-        </div>
+        </>
     )
 }
 

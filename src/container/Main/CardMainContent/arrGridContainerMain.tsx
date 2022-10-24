@@ -6,6 +6,7 @@ export type arrMainPageProps = {
     readMore?: string
     alt: string
     text?: string
+    namePage?: string
 }
 
 export const arrMainPageLeft = [
@@ -14,6 +15,7 @@ export const arrMainPageLeft = [
         img: '/img/wooman_near_water.jpg',
         alt: 'wooman_near_water',
         nameCategory: 'FASHION',
+        namePage: 'everything',
         title: 'Everything About Cultural',
         text: `Donec sed lacus eu massa commodo interdum non id mauris.
         Etiam eu dignissim elit. Nulla cursus neque adictum quam
@@ -24,6 +26,7 @@ export const arrMainPageLeft = [
         img: '/img/motoki-tonn.jpg',
         alt: 'motoki-tonn',
         nameCategory: 'TRAVEL',
+        namePage: 'jackson',
         title: 'Watch Jackson Wang',
         text: `Donec sed lacus eu massa commodo
         interdum non id mauris. Etiam eu
@@ -36,6 +39,7 @@ export const arrMainPageLeft = [
         img: '/img/horse.jpg',
         alt: 'horse',
         nameCategory: 'TRAVEL',
+        namePage: 'harvey',
         title: 'Styling Harvey',
         text: `Donec sed lacus eu massa commodo
       interdum non id mauris. Etiam eu
@@ -51,6 +55,7 @@ export const arrMainPageRight = [
         img: '/img/wooman_in_bike.jpg',
         alt: 'wooman_in_bike',
         nameCategory: 'FASHION',
+        namePage: 'catalines',
         title: 'Las Catalines Welcome',
         text: `Donec sed lacus eu massa commodo
       interdum non id mauris. Etiam eu
@@ -63,7 +68,8 @@ export const arrMainPageRight = [
         img: '/img/bridge.jpg',
         alt: 'bridge',
         nameCategory: 'LIFESTYLE',
-        title: 'Clarins Marcara',
+        namePage: 'mascara',
+        title: 'Clarins Mascara',
         text: `Donec sed lacus eu massa commodo
       interdum non id mauris. Etiam eu
       dignissim elit. Nulla cursus neque
@@ -75,6 +81,7 @@ export const arrMainPageRight = [
         img: '/img/man-with-board.jpg',
         alt: 'man-with-board',
         nameCategory: 'FASHION',
+        namePage: 'parisian',
         title: 'Dress Like a Parisian',
         text: `Donec sed lacus eu massa commodo
     interdum non id mauris. Etiam eu

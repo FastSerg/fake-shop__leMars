@@ -1,37 +1,30 @@
-import React, { useState } from 'react'
 import CssBaseline from '@mui/material/CssBaseline'
 import Header from 'container/Header/Header'
 import Main from 'container/Main/Main'
 import Footer from 'container/Footer/Footer'
 import { Routes, Route } from 'react-router-dom'
-import StoryOfBeauty from 'Pages/StoryOfBeaty/StoryOfBeauty'
-import StylingHarvey from 'Pages/StylingHarvey/StylingHarvey'
 import ContactUs from 'Pages/ContactUs/ContactUs'
-import EverythingCultural from 'Pages/EverythingCultural/EverythingCultural'
 import Products from 'Pages/ShopProd/ProductsShop'
 import Cart from 'Pages/ShopProd/Cart/Cart'
 import HeaderTop from 'components/HeaderTopComponent/HeaderTop'
-import CobaltLeather from 'Pages/CobaltLeather/CobaltLeather'
-import JacksonWang from 'Pages/JacksonWang/JacksonWang'
-import Parisian from 'Pages/Parisian/Parisian'
-import Marsara from 'Pages/Marsara/Marsara'
-import CatalinesWelcome from 'Pages/CatalinesWelcome/CatalinesWelcome'
-
-type ProductsInCartProps = { [id: number]: number }
+import Checkout from 'Pages/ShopProd/Checkout/Checkout'
+import { useAppDispatch } from 'redux/hooks'
+import { fetchProducts } from 'redux/productsReduser'
+import { useEffect } from 'react'
+import LikesProducts from 'Pages/ShopProd/ProductItem/LikesProducts/LikesProducts'
+import Creativity from 'Pages/Creativity/Creativity'
+import LeMarsPages from 'Pages/LeMarsPages/LeMarsPages'
+import { fetchShopProducts } from 'redux/shopProducts'
 
 export const App = () => {
-    const [productsInCart, setProductsInCart] = useState<ProductsInCartProps>(
-        {}
-    )
+    const dispatch = useAppDispatch()
 
-    const addCart = (id: number) => {
-        setProductsInCart((prevState: ProductsInCartProps) => ({
-            ...prevState,
-            [id]: (prevState[id] || 0) + 1,
-        }))
-    }
-
-    console.log(productsInCart)
+    useEffect(() => {
+        dispatch(fetchProducts())
+    }, [dispatch])
+    useEffect(() => {
+        dispatch(fetchShopProducts())
+    }, [dispatch])
 
     return (
         <>
@@ -53,7 +46,10 @@ export const App = () => {
                         <>
                             <CssBaseline />
                             <HeaderTop />
-                            <StoryOfBeauty heightImg={'1060px'} />
+                            <LeMarsPages
+                                heightImg={'1060px'}
+                                titlePage={'Story Of Beauty'}
+                            />
                             <Footer />
                         </>
                     }
@@ -64,7 +60,10 @@ export const App = () => {
                         <>
                             <CssBaseline />
                             <HeaderTop />
-                            <StylingHarvey heightImg={'1271px'} />
+                            <LeMarsPages
+                                heightImg={'1271px'}
+                                titlePage={'Styling Harvey'}
+                            />
                             <Footer />
                         </>
                     }
@@ -75,7 +74,10 @@ export const App = () => {
                         <>
                             <CssBaseline />
                             <HeaderTop />
-                            <CobaltLeather heightImg={'1271px'} />
+                            <LeMarsPages
+                                heightImg={'1271px'}
+                                titlePage={'Cobalt Leather'}
+                            />
                             <Footer />
                         </>
                     }
@@ -86,7 +88,10 @@ export const App = () => {
                         <>
                             <CssBaseline />
                             <HeaderTop />
-                            <Parisian heightImg={'517px'} />
+                            <LeMarsPages
+                                heightImg={'517px'}
+                                titlePage={'Dress Like a Parisian'}
+                            />
                             <Footer />
                         </>
                     }
@@ -97,7 +102,10 @@ export const App = () => {
                         <>
                             <CssBaseline />
                             <HeaderTop />
-                            <Marsara heightImg={'470px'} />
+                            <LeMarsPages
+                                heightImg={'470px'}
+                                titlePage={'Clarins Mascara'}
+                            />
                             <Footer />
                         </>
                     }
@@ -108,7 +116,10 @@ export const App = () => {
                         <>
                             <CssBaseline />
                             <HeaderTop />
-                            <CatalinesWelcome heightImg={'1096px'} />
+                            <LeMarsPages
+                                heightImg={'1096px'}
+                                titlePage={'Las Catalines Welcome'}
+                            />
                             <Footer />
                         </>
                     }
@@ -130,7 +141,10 @@ export const App = () => {
                         <>
                             <CssBaseline />
                             <HeaderTop />
-                            <EverythingCultural heightImg={'850px'} />
+                            <LeMarsPages
+                                heightImg={'850px'}
+                                titlePage={'Everything About Cultural'}
+                            />
                             <Footer />
                         </>
                     }
@@ -141,29 +155,118 @@ export const App = () => {
                         <>
                             <CssBaseline />
                             <HeaderTop />
-                            <JacksonWang heightImg={'1271px'} />
+                            <LeMarsPages
+                                heightImg={'1271px'}
+                                titlePage={'Watch Jackson Wang'}
+                            />
                             <Footer />
                         </>
                     }
                 />
                 <Route
-                    path="products"
+                    path="/summer"
                     element={
                         <>
                             <CssBaseline />
                             <HeaderTop />
-                            <Products addCart={addCart} />
+                            <LeMarsPages
+                                heightImg={'850px'}
+                                titlePage={'Ready for the Summer'}
+                            />
                             <Footer />
                         </>
                     }
                 />
                 <Route
-                    path="cart"
+                    path="/creativity"
                     element={
                         <>
                             <CssBaseline />
                             <HeaderTop />
-                            <Cart productsInCart={productsInCart} />
+                            <Creativity
+                                imageCategory={'/img/man_see_full.jpg'}
+                                category={'BEAUTY'}
+                                titleCategory={'New Year Creativity'}
+                                imageContent={'/img/stoune_fog.jpg'}
+                            />
+                            <Footer />
+                        </>
+                    }
+                />
+                <Route
+                    path="/newLook"
+                    element={
+                        <>
+                            <CssBaseline />
+                            <HeaderTop />
+                            <Creativity
+                                imageCategory={'/img/man_with_bag.jpg'}
+                                category={'LIFESTYLE'}
+                                titleCategory={'Makeup for new Look'}
+                                imageContent={'/img/phone.jpg'}
+                                classImg={'float-img'}
+                            />
+                            <Footer />
+                        </>
+                    }
+                />
+                <Route
+                    path="/valley"
+                    element={
+                        <>
+                            <CssBaseline />
+                            <HeaderTop />
+                            <Creativity
+                                imageCategory={'/img/sity_palm.jpg'}
+                                category={'LIFESTYLE'}
+                                titleCategory={'Sonoma Valley Lancome'}
+                                imageContent={'/img/phone.jpg'}
+                                classImg={'float-img'}
+                            />
+                            <Footer />
+                        </>
+                    }
+                />
+                <Route
+                    path="Shop"
+                    element={
+                        <>
+                            <CssBaseline />
+                            <HeaderTop />
+                            <Products />
+                            <Footer />
+                        </>
+                    }
+                />
+                <Route
+                    path="LikesProducts"
+                    element={
+                        <>
+                            <CssBaseline />
+                            <HeaderTop />
+                            <LikesProducts />
+                            <Footer />
+                        </>
+                    }
+                />
+                <Route
+                    path="Cart"
+                    element={
+                        <>
+                            <CssBaseline />
+                            <HeaderTop />
+                            <Cart />
+                            <Footer />
+                        </>
+                    }
+                />
+                <Route
+                    path="checkout"
+                    element={
+                        <>
+                            <CssBaseline />
+                            <HeaderTop />
+                            <Checkout />
                             <Footer />
                         </>
                     }

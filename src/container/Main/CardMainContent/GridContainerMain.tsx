@@ -14,7 +14,7 @@ import {
     arrMainPageLeft,
     arrMainPageRight,
 } from './arrGridContainerMain'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 type Props = {}
 
@@ -23,7 +23,7 @@ const GridContainerMain = (props: Props) => {
         <>
             <Grid container spacing={4} sx={{ padding: '70px 0' }}>
                 <Grid item md={12}>
-                    <NavLink to="/storyOfBeaty">
+                    <Link to="/storyOfBeauty">
                         <Card sx={{ maxWidth: 840 }}>
                             <CardActionArea>
                                 <CardContent>
@@ -64,8 +64,8 @@ const GridContainerMain = (props: Props) => {
                                 />
                             </CardActionArea>
                         </Card>
-                    </NavLink>
-                </Grid>{' '}
+                    </Link>
+                </Grid>
                 <Grid item md={6}>
                     {arrMainPageLeft.map(
                         ({
@@ -75,33 +75,10 @@ const GridContainerMain = (props: Props) => {
                             text,
                             nameCategory,
                             alt,
+                            namePage,
                         }: arrMainPageProps) => (
                             <Grid item md={12} key={id}>
-                                {title === 'Styling Harvey' ? (
-                                    <NavLink to="/StylingHarvey">
-                                        {' '}
-                                        <CardMediaProtoMain
-                                            id={id}
-                                            img={img}
-                                            title={title}
-                                            text={text}
-                                            alt={alt}
-                                            nameCategory={nameCategory}
-                                        />
-                                    </NavLink>
-                                ) : title === 'Everything About Cultural' ? (
-                                    <NavLink to="/cultural">
-                                        {' '}
-                                        <CardMediaProtoMain
-                                            id={id}
-                                            img={img}
-                                            title={title}
-                                            text={text}
-                                            alt={alt}
-                                            nameCategory={nameCategory}
-                                        />
-                                    </NavLink>
-                                ) : (
+                                <Link to={`/${namePage}`}>
                                     <CardMediaProtoMain
                                         id={id}
                                         img={img}
@@ -110,7 +87,7 @@ const GridContainerMain = (props: Props) => {
                                         alt={alt}
                                         nameCategory={nameCategory}
                                     />
-                                )}
+                                </Link>
                             </Grid>
                         )
                     )}
@@ -124,35 +101,22 @@ const GridContainerMain = (props: Props) => {
                             text,
                             nameCategory,
                             alt,
+                            namePage,
                         }: arrMainPageProps) => (
                             <Grid item md={12} key={id}>
-                                <CardMediaProtoMain
-                                    id={id}
-                                    img={img}
-                                    title={title}
-                                    text={text}
-                                    alt={alt}
-                                    nameCategory={nameCategory}
-                                />
+                                <Link to={`/${namePage}`}>
+                                    <CardMediaProtoMain
+                                        id={id}
+                                        img={img}
+                                        title={title}
+                                        text={text}
+                                        alt={alt}
+                                        nameCategory={nameCategory}
+                                    />
+                                </Link>
                             </Grid>
                         )
                     )}
-                </Grid>
-                <Grid
-                    item
-                    md={12}
-                    sx={{ textAlign: 'center', marginTop: '60px' }}
-                >
-                    <Button
-                        variant="contained"
-                        sx={{
-                            color: 'white',
-                            backgroundColor: 'black',
-                            borderRadius: '16px',
-                        }}
-                    >
-                        LOAD MORE
-                    </Button>
                 </Grid>
             </Grid>
         </>

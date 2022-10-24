@@ -1,7 +1,5 @@
-import Carousel from 'components/Carousel/Carousel'
+import CategoryCarousel from 'components/CategoryCarousel/CategoryCarousel'
 import React, { useState } from 'react'
-
-type Props = {}
 
 const Category = () => {
     const [show, setShow] = useState<boolean>(false)
@@ -14,8 +12,7 @@ const Category = () => {
         >
             <div className="menu-item">CATEGORY</div>
             <div className={show ? 'lage-menu active' : 'lage-menu'}>
-                {/* <CategoryTab /> */}
-                <Carousel />
+                <CategoryCarousel />
             </div>
         </li>
     )

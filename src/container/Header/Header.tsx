@@ -5,8 +5,6 @@ import { Social } from './Social'
 import { Logo } from './Logo'
 import { NavLink } from 'react-router-dom'
 
-type Props = {}
-
 const Header = () => {
     return (
         <header className="header">

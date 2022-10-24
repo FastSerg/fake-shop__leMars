@@ -3,7 +3,6 @@ import {
     Grid,
     CardActionArea,
     CardMedia,
-    Card,
     CardContent,
     Typography,
     Button,
@@ -19,7 +18,6 @@ type Props = {}
 const ContactContent = (props: Props) => {
     return (
         <>
-            {' '}
             <Grid
                 container
                 spacing={1}

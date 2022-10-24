@@ -1,14 +1,6 @@
 import React, { useState } from 'react'
+const homeList = [{ name: 'Home 1', id: 1 }]
 
-const homeList = [
-    // {title: 'HOME'},
-    { name: 'Home 1', id: 1 },
-    { name: 'Home 2', id: 2 },
-    { name: 'Home 3', id: 3 },
-    { name: 'Home 4', id: 4 },
-    { name: 'Home 5', id: 5 },
-    { name: 'Home 6', id: 6 },
-]
 type homeListProps = { name: string; id: number }
 type Props = {}
 
