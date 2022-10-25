@@ -6,7 +6,6 @@ import { ArrProductsProps } from '../../components/Arrays/arraysProducts'
 import ShopScrollItem from './ProductItem/ShopScrollItem'
 import FormatListBulletedOutlinedIcon from '@mui/icons-material/FormatListBulletedOutlined'
 import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined'
-import SelectedControl from './ProductItem/SelectedControl'
 import ShopTileList from './ProductItem/ShopTileList'
 import ShopListContent from './ProductItem/ShopListContent'
 import { useAppSelector } from 'redux/hooks'
@@ -36,12 +35,9 @@ const Products = (props: Props) => {
                     </Grid>
                     <Grid item md={9}>
                         <Grid container spacing={3}>
-                            <Grid item md={8} sx={{ marginBottom: '30px' }}>
-                                <SelectedControl />
-                            </Grid>
                             <Grid
                                 item
-                                md={4}
+                                md={12}
                                 sx={{
                                     display: 'flex',
                                     justifyContent: 'flex-end',

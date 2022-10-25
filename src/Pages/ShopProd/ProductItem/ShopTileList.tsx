@@ -83,7 +83,7 @@ const ShopTileList = ({
                                         zIndex: '11',
                                     }}
                                 >
-                                    Viue Cart
+                                    View Cart
                                 </span>
                             </Link>
                         ) : null}
