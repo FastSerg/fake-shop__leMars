@@ -1,6 +1,6 @@
 # LeMars
 
-**Online store and blog site**
+**[LeMars](https://jazzy-mousse-34d15a.netlify.app/) - Online store and blog site**
 
 ### Tech stack:
 
@@ -21,3 +21,7 @@ A user is able to purchase the products in the section `Checkout`. Also, a user 
 
 -   `npm i` to install all libraries
 -   `npm start` to run the app in the development mode. Open http://localhost:3000 to view it in the browser
+
+### Deployed app
+
+Go to the [LeMars](https://jazzy-mousse-34d15a.netlify.app/) to check the App.
