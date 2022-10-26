@@ -34,8 +34,42 @@ const Checkout = (props: Props) => {
         email: '',
         text: '',
     })
-    console.log(formState)
+
+    const [error, setError] = useState<OrderData>({
+        name: '',
+        lastName: '',
+        company: '',
+        StreetAddress: '',
+        ApartmentAddress: '',
+        city: '',
+        county: '',
+        postcode: '',
+        phone: '+380',
+        email: '',
+        text: '',
+    })
+
+    const isValidName = (name: string) => {
+        return /(?=.*[a-z])[a-z]{2,}/g.test(name)
+    }
+
+    const isValidEmail = (email: string) => {
+        return /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i.test(email)
+    }
+
+    const isValidpassword = (password: string) => {
+        return /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,10}$/g.test(
+            password
+        )
+    }
+
     const handleName = (e: React.ChangeEvent<HTMLInputElement>) => {
+        !isValidName(e.target.value)
+            ? setError((prevState: OrderData) => ({
+                  ...prevState,
+                  name: 'Name is to short',
+              }))
+            : setError((prevState: OrderData) => ({ ...prevState, name: '' }))
         setOrderData((prevState: OrderData) => ({
             ...prevState,
             name: e.target.value,
@@ -43,6 +77,15 @@ const Checkout = (props: Props) => {
     }
 
     const handleLastName = (e: React.ChangeEvent<HTMLInputElement>) => {
+        !isValidName(e.target.value)
+            ? setError((prevState: OrderData) => ({
+                  ...prevState,
+                  lastName: 'lastName is to short',
+              }))
+            : setError((prevState: OrderData) => ({
+                  ...prevState,
+                  lastName: '',
+              }))
         setOrderData((prevState: OrderData) => ({
             ...prevState,
             lastName: e.target.value,
@@ -85,6 +128,15 @@ const Checkout = (props: Props) => {
     }
 
     const handlePostcode = (e: React.ChangeEvent<HTMLInputElement>) => {
+        !isValidpassword(e.target.value)
+            ? setError((prevState: OrderData) => ({
+                  ...prevState,
+                  postcode: 'postcode is must have one big letter and number',
+              }))
+            : setError((prevState: OrderData) => ({
+                  ...prevState,
+                  postcode: '',
+              }))
         setOrderData((prevState: OrderData) => ({
             ...prevState,
             postcode: e.target.value,
@@ -99,9 +151,15 @@ const Checkout = (props: Props) => {
     }
 
     const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+        !isValidEmail(e.target.value)
+            ? setError((prevState: OrderData) => ({
+                  ...prevState,
+                  email: 'Email is invalid',
+              }))
+            : setError((prevState: OrderData) => ({ ...prevState, email: '' }))
         setOrderData((prevState: OrderData) => ({
             ...prevState,
-            emeil: e.target.value,
+            email: e.target.value,
         }))
     }
 
@@ -168,6 +226,7 @@ const Checkout = (props: Props) => {
                     ) : (
                         <CheckoutForm
                             orderData={orderData}
+                            error={error}
                             handleName={handleName}
                             handleLastName={handleLastName}
                             handleCompany={handleCompany}

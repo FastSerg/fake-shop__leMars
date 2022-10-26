@@ -14,7 +14,17 @@ const FormEmail = (props: Props) => {
         email: '',
     })
 
+    const [error, setError] = useState<string>('')
+
+    const isValidEmail = (email: string) => {
+        return /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i.test(email)
+    }
+
     const handleEmailUser = (e: React.ChangeEvent<HTMLInputElement>) => {
+        !isValidEmail(e.target.value)
+            ? setError('Email is invalid')
+            : setError('')
+
         setEmailUser((prevState: emailUserProps) => ({
             ...prevState,
             email: e.target.value,
@@ -36,7 +46,14 @@ const FormEmail = (props: Props) => {
 
     return (
         <div onMouseLeave={() => setFormState(false)}>
-            <form onSubmit={emailuserSend} className="scroll-group">
+            <form
+                onSubmit={emailuserSend}
+                className={
+                    error === 'Email is invalid'
+                        ? 'scroll-group error-active'
+                        : 'scroll-group'
+                }
+            >
                 <input
                     className="scroll-input"
                     name="email"
@@ -46,13 +63,13 @@ const FormEmail = (props: Props) => {
                     value={emailUser.email}
                     onChange={handleEmailUser}
                 />
+                {error && <span className="error-email">* {error}</span>}
                 <IconButton
                     color="inherit"
                     sx={{
                         bgcolor: '#fff',
                         paddingRight: '20px',
                         borderRadius: '0',
-                        height: 'inherit',
                         width: '20%',
                     }}
                     type="submit"

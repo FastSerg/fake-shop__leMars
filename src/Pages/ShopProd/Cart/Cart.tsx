@@ -51,23 +51,6 @@ const Cart = (props: Props) => {
                         </Fragment>
                     ))}
 
-                    <div className="coupon">
-                        <form>
-                            <input
-                                type="text"
-                                name="coupon_code"
-                                className="coupon-input"
-                                id="coupon_code"
-                                placeholder="Coupon code"
-                            />
-                            <button type="submit" className="coupon-btn">
-                                Apply coupon
-                            </button>
-                        </form>
-                        <button type="submit" className="coupon-btn">
-                            Update Cart
-                        </button>
-                    </div>
                     <CartTotal
                         total={Object.keys(productsInCart).reduce(
                             (total, productId) =>
