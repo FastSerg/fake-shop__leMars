@@ -17,7 +17,7 @@ export const NavbarMenu = () => {
                 <Pages />
                 <NavLink to="/contactUs">
                     <li className="contact">
-                        <div className="menu-item">CONTACT US</div>
+                        <div className="menu-item">CONTACT </div>
                     </li>
                 </NavLink>
             </ul>
