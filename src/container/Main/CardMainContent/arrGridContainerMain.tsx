@@ -90,3 +90,82 @@ export const arrMainPageRight = [
     habitant morbi tristique`,
     },
 ]
+
+export const arrMainPages = [
+    {
+        id: 1,
+        img: '/img/wooman_in_bike.jpg',
+        alt: 'wooman_in_bike',
+        nameCategory: 'FASHION',
+        namePage: 'catalines',
+        title: 'Las Catalines Welcome',
+        text: `Donec sed lacus eu massa commodo
+      interdum non id mauris. Etiam eu
+      dignissim elit. Nulla cursus neque
+      adictum quam tristique ac. Pellentesque
+      habitant morbi tristique`,
+    },
+    {
+        id: 2,
+        img: '/img/bridge.jpg',
+        alt: 'bridge',
+        nameCategory: 'LIFESTYLE',
+        namePage: 'mascara',
+        title: 'Clarins Mascara',
+        text: `Donec sed lacus eu massa commodo
+      interdum non id mauris. Etiam eu
+      dignissim elit. Nulla cursus neque
+      adictum quam tristique ac. Pellentesque
+      habitant morbi tristique`,
+    },
+    {
+        id: 3,
+        img: '/img/man-with-board.jpg',
+        alt: 'man-with-board',
+        nameCategory: 'FASHION',
+        namePage: 'parisian',
+        title: 'Dress Like a Parisian',
+        text: `Donec sed lacus eu massa commodo
+    interdum non id mauris. Etiam eu
+    dignissim elit. Nulla cursus neque
+    adictum quam tristique ac. Pellentesque
+    habitant morbi tristique`,
+    },
+    {
+        id: 4,
+        img: '/img/wooman_near_water.jpg',
+        alt: 'wooman_near_water',
+        nameCategory: 'FASHION',
+        namePage: 'everything',
+        title: 'Everything About Cultural',
+        text: `Donec sed lacus eu massa commodo interdum non id mauris.
+        Etiam eu dignissim elit. Nulla cursus neque adictum quam
+        tristique ac. Pellentesque habitant morbi tristique`,
+    },
+    {
+        id: 5,
+        img: '/img/motoki-tonn.jpg',
+        alt: 'motoki-tonn',
+        nameCategory: 'TRAVEL',
+        namePage: 'jackson',
+        title: 'Watch Jackson Wang',
+        text: `Donec sed lacus eu massa commodo
+        interdum non id mauris. Etiam eu
+        dignissim elit. Nulla cursus neque
+        adictum quam tristique ac. Pellentesque
+        habitant morbi tristique`,
+    },
+    {
+        id: 6,
+        img: '/img/horse.jpg',
+        alt: 'horse',
+        nameCategory: 'TRAVEL',
+        namePage: 'harvey',
+        title: 'Styling Harvey',
+        text: `Donec sed lacus eu massa commodo
+      interdum non id mauris. Etiam eu
+      dignissim elit. Nulla cursus neque
+      adictum quam tristique ac. Pellentesque
+      habitant morbi tristique`,
+    },
+]

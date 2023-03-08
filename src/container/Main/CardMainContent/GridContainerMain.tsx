@@ -7,11 +7,12 @@ import {
     CardContent,
     Typography,
 } from '@mui/material'
-import { MCardMediaProtoMain } from './CardMediaProtoMain'
+import { CardMediaProtoMain } from './CardMediaProtoMain'
 import {
     arrMainPageProps,
     arrMainPageLeft,
     arrMainPageRight,
+    arrMainPages,
 } from './arrGridContainerMain'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
@@ -32,18 +33,13 @@ const GridContainerMain = (props: Props) => {
     }
     return (
         <>
-            <Grid
-                container
-                spacing={4}
-                sx={{ padding: '70px 0' }}
-                component={motion.div}
-                initial={'hidden'}
-                whileInView={'visible'}
-                viewport={{ amount: 0.2, once: true }}
-            >
+            <Grid container spacing={4} sx={{ padding: '70px 0' }}>
                 <Grid
                     item
                     md={12}
+                    initial={'hidden'}
+                    whileInView={'visible'}
+                    viewport={{ amount: 0.2, once: true }}
                     component={motion.div}
                     variants={MProtoMain}
                     custom={1}
@@ -105,16 +101,9 @@ const GridContainerMain = (props: Props) => {
                             }: arrMainPageProps,
                             i
                         ) => (
-                            <Grid
-                                item
-                                md={12}
-                                key={id}
-                                component={motion.div}
-                                variants={MProtoMain}
-                                custom={i + 3}
-                            >
+                            <Grid item md={12} key={id}>
                                 <Link to={`/${namePage}`}>
-                                    <MCardMediaProtoMain
+                                    <CardMediaProtoMain
                                         id={id}
                                         img={img}
                                         title={title}
@@ -141,16 +130,9 @@ const GridContainerMain = (props: Props) => {
                             }: arrMainPageProps,
                             i
                         ) => (
-                            <Grid
-                                item
-                                md={12}
-                                key={id}
-                                component={motion.div}
-                                variants={MProtoMain}
-                                custom={i + 3}
-                            >
+                            <Grid item md={12} key={id}>
                                 <Link to={`/${namePage}`}>
-                                    <MCardMediaProtoMain
+                                    <CardMediaProtoMain
                                         id={id}
                                         img={img}
                                         title={title}
