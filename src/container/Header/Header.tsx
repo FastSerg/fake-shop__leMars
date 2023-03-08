@@ -4,7 +4,7 @@ import { NavbarMenu } from './NavbarMenu/NavbarMenu'
 import { Social } from './Social'
 import { Logo } from './Logo'
 import { NavLink } from 'react-router-dom'
-
+import { motion } from 'framer-motion'
 const Header = () => {
     return (
         <header className="header">

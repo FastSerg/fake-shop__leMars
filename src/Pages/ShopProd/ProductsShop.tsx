@@ -6,8 +6,8 @@ import { ArrProductsProps } from '../../components/Arrays/arraysProducts'
 import ShopScrollItem from './ProductItem/ShopScrollItem'
 import FormatListBulletedOutlinedIcon from '@mui/icons-material/FormatListBulletedOutlined'
 import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined'
-import ShopTileList from './ProductItem/ShopTileList'
-import ShopListContent from './ProductItem/ShopListContent'
+import { ShopTileList } from './ProductItem/ShopTileList'
+import { ShopListContent } from './ProductItem/ShopListContent'
 import { useAppSelector } from 'redux/hooks'
 
 type Props = {}
@@ -97,27 +97,25 @@ const Products = (props: Props) => {
                                     discount,
                                 }: ArrProductsProps) =>
                                     activeProd ? (
-                                        <React.Fragment key={id}>
-                                            <ShopListContent
-                                                id={id}
-                                                img={img}
-                                                alt={alt}
-                                                nameProduct={nameProduct}
-                                                price={price}
-                                                discount={discount}
-                                            />
-                                        </React.Fragment>
+                                        <ShopListContent
+                                            id={id}
+                                            key={id}
+                                            img={img}
+                                            alt={alt}
+                                            nameProduct={nameProduct}
+                                            price={price}
+                                            discount={discount}
+                                        />
                                     ) : (
-                                        <React.Fragment key={id}>
-                                            <ShopTileList
-                                                id={id}
-                                                img={img}
-                                                alt={alt}
-                                                nameProduct={nameProduct}
-                                                price={price}
-                                                discount={discount}
-                                            />
-                                        </React.Fragment>
+                                        <ShopTileList
+                                            id={id}
+                                            img={img}
+                                            alt={alt}
+                                            nameProduct={nameProduct}
+                                            price={price}
+                                            discount={discount}
+                                            key={id}
+                                        />
                                     )
                             )}
                         </Grid>

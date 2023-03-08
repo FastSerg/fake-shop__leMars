@@ -2,14 +2,38 @@ import React from 'react'
 import { Grid, CardActionArea, CardMedia, Card } from '@mui/material'
 import CardMediaProto from '../CartMediaTop/CardMediaProtoTop'
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 type Props = {}
 
 const GridItemCartTop = (props: Props) => {
+    const MCartTop = {
+        hidden: {
+            opacity: 0,
+        },
+        visible: (custom: number) => ({
+            opacity: 1,
+            transition: { duration: 2, delay: custom * 0.2 },
+        }),
+    }
     return (
         <>
-            <Grid container spacing={2} sx={{ marginBottom: '60px' }}>
-                <Grid item md={6}>
+            <Grid
+                component={motion.div}
+                initial={'hidden'}
+                whileInView={'visible'}
+                viewport={{ amount: 0.2, once: true }}
+                container
+                spacing={2}
+                sx={{ marginBottom: '60px' }}
+            >
+                <Grid
+                    item
+                    md={6}
+                    component={motion.div}
+                    variants={MCartTop}
+                    custom={1}
+                >
                     <Card sx={{ maxWidth: '100%' }}>
                         <CardActionArea>
                             <Link to="/newLook">
@@ -23,7 +47,13 @@ const GridItemCartTop = (props: Props) => {
                         </CardActionArea>
                     </Card>
                 </Grid>
-                <Grid item md={6}>
+                <Grid
+                    item
+                    md={6}
+                    component={motion.div}
+                    variants={MCartTop}
+                    custom={1}
+                >
                     <div className="blog-cart">
                         <div className="blog-cart__info">
                             <div className="title-top">
@@ -40,7 +70,13 @@ const GridItemCartTop = (props: Props) => {
                     </div>
                 </Grid>
 
-                <Grid item md={4}>
+                <Grid
+                    item
+                    md={4}
+                    component={motion.div}
+                    variants={MCartTop}
+                    custom={3}
+                >
                     <Link to={'/summer'}>
                         <CardMediaProto
                             catagory={'FASHION'}
@@ -50,7 +86,13 @@ const GridItemCartTop = (props: Props) => {
                         />
                     </Link>
                 </Grid>
-                <Grid item md={4}>
+                <Grid
+                    item
+                    md={4}
+                    component={motion.div}
+                    variants={MCartTop}
+                    custom={3}
+                >
                     <Link to={'/valley'}>
                         <CardMediaProto
                             catagory={'LIFESTYLE'}
@@ -60,7 +102,13 @@ const GridItemCartTop = (props: Props) => {
                         />
                     </Link>
                 </Grid>
-                <Grid item md={4}>
+                <Grid
+                    item
+                    md={4}
+                    component={motion.div}
+                    variants={MCartTop}
+                    custom={3}
+                >
                     <Link to={'/creativity'}>
                         <CardMediaProto
                             catagory={'BEAUTY'}

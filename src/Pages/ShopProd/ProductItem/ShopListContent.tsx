@@ -3,6 +3,7 @@ import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutl
 import { useAppDispatch, useAppSelector } from 'redux/hooks'
 import { addCart } from 'redux/productsCartReducer'
 import { changeStateButtons } from 'redux/buttonsLikeState'
+import { motion } from 'framer-motion'
 
 type Props = {
     id: number
@@ -13,7 +14,7 @@ type Props = {
     price: number
 }
 
-const ShopListContent = ({
+export const ShopListContent = ({
     id,
     img,
     alt,
@@ -25,8 +26,29 @@ const ShopListContent = ({
     const isLike = useAppSelector((state) => state.buttonsState)
     const isCartContent = useAppSelector((state) => state.cartProductsState)
 
+    const MProtoMain = {
+        hidden: {
+            opacity: 0,
+            x: -500,
+        },
+        visible: (custom: number) => ({
+            opacity: 1,
+            x: 0,
+            transition: { duration: 0.4, delay: custom * 0.2 },
+        }),
+        out: { opacity: 0, x: -500 },
+    }
     return (
-        <div className="products-grid" key={id}>
+        <motion.div
+            initial={'hidden'}
+            whileInView="visible"
+            exit={'out'}
+            viewport={{ amount: 0.1, once: true }}
+            variants={MProtoMain}
+            custom={id * 0.5}
+            className="products-grid"
+            key={id}
+        >
             <div className="product-list">
                 <img src={img} alt={alt} />
                 <div className={discount === undefined ? 'd-none' : 'discount'}>
@@ -95,8 +117,6 @@ const ShopListContent = ({
                     />
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
-
-export default ShopListContent

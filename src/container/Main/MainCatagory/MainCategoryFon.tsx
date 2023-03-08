@@ -1,25 +1,50 @@
 import React from 'react'
-import ContainerMainItem from '../CardMainContent/ContainerMainItem'
+import { MContainerMainItem } from '../CardMainContent/ContainerMainItem'
 import imgListArr from '../../../components/Arrays/imgListArr'
 import { imgListProps } from '../../../components/Arrays/imgListArr'
+import { motion } from 'framer-motion'
 
 const ContainerMainCategory = () => {
+    const MPost = {
+        hidden: {
+            opacity: 0,
+            y: -100,
+        },
+        visible: (custom: number) => ({
+            opacity: 1,
+            y: 0,
+            transition: { delay: custom * 0.2 },
+        }),
+    }
     return (
         <>
             <div className="container top">
-                <div className="container__post">
+                <motion.div
+                    initial={'hidden'}
+                    whileInView="visible"
+                    viewport={{ amount: 0.8, once: true }}
+                    className="container__post"
+                >
                     {imgListArr.map(
-                        ({
-                            id,
-                            img,
-                            nameCategory,
-                            title,
-                            readMore,
-                            alt,
-                            namePage,
-                        }: imgListProps) => (
-                            <div className="post__item" key={id}>
-                                <ContainerMainItem
+                        (
+                            {
+                                id,
+                                img,
+                                nameCategory,
+                                title,
+                                readMore,
+                                alt,
+                                namePage,
+                            }: imgListProps,
+                            i
+                        ) => (
+                            <motion.div
+                                variants={MPost}
+                                custom={i}
+                                className="post__item"
+                                key={id}
+                            >
+                                <MContainerMainItem
                                     id={id}
                                     img={img}
                                     alt={alt}
@@ -28,10 +53,10 @@ const ContainerMainCategory = () => {
                                     readMore={readMore}
                                     namePage={namePage}
                                 />
-                            </div>
+                            </motion.div>
                         )
                     )}
-                </div>
+                </motion.div>
             </div>
         </>
     )

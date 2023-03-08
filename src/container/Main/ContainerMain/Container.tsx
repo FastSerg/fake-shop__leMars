@@ -4,13 +4,18 @@ import { Grid } from '@mui/material'
 import GridItemCartTop from '../GridItemCartTop/GridItemCartTop'
 import GritContainerScrolling from '../ScrollMenu/GritContainerScrolling'
 import GridContainerMain from '../CardMainContent/GridContainerMain'
+import { motion } from 'framer-motion'
 
 type Props = {}
 
 const Conteiner = (props: Props) => {
     return (
         <>
-            <div className="container">
+            <motion.div
+                initial={'hidden'}
+                whileInView={'visible'}
+                className="container"
+            >
                 <Grid container spacing={1} sx={{ paddingTop: '70px' }}>
                     <Grid item md={9}>
                         <GridItemCartTop />
@@ -20,7 +25,7 @@ const Conteiner = (props: Props) => {
                         <GritContainerScrolling />
                     </Grid>
                 </Grid>
-            </div>
+            </motion.div>
         </>
     )
 }

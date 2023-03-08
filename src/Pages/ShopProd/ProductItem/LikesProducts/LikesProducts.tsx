@@ -5,7 +5,7 @@ import {
     ArrProductsProps,
     getProductObject,
 } from '../../../../components/Arrays/arraysProducts'
-import ShopListContent from '../ShopListContent'
+import { ShopListContent } from '../ShopListContent'
 type productObjectProps = { [key: number]: ArrProductsProps }
 
 type Props = {}

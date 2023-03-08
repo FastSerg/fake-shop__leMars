@@ -7,21 +7,47 @@ import {
     CardContent,
     Typography,
 } from '@mui/material'
-import CardMediaProtoMain from './CardMediaProtoMain'
+import { MCardMediaProtoMain } from './CardMediaProtoMain'
 import {
     arrMainPageProps,
     arrMainPageLeft,
     arrMainPageRight,
 } from './arrGridContainerMain'
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 type Props = {}
 
 const GridContainerMain = (props: Props) => {
+    const MProtoMain = {
+        hidden: {
+            opacity: 0,
+            y: 50,
+        },
+        visible: (custom: number) => ({
+            opacity: 1,
+            y: 0,
+            transition: { duration: 1.7, delay: custom * 0.2 },
+        }),
+    }
     return (
         <>
-            <Grid container spacing={4} sx={{ padding: '70px 0' }}>
-                <Grid item md={12}>
+            <Grid
+                container
+                spacing={4}
+                sx={{ padding: '70px 0' }}
+                component={motion.div}
+                initial={'hidden'}
+                whileInView={'visible'}
+                viewport={{ amount: 0.2, once: true }}
+            >
+                <Grid
+                    item
+                    md={12}
+                    component={motion.div}
+                    variants={MProtoMain}
+                    custom={1}
+                >
                     <Link to="/storyOfBeauty">
                         <Card sx={{ maxWidth: 840 }}>
                             <CardActionArea>
@@ -67,18 +93,28 @@ const GridContainerMain = (props: Props) => {
                 </Grid>
                 <Grid item md={6}>
                     {arrMainPageLeft.map(
-                        ({
-                            id,
-                            img,
-                            title,
-                            text,
-                            nameCategory,
-                            alt,
-                            namePage,
-                        }: arrMainPageProps) => (
-                            <Grid item md={12} key={id}>
+                        (
+                            {
+                                id,
+                                img,
+                                title,
+                                text,
+                                nameCategory,
+                                alt,
+                                namePage,
+                            }: arrMainPageProps,
+                            i
+                        ) => (
+                            <Grid
+                                item
+                                md={12}
+                                key={id}
+                                component={motion.div}
+                                variants={MProtoMain}
+                                custom={i + 3}
+                            >
                                 <Link to={`/${namePage}`}>
-                                    <CardMediaProtoMain
+                                    <MCardMediaProtoMain
                                         id={id}
                                         img={img}
                                         title={title}
@@ -93,18 +129,28 @@ const GridContainerMain = (props: Props) => {
                 </Grid>
                 <Grid item md={6}>
                     {arrMainPageRight.map(
-                        ({
-                            id,
-                            img,
-                            title,
-                            text,
-                            nameCategory,
-                            alt,
-                            namePage,
-                        }: arrMainPageProps) => (
-                            <Grid item md={12} key={id}>
+                        (
+                            {
+                                id,
+                                img,
+                                title,
+                                text,
+                                nameCategory,
+                                alt,
+                                namePage,
+                            }: arrMainPageProps,
+                            i
+                        ) => (
+                            <Grid
+                                item
+                                md={12}
+                                key={id}
+                                component={motion.div}
+                                variants={MProtoMain}
+                                custom={i + 3}
+                            >
                                 <Link to={`/${namePage}`}>
-                                    <CardMediaProtoMain
+                                    <MCardMediaProtoMain
                                         id={id}
                                         img={img}
                                         title={title}

@@ -4,6 +4,7 @@ import { addCart } from 'redux/productsCartReducer'
 import { useAppDispatch, useAppSelector } from 'redux/hooks'
 import { changeStateButtons } from 'redux/buttonsLikeState'
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 type Props = {
     id: number
@@ -14,7 +15,7 @@ type Props = {
     price: number
 }
 
-const ShopTileList = ({
+export const ShopTileList = ({
     id,
     img,
     alt,
@@ -26,8 +27,28 @@ const ShopTileList = ({
     const cartShowState = useAppSelector((state) => state.buttonsState)
     const isCart = useAppSelector((state) => state.cartProductsState)
 
+    const MProtoMain = {
+        hidden: {
+            opacity: 0,
+        },
+        visible: (custom: number) => ({
+            opacity: 1,
+            transition: { duration: 0.4, delay: custom * 0.2 },
+        }),
+        out: { opacity: 0, x: -500 },
+    }
     return (
-        <Grid item md={4} key={id}>
+        <Grid
+            item
+            md={4}
+            key={id}
+            component={motion.div}
+            initial={'hidden'}
+            whileInView="visible"
+            viewport={{ amount: 0.1, once: true }}
+            variants={MProtoMain}
+            custom={id * 0.5}
+        >
             <div className="products">
                 <div
                     className="product-list"
@@ -113,5 +134,3 @@ const ShopTileList = ({
         </Grid>
     )
 }
-
-export default ShopTileList

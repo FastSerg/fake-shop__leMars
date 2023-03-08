@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import SupportAgentIcon from '@mui/icons-material/SupportAgent'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
+import { motion, AnimatePresence } from 'framer-motion'
 import './ButtomFixed.scss'
 
 const btnContent = [
@@ -34,13 +35,25 @@ const ButtonFixed = () => {
         <>
             {btnContent.map(({ className, id, text, icon }: Props2) => (
                 <div key={id}>
-                    <button
-                        className={className}
-                        onMouseEnter={() => change(id)}
-                        onMouseLeave={() => change(id)}
-                    >
-                        {icon} {fixedState[id] ? <span>{text}</span> : null}
-                    </button>
+                    <AnimatePresence>
+                        <motion.button
+                            className={className}
+                            onMouseEnter={() => change(id)}
+                            onMouseLeave={() => change(id)}
+                        >
+                            {icon}
+                            {fixedState[id] ? (
+                                <motion.span
+                                    initial={{ opacity: 0, width: 0 }}
+                                    animate={{ opacity: 1, width: '100%' }}
+                                    exit={{ opacity: 0, width: 0 }}
+                                    transition={{ duration: 2 }}
+                                >
+                                    {text}
+                                </motion.span>
+                            ) : null}
+                        </motion.button>
+                    </AnimatePresence>
                 </div>
             ))}
         </>
