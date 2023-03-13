@@ -12,7 +12,6 @@ import {
     arrMainPageProps,
     arrMainPageLeft,
     arrMainPageRight,
-    arrMainPages,
 } from './arrGridContainerMain'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
